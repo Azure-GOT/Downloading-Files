@@ -9,6 +9,22 @@
   <h5>Click on the below button for downloading</h5>
   <a href="131579660.jpg" download="Sample Image"><button type="button">Download</button>
   </a>
+  
+  <h2>Provide the URL of the image</h2>
+    <input type="url" id="image-input">
+    <button id="b">Get Image</button>
+    <br>
+    
+    <img src="" id="image">
+  
+  <script>
+    document.getElementById("b").addEventListener("click", e=> {
+    let imageInput = document.getElementById("image-input");
+    let image = document.getElementById("image");
+    if (imageInput.value) image.src = imageInput.value;
+  });
+
+</script>
 </center>
 </body>
 </html>
