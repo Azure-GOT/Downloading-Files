@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <input type="url" id="image-input">
+    <button id="b">Get Image</button>
+    <br>
+    
+    <img src="" id="image">
+    
+
+</body>
+<script>
+    document.getElementById("b").addEventListener("click", e => {
+    let imageInput = document.getElementById("image-input");
+    let image = document.getElementById("image");
+    if (imageInput.value) image.src = imageInput.value;
+  });
+
+</script>
+
+</html>
