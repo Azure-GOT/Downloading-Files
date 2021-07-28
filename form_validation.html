@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form>
+    <h1>Form Validation</h1>
+      <label>Movie Name </label>
+      <input id="moviename" type="text"><br>
+      <label>Realise Date </label>
+      <input id="date" type="date"><br>
+      <label>Cast </label>
+      <input id="cast" type="text"><br>
+      <label>Director Name </label>
+      <input id="dname" type="text"><br>
+      <label>Rating </label>
+      <input id="rating" type="number"><br>
+  
+  
+      <input type="button" onClick="insertData()" value="Submit">
+      <input type="reset" value="Reset">
+      </form>
+  
+  <script>
+      function insertData() {
+          var Name = document.getElementById("moviename").value;
+          var Date = document.getElementById("date").value;
+          var Cast = document.getElementById("cast").value;
+          var Dname = document.getElementById("dname").value;
+          var Rating = document.getElementById("rating").value;
+          document.getElementById("insert").innerHTML += "<tr><td>" + Name + "</td><td>" + Date + "</td><td>" + Cast + "</td><td>" + Dname + "</td><td>" + Rating + "</td></tr>";
+        
+          // The below part is to clear the values after the entry is added.
+          document.getElementById("moviename").value = "";
+          document.getElementById("date").value = "";
+          document.getElementById("cast").value = "";
+          document.getElementById("dname").value = "";
+          document.getElementById("rating").value = "";
+      }
+  </script>
+  <table>
+      <caption>Movie Detail Table</caption>
+      <thead>
+          <tr>
+              <th>Movie Name</th>
+              <th>Realise Date</th>
+              <th>Cast</th>
+              <th>Director Name</th>
+              <th>Rating</th>
+          </tr>
+      </thead>
+      <tbody id="insert">
+        
+      </tbody>
+  </table>
+</body>
+</html>
