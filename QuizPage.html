@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+</head>
+<body>
+    Q1. What is 2+3?<br>
+    <input type="radio" name="question1" id="correct1"> 5<br>
+    <input type="radio" name="question1"> 6<br>
+    <input type="radio" name="question1"> 4<br>
+    <input type="radio" name="question1"> 7<br>
+    <br>
+    Q2. What is Capital of India??<br>
+    <input type="radio" name="question2"> Mumbai<br>
+    <input type="radio" name="question2"> Chennai<br>
+    <input type="radio" name="question2" id="correct2"> Delhi<br>
+    <input type="radio" name="question2"> Kolkata<br>
+    <br>
+    Q3. Which player became the youngest captain in the Test Cricket??<br>
+    <input type="radio" name="question3" id="correct3"> Rashid Khan<br>
+    <input type="radio" name="question3"> Virat Kohli<br>
+    <input type="radio" name="question3"> Babar Azam<br>
+    <input type="radio" name="question3"> Joe Root<br>
+    <br>
+    Q4. How many days are there in a normal year?<br>
+    <input type="radio" name="question4"> 364<br>
+    <input type="radio" name="question4"> 362<br>
+    <input type="radio" name="question4" id="correct4"> 365<br>
+    <input type="radio" name="question4"> 366<br>
+    <br>
+    Q5. Which festival is called the festival of light?<br>
+    <input type="radio" name="question5"> Holi<br>
+    <input type="radio" name="question5" id="correct5"> Diwali<br>
+    <input type="radio" name="question5"> New Year<br>
+    <input type="radio" name="question5"> Christmas<br>
+    <br>
+    <input type="submit" name="submit" value="Submit-Quiz" onclick="result()">
+
+<script>
+    function result() {
+        var score = 0;
+        if (document.getElementById('correct1').checked) {
+            score++;
+        }
+        if (document.getElementById('correct2').checked) {
+            score++;
+        }
+        if (document.getElementById('correct3').checked) {
+            score++;
+        }
+        if (document.getElementById('correct4').checked) {
+            score++;
+        }
+        if (document.getElementById('correct5').checked) {
+            score++;
+        }
+
+        document.write("Your Score is:" +score);
+    }
+</script>
+</body>
+</html>
