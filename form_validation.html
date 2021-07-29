@@ -2,7 +2,6 @@
 <html>
     <body>
         <center>
-
         <script>
             function insertData() {
                 var Name = document.getElementById("moviename").value;
@@ -37,10 +36,10 @@
     				return false;
   					}
 
-                document.getElementById("Table-Output").innerHTML = "<table><caption><h1>Movie Detail Table</h1></caption><thead><tr><th>Movie Name</th><th>Realise Date</th><th>Cast</th<th>Director Name</th><th>Rating</th></tr></thead><tbody><tr><td>" + Name + " </td><td>" + Date + " </td><td>" + Cast + " </td><td>" + Dname + " </td><td>" + Rating + " </td></tr></tbody></table>"
+                document.getElementById("Table-Output").innerHTML = "<table style=\"width:70%\"><caption><h1>Movie Detail Table</h1></caption><thead><tr><th>  Movie Name  </th><th>  Realise Date  </th><th>  Cast  </th<th>  Director Name  </th><th>  Rating  </th></tr></thead><tbody><tr><td>" +   Name  + " </td><td>" +   Date  + " </td><td>" +  Cast  + " </td><td>" +  Dname  + " </td><td>" +  Rating  + " </td></tr></tbody></table>"
               
       
-                document.getElementById("Embed-Code").innerHTML = "&lt;table&gt;&lt;caption&gt;&lt;h1&gt;Movie Detail Table&lt;/h1&gt;&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Movie Name&lt;/th&gt;&lt;th&gt;Realise Date&lt;/th&gt;&lt;th&gt;Cast&lt;/th&lt;th&gt;Director Name&lt;/th&gt;&lt;th&gt;Rating&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;" + Name + " &lt;/td&gt;&lt;td&gt;" + Date + " &lt;/td&gt;&lt;td&gt;" + Cast + " &lt;/td&gt;&lt;td&gt;" + Dname + " &lt;/td&gt;&lt;td&gt;" + Rating + " &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;"
+                document.getElementById("Embed-Code").innerHTML = "&lt;table style=\"width:70%\"&gt;&lt;caption&gt;&lt;h1&gt;Movie Detail Table&lt;/h1&gt;&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Movie Name&lt;/th&gt;&lt;th&gt;Realise Date&lt;/th&gt;&lt;th&gt;Cast&lt;/th&lt;th&gt;Director Name&lt;/th&gt;&lt;th&gt;Rating&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;" +  Name  + " &lt;/td&gt;&lt;td&gt;" +  Date  + " &lt;/td&gt;&lt;td&gt;" +  Cast  + " &lt;/td&gt;&lt;td&gt;" +  Dname  + " &lt;/td&gt;&lt;td&gt;" +  Rating  + " &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;"
                 
                 
                 
@@ -58,7 +57,7 @@
             <input name="Cast" id="cast" type="text" required><br><br>
             <label>Director Name </label>
             <input name="Dname" id="dname" type="text" required><br><br>
-            <label>Rating </label>
+            <label>Rating</label>
             <input name="Rating" id="rating" type="number" required><br><br>
         
         
@@ -67,12 +66,15 @@
         </form>
   <hr>
   <br><br>
-
+<div>
   <p id="Table-Output"></p>
-<br>    
+<br> 
+<div>   
   <p id="Embed-Code"></p>
+</div>
+</div>
 
   
-        </center>
+  </center>
 </body>
 </html>
