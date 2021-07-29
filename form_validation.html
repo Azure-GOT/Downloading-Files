@@ -1,80 +1,45 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <form>
-    <h1>Form Validation</h1>
-      <label>Movie Name </label>
-      <input id="moviename" type="text"><br><br>
-      <label>Realise Date </label>
-      <input id="date" type="date"><br><br>
-      <label>Cast </label>
-      <input id="cast" type="text"><br><br>
-      <label>Director Name </label>
-      <input id="dname" type="text"><br><br>
-      <label>Rating </label>
-      <input id="rating" type="number"><br><br>
-  
-  
-      <input type="button" onClick="insertData()" value="Submit">
-      <input type="reset" value="Reset">
-        </form>
-        <p id="tbl"></p>
 
+        <script>
+            function insertData() {
+                var Name = document.getElementById("moviename").value;
+                var Date = document.getElementById("date").value;
+                var Cast = document.getElementById("cast").value;
+                var Dname = document.getElementById("dname").value;
+                var Rating = document.getElementById("rating").value;
+
+                document.getElementById("Table-Output").innerHTML = "<table><caption><h1>Movie Detail Table</h1></caption><thead><tr><th>Movie Name</th><th>Realise Date</th><th>Cast</th<th>Director Name</th><th>Rating</th></tr></thead><tbody><tr><td>" + Name + " </td><td>" + Date + " </td><td>" + Cast + " </td><td>" + Dname + " </td><td>" + Rating + " </td></tr></tbody></table>"
+              
+      
+                document.getElementById("Embed-Code").innerHTML = "&lt;table&gt;&lt;caption&gt;&lt;h1&gt;Movie Detail Table&lt;/h1&gt;&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Movie Name&lt;/th&gt;&lt;th&gt;Realise Date&lt;/th&gt;&lt;th&gt;Cast&lt;/th&lt;th&gt;Director Name&lt;/th&gt;&lt;th&gt;Rating&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;" + Name + " &lt;/td&gt;&lt;td&gt;" + Date + " &lt;/td&gt;&lt;td&gt;" + Cast + " &lt;/td&gt;&lt;td&gt;" + Dname + " &lt;/td&gt;&lt;td&gt;" + Rating + " &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;"
+                }
+        </script>
+        <form name="myForm">  
+            <h1>Form Validation</h1>
+            <label>Movie Name </label>
+            <input name= "Mname" id="moviename" type="text" required><br><br>
+            <label>Realise Date </label>
+            <input id="date" type="date" required><br><br>
+            <label>Cast </label>
+            <input id="cast" type="text" required><br><br>
+            <label>Director Name </label>
+            <input id="dname" type="text" required><br><br>
+            <label>Rating </label>
+            <input id="rating" type="number" required><br><br>
         
+        
+            <input type="button" onClick="insertData()" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
   <hr>
   <br><br>
-        
-        <table id = "tabledata">
-      <caption><h1>Movie Detail Table</h1></caption>
-      <thead>
-          <tr>
-              <th>Movie Name</th>
-              <th>Realise Date</th>
-              <th>Cast</th>
-              <th>Director Name</th>
-              <th>Rating</th>
-          </tr>
-      </thead>
-      <tbody id="insert">
-        
-      </tbody>
-  </table>
-  <p id="demo"></p>
-  <script>
-      function insertData() {
-          var Name = document.getElementById("moviename").value;
-          var Date = document.getElementById("date").value;
-          var Cast = document.getElementById("cast").value;
-          var Dname = document.getElementById("dname").value;
-          var Rating = document.getElementById("rating").value;
-          
-          let text;
-          if(Rating < 0 || Rating > 10){
-              text = "Rating should be between 0 and 10"
-          } else{
-              text = " ";
-          }
-          let x;
-          if (Rating > 0 && Rating <= 10) {
-              x = Rating;
-          }else{
-              x = " ";
-          }
-          document.getElementById("insert").innerHTML += "<tr><td>" + Name + "</td><td>" + Date + "</td><td>" + Cast + "</td><td>" + Dname + "</td><td>" + x + "</td></tr>";
-        
 
-          
-          document.getElementById("tbl").innerHTML = text;
+    <p id="Table-Output"></p>
+    <br>    
+    <p id="Embed-Code"></p>
 
-          document.getElementById("demo").innerHTML = "&lt;iframe width =  100% ; height= 100%; position= absolute; border = 2px; src='https://azure-got.github.io/Web-Project/form_validation.html#tabledata '&gt; &lt;/iframe&gt;";
-          // The below part is to clear the values after the entry is added.
-          document.getElementById("moviename").value = "";
-          document.getElementById("date").value = "";
-          document.getElementById("cast").value = "";
-          document.getElementById("dname").value = "";
-          document.getElementById("rating").value = "";
-      }
-  </script>
   
   
 </body>
