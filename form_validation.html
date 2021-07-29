@@ -10,11 +10,42 @@
                 var Dname = document.getElementById("dname").value;
                 var Rating = document.getElementById("rating").value;
 
+                let x = document.forms["myForm"]["Mname"].value;
+  					if (x == "") {
+   					alert("Name must be filled out");
+    				return false;
+  					}
+                let y = document.forms["myForm"]["Date"].value;
+  					if (y == "") {
+    				alert("Date must be filled out");
+    				return false;
+  					}
+    			let z = document.forms["myForm"]["Cast"].value;
+  					if (z == "") {
+   					alert("Cast must be filled out");
+    				return false;
+  					}
+    			let a = document.forms["myForm"]["Dname"].value;
+  					if (a == "") {
+    				alert("Director Name must be filled out");
+    				return false;
+  					}
+    			let b = document.forms["myForm"]["Rating"].value;
+  					if (b == "") {
+    				alert("Rating must be filled out");
+    				return false;
+  					}
+
                 document.getElementById("Table-Output").innerHTML = "<table><caption><h1>Movie Detail Table</h1></caption><thead><tr><th>Movie Name</th><th>Realise Date</th><th>Cast</th<th>Director Name</th><th>Rating</th></tr></thead><tbody><tr><td>" + Name + " </td><td>" + Date + " </td><td>" + Cast + " </td><td>" + Dname + " </td><td>" + Rating + " </td></tr></tbody></table>"
               
       
                 document.getElementById("Embed-Code").innerHTML = "&lt;table&gt;&lt;caption&gt;&lt;h1&gt;Movie Detail Table&lt;/h1&gt;&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Movie Name&lt;/th&gt;&lt;th&gt;Realise Date&lt;/th&gt;&lt;th&gt;Cast&lt;/th&lt;th&gt;Director Name&lt;/th&gt;&lt;th&gt;Rating&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;" + Name + " &lt;/td&gt;&lt;td&gt;" + Date + " &lt;/td&gt;&lt;td&gt;" + Cast + " &lt;/td&gt;&lt;td&gt;" + Dname + " &lt;/td&gt;&lt;td&gt;" + Rating + " &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;"
-                }
+                
+                
+                
+              
+
+            }
         </script>
         <form name="myForm">  
             <h1>Form Validation</h1>
@@ -36,9 +67,9 @@
   <hr>
   <br><br>
 
-    <p id="Table-Output"></p>
-    <br>    
-    <p id="Embed-Code"></p>
+  <p id="Table-Output"></p>
+<br>    
+  <p id="Embed-Code"></p>
 
   
   
