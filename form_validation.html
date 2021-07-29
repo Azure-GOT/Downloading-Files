@@ -23,6 +23,23 @@
         
   <hr>
   <br><br>
+        
+        <table id = "tabledata">
+      <caption><h1>Movie Detail Table</h1></caption>
+      <thead>
+          <tr>
+              <th>Movie Name</th>
+              <th>Realise Date</th>
+              <th>Cast</th>
+              <th>Director Name</th>
+              <th>Rating</th>
+          </tr>
+      </thead>
+      <tbody id="insert">
+        
+      </tbody>
+  </table>
+  <p id="demo"></p>
   <script>
       function insertData() {
           var Name = document.getElementById("moviename").value;
@@ -59,21 +76,6 @@
       }
   </script>
   
-  <table id = "tabledata">
-      <caption><h1>Movie Detail Table</h1></caption>
-      <thead>
-          <tr>
-              <th>Movie Name</th>
-              <th>Realise Date</th>
-              <th>Cast</th>
-              <th>Director Name</th>
-              <th>Rating</th>
-          </tr>
-      </thead>
-      <tbody id="insert">
-        
-      </tbody>
-  </table>
-  <p id="demo"></p>
+  
 </body>
 </html>
