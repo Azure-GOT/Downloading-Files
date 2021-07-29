@@ -1,7 +1,7 @@
     <!DOCTYPE html>
     <html>
         <body>
-            <center>
+            
             <script>
                 function insertData() {
                     var Name = document.getElementById("moviename").value;
@@ -36,18 +36,16 @@
                         return false;
                         }
 
-                    document.getElementById("Table-Output").innerHTML = "<table style=\"width:100%\"><caption><h1>Movie Detail Table</h1></caption><tr><td>Movie Name</td><td>Realise Date</td><td>Cast</td><td>Director Name</td><td>Rating</td></tr><tr><td>" + Name + "</td><td>" + Date + "</td><td>" + Cast + " </td><td>" +Dname + " </td><td>" + Rating + "</td></tr></table>"
+                        document.getElementById("Table-Output").innerHTML = "<table style=\"width:100%\"><h1>Movie Detail Table</h1><tr><td>Movie Name: "+ Name +"</td></tr><tr><td>Realise Date: "+ Date+"</td></tr><tr><td>Cast: "+ Cast+"</td></tr><tr><td>Director Name: "+ Dname+"</td></tr><tr><td>Rating: "+ Rating+"</td></tr></table>"
                 
         
-                    document.getElementById("Embed-Code").innerHTML = "&lt;table style=\"width:70%\"&gt;&lt;caption&gt;&lt;h1&gt;Movie Detail Table&lt;/h1&gt;&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;Movie Name&lt;/td&gt;&lt;td&gt;Realise Date&lt;/td&gt;&lt;td&gt;Cast&lt;/td&gt;&lt;td&gt;Director Name&lt;/td&gt;&lt;td&gt;Rating&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;" +  Name  + " &lt;/td&gt;&lt;td&gt;" +  Date  + " &lt;/td&gt;&lt;td&gt;" +  Cast  + " &lt;/td&gt;&lt;td&gt;" +  Dname  + " &lt;/td&gt;&lt;td&gt;" +  Rating  + " &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
-                    
+                        document.getElementById("Embed-Code").innerHTML = "&lt;table style=\"width:100%\"&gt;&lt;h1&gt;Movie Detail Table&lt;/h1&gt;&lt;tr&gt;&lt;td&gt;Movie Name: "+ Name +"&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Realise Date: "+ Date+"&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Cast: "+ Cast+"&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Director Name: "+ Dname+"&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Rating: "+ Rating+"&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
                     // The below part is to clear the values after the entry is added.
-                    document.getElementById("moviename").value = "";
+                     document.getElementById("moviename").value = "";
                     document.getElementById("date").value = "";
                     document.getElementById("cast").value = "";
                     document.getElementById("dname").value = "";
                     document.getElementById("rating").value = "";
-                    
                     
                 
 
@@ -81,6 +79,6 @@
     </div>
 
     
-    </center>
+    
     </body>
     </html>
