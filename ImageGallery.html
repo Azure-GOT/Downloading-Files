@@ -5,85 +5,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Image Gallery</h1>
+<h2 style="text-align:center">Image Gallery</h2>
 
+<div class="row">
+  <div class="column">
+    <img src="Images/1_small.jpg" style="width:100%" onclick="openModal();currentSlide(1)">
+  </div>
+  <div class="column">
+    <img src="Images/2_small.jpg" style="width:100%" onclick="openModal();currentSlide(2)">
+  </div>
+  <div class="column">
+    <img src="Images/3_small.jpg" style="width:100%" onclick="openModal();currentSlide(3)">
+  </div>
+  <div class="column">
+    <img src="Images/4_small.jpg" style="width:100%" onclick="openModal();currentSlide(4)">
+  </div>
+</div>
 
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
 
-    <div class="">
-        <div class="">
-            <img src="Images/1_small.jpg" onclick="">
-        </div>
-        <div class="">
-            <img src="Images/2_small.jpg" onclick="" >
-        </div>
-        <div class="">
-            <img src="Images/3_small.jpg" onclick="" >
-        </div>
-        <div class="">
-            <img src="Images/4_small.jpg" onclick="" >
-        </div>
-        <div class="">
-            <img src="Images/5_small.jpg" onclick="" >
-        </div>
+    <div class="mySlides">
+      <img src="Images/1.jpg" style="width:100%">
     </div>
 
-    <div id="Gallery" class="">
-        <span class="" onclick="">&times;</span>
-        <div>
-
-            <div class="">
-                <div class="">1/5</div>
-                <img src="Images/1_small.jpg" style="width: 50%;">
-            </div>
-            <div class="">
-                <div class="">2/5</div>
-                <img src="Images/2_small.jpg" style="width: 50%;">
-            </div>
-            <div class="">
-                <div class="">3/5</div>
-                <img src="Images/3_small.jpg" style="width: 50%;">
-            </div>
-            <div class="">
-                <div class="">4/5</div>
-                <img src="Images/4_small.jpg" style="width: 50%;">
-            </div>
-            <div class="">
-                <div class="">5/5</div>
-                <img src="Images/5_small.jpg" style="width: 50%;">
-            </div>
-
-            <a class="" onclick="">&#10094</a>
-            <a class="" onclick="">&#10095</a>
-
-            <div class="">
-                <p id=""></p>
-            </div>
-            <div class="">
-                <img class="" src="Images/1_small.jpg" onclick="" alt="Animal">
-            </div>
-            <div class="">
-                <img class="" src="Images/2_small.jpg" onclick="" alt="2">
-            </div>
-            <div class="">
-                <img class="" src="Images/3_small.jpg" onclick="" alt="3">
-            </div>
-            <div class="">
-                <img class="" src="Images/4_small.jpg" onclick="" alt="4">
-            </div>
-            <div class="">
-                <img class="" src="Images/5_small.jpg" onclick="" alt="5">
-            </div>
-        </div>
+    <div class="mySlides">
+      <img src="Images/2.jpg" style="width:100%">
     </div>
-    <script>
-        function open() {
-            document.getElementById("Gallery").style.display = "block";
-        }
-        function close() {
-            document.getElementById("Gallery").style.display = "none";
-        }
-    </script>
+
+    <div class="mySlides">
+      <img src="Images/3.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <img src="Images/4.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" style="right: 0%;" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+
+
+    <div class="column">
+      <img src="Images/1.jpg" style="width:100%" onclick="currentSlide(1)">
+    </div>
+    <div class="column">
+      <img src="Images/2.jpg" style="width:100%" onclick="currentSlide(2)">
+    </div>
+    <div class="column">
+      <img src="Images/3.jpg" style="width:100%" onclick="currentSlide(3)">
+    </div>
+    <div class="column">
+      <img src="Images/4.jpg" style="width:100%" onclick="currentSlide(4)">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+    
 </body>
 </html>
+
