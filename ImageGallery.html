@@ -52,19 +52,19 @@
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content" style="position: relative; background-color: #fefefe; margin: auto; padding: 0; width: 90%; max-width: 1200px;">
 
-    <div class="mySlides">
+    <div class="Images">
       <img src="Images/1.jpg" style="width:100%">
     </div>
 
-    <div class="mySlides">
+    <div class="Images">
       <img src="Images/2.jpg" style="width:100%">
     </div>
 
-    <div class="mySlides">
+    <div class="Images">
       <img src="Images/3.jpg" style="width:100%">
     </div>
     
-    <div class="mySlides">
+    <div class="Images">
       <img src="Images/4.jpg" style="width:100%">
     </div>
     
@@ -111,7 +111,7 @@ function currentImage(n) {
 
 function showImage(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("Images");
   var dots = document.getElementsByClassName("demo");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
