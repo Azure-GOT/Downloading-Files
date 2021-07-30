@@ -35,16 +35,16 @@
 
 <div class="row">
   <div style=" float: left; width: 25%;">
-    <img src="Images/1_small.jpg" style="width:100%" onclick="openModal();currentSlide(1)">
+    <img src="Images/1_small.jpg" style="width:100%" onclick="open();currentImage(1)">
   </div>
   <div style=" float: left; width: 25%;">
-    <img src="Images/2_small.jpg" style="width:100%" onclick="openModal();currentSlide(2)">
+    <img src="Images/2_small.jpg" style="width:100%" onclick="open();currentImage(2)">
   </div>
   <div style=" float: left; width: 25%;">
-    <img src="Images/3_small.jpg" style="width:100%" onclick="openModal();currentSlide(3)">
+    <img src="Images/3_small.jpg" style="width:100%" onclick="open();currentImage(3)">
   </div>
   <div style=" float: left; width: 25%;">
-    <img src="Images/4_small.jpg" style="width:100%" onclick="openModal();currentSlide(4)">
+    <img src="Images/4_small.jpg" style="width:100%" onclick="open();currentImage(4)">
   </div>
 </div>
 
@@ -75,22 +75,22 @@
 
 
     <div style=" float: left; width: 25%;">
-      <img src="Images/1.jpg" style="width:100%" onclick="currentSlide(1)">
+      <img src="Images/1.jpg" style="width:100%" onclick="currentImage(1)">
     </div>
     <div style=" float: left; width: 25%;">
-      <img src="Images/2.jpg" style="width:100%" onclick="currentSlide(2)">
+      <img src="Images/2.jpg" style="width:100%" onclick="currentImage(2)">
     </div>
     <div style=" float: left; width: 25%;">
-      <img src="Images/3.jpg" style="width:100%" onclick="currentSlide(3)">
+      <img src="Images/3.jpg" style="width:100%" onclick="currentImage(3)">
     </div>
     <div style=" float: left; width: 25%;">
-      <img src="Images/4.jpg" style="width:100%" onclick="currentSlide(4)">
+      <img src="Images/4.jpg" style="width:100%" onclick="currentImage(4)">
     </div>
   </div>
 </div>
 
 <script>
-function openModal() {
+function open() {
   document.getElementById("myModal").style.display = "block";
 }
 
@@ -105,7 +105,7 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {
+function currentImage(n) {
   showSlides(slideIndex = n);
 }
 
