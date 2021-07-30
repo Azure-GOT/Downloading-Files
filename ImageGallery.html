@@ -12,21 +12,21 @@
 
 <div class="row">
   <div class="column">
-    <img src="Images/1_small.jpg" style="width:100%" onclick="openModal();currentSlide(1)">
+    <img src="Images/1_small.jpg" style="width:100%" onclick="open();currentSlide(1)">
   </div>
   <div class="column">
-    <img src="Images/2_small.jpg" style="width:100%" onclick="openModal();currentSlide(2)">
+    <img src="Images/2_small.jpg" style="width:100%" onclick="open();currentSlide(2)">
   </div>
   <div class="column">
-    <img src="Images/3_small.jpg" style="width:100%" onclick="openModal();currentSlide(3)">
+    <img src="Images/3_small.jpg" style="width:100%" onclick="open();currentSlide(3)">
   </div>
   <div class="column">
-    <img src="Images/4_small.jpg" style="width:100%" onclick="openModal();currentSlide(4)">
+    <img src="Images/4_small.jpg" style="width:100%" onclick="open();currentSlide(4)">
   </div>
 </div>
 
 <div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <span class="close cursor" onclick="close()">&times;</span>
   <div class="modal-content">
 
     <div class="mySlides">
@@ -67,11 +67,11 @@
 </div>
 
 <script>
-function openModal() {
+function open() {
   document.getElementById("myModal").style.display = "block";
 }
 
-function closeModal() {
+function close() {
   document.getElementById("myModal").style.display = "none";
 }
 
