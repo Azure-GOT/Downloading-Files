@@ -11,16 +11,16 @@
 
 <div class="row">
   <div class="column">
-    <img src="Images/1_small.jpg" style="width:100%" onclick="open();currentSlide(1)">
+    <img src="Images/1_small.jpg" style="width:100%" onclick="open();currentImage(1)">
   </div>
   <div class="column">
-    <img src="Images/2_small.jpg" style="width:100%" onclick="open();currentSlide(2)">
+    <img src="Images/2_small.jpg" style="width:100%" onclick="open();currentImage(2)">
   </div>
   <div class="column">
-    <img src="Images/3_small.jpg" style="width:100%" onclick="open();currentSlide(3)">
+    <img src="Images/3_small.jpg" style="width:100%" onclick="open();currentImage(3)">
   </div>
   <div class="column">
-    <img src="Images/4_small.jpg" style="width:100%" onclick="open();currentSlide(4)">
+    <img src="Images/4_small.jpg" style="width:100%" onclick="open();currentImage(4)">
   </div>
 </div>
 
@@ -28,39 +28,39 @@
   <span class="close cursor" onclick="close()">&times;</span>
   <div class="modal-content">
 
-    <div class="mySlides">
+    <div class="myImages">
       <img src="Images/1.jpg" style="width:100%">
     </div>
 
-    <div class="mySlides">
+    <div class="myImages">
       <img src="Images/2.jpg" style="width:100%">
     </div>
 
-    <div class="mySlides">
+    <div class="myImages">
       <img src="Images/3.jpg" style="width:100%">
     </div>
     
-    <div class="mySlides">
+    <div class="myImages">
       <img src="Images/4.jpg" style="width:100%">
     </div>
     
-    <a class="prev" style="right: 0%;" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a class="prev" style="right: 0%;" onclick="plusImage(-1)">&#10094;</a>
+    <a class="next" onclick="plusImage(1)">&#10095;</a>
 
 
 
 
     <div class="column">
-      <img src="Images/1.jpg" style="width:100%" onclick="currentSlide(1)">
+      <img src="Images/1.jpg" style="width:100%" onclick="currentImage(1)">
     </div>
     <div class="column">
-      <img src="Images/2.jpg" style="width:100%" onclick="currentSlide(2)">
+      <img src="Images/2.jpg" style="width:100%" onclick="currentImage(2)">
     </div>
     <div class="column">
-      <img src="Images/3.jpg" style="width:100%" onclick="currentSlide(3)">
+      <img src="Images/3.jpg" style="width:100%" onclick="currentImage(3)">
     </div>
     <div class="column">
-      <img src="Images/4.jpg" style="width:100%" onclick="currentSlide(4)">
+      <img src="Images/4.jpg" style="width:100%" onclick="currentImage(4)">
     </div>
   </div>
 </div>
@@ -74,31 +74,31 @@ function close() {
   document.getElementById("myModal").style.display = "none";
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+var imgnum = 1;
+showImage(imgnum);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusImage(n) {
+  showImage(imgnum += n);
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function currentImage(n) {
+  showImage(imgnum = n);
 }
 
-function showSlides(n) {
+function showImage(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var imgs = document.getElementsByClassName("myImages");
   var dots = document.getElementsByClassName("demo");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  if (n > imgs.length) {imgnum = 1}
+  if (n < 1) {imgnum = imgs.length}
+  for (i = 0; i < imgs.length; i++) {
+      imgs[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  imgs[imgnum-1].style.display = "block";
+  dots[imgnum-1].className += " active";
 }
 </script>
     
