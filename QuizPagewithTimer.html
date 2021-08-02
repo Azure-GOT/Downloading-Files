@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
     <title>Quiz Page</title>
 </head>
 <body>
+    
     <div id="frame001">
         <div id="font001">
             <h2>Quiz Page</h2><text>Question: <text id="number001">0</text></text><br />
@@ -14,7 +14,7 @@
             <text>Time: <text id="time001">20</text></text><br />
             <hr />
             <div id="disappear001">
-                <button class="buttons002" onclick="begin001()">Begin</button>
+                <button onclick="begin001()">Start</button>
             </div>
             <p id="message001"></p>
             <p id="message002"></p>
@@ -35,16 +35,16 @@
             "How many hours are there in a day."
         ];
 
-        var options001 = ["<button class=buttons001 onclick=q1i()>5</button><button class=buttons001 onclick=q1i()>6</button><button class=buttons001 onclick=q1c()>4</button><button class=buttons001 onclick=q1i()>3</button>"];
-        var options002 = ["<button class=buttons001 onclick=q2i()>Mumbai</button><button class=buttons001 onclick=q2i()>Chennai</button><button class=buttons001 onclick=q2c()>Delhi</button><button class=buttons001 onclick=q2i()>Kolkata</button>"];
-        var options003 = ["<button class=buttons001 onclick=q3c()>Rashid Khan</button><button class=buttons001 onclick=q3i()>Virat Kohli</button><button class=buttons001 onclick=q3i()>Babar Azam</button><button class=buttons001 onclick=q3i()>Joe Root</button>"];
-        var options004 = ["<button class=buttons001 onclick=q4i()>364</button><button class=buttons001 onclick=q4c()>365</button><button class=buttons001 onclick=q4i()>363</button><button class=buttons001 onclick=q4i()>366</button>"];
-        var options005 = ["<button class=buttons001 onclick=q5i()>Holi</button><button class=buttons001 onclick=q5i()>New Year</button><button class=buttons001 onclick=q5i()>Christmas</button><button class=buttons001 onclick=q5c()>Diwali</button>"];
-        var options006 = ["<button class=buttons001 onclick=q6i()>False</button><button class=buttons001 onclick=q6c()>True</button>"];
-        var options007 = ["<button class=buttons001 onclick=q7c()>Mercury</button><button class=buttons001 onclick=q7i()>Earth</button><button class=buttons001 onclick=q7i()>Mars</button><button class=buttons001 onclick=q7i()>Jupiter</button>"];
-        var options008 = ["<button class=buttons001 onclick=q8c()>False</button><button class=buttons001 onclick=q8i()>True</button>"];
-        var options009 = ["<button class=buttons001 onclick=q9c()>50</button><button class=buttons001 onclick=q9i()>60</button><button class=buttons001 onclick=q9i()>55</button>"];
-        var options010 = ["<button class=buttons001 onclick=q10i()>22</button><button class=buttons001 onclick=q10i()>25</button><button class=buttons001 onclick=q10c()>24</button><button class=buttons001 onclick=q10i()>23</button>"];
+        var options001 = ["<button id=b1 onclick=q1i()>5</button><button id=b1 onclick=q1i()>6</button><button id=b2  onclick=q1c()>4</button><button id=b1 onclick=q1i()>3</button>"];
+        var options002 = ["<button id=b3 onclick=q2i()>Mumbai</button><button id=b3 onclick=q2i()>Chennai</button><button id=b4  onclick=q2c()>Delhi</button><button id=b3  onclick=q2i()>Kolkata</button>"];
+        var options003 = ["<button id=b6 onclick=q3c()>Rashid Khan</button><button id=b5  onclick=q3i()>Virat Kohli</button><button id=b5 onclick=q3i()>Babar Azam</button><button id=b5  onclick=q3i()>Joe Root</button>"];
+        var options004 = ["<button id=b7  onclick=q4i()>364</button><button id=b8  onclick=q4c()>365</button><button id=b7  onclick=q4i()>363</button><button id=b7  onclick=q4i()>366</button>"];
+        var options005 = ["<button id=b9  onclick=q5i()>Holi</button><button id=b9  onclick=q5i()>New Year</button><button id=b9  onclick=q5i()>Christmas</button><button id=10 onclick=q5c()>Diwali</button>"];
+        var options006 = ["<button id=b11  onclick=q6i()>False</button><button id=b12  onclick=q6c()>True</button>"];
+        var options007 = ["<button id=b14  onclick=q7c()>Mercury</button><button id=b13  onclick=q7i()>Earth</button><button id=b13  onclick=q7i()>Mars</button><button id=b13  onclick=q7i()>Jupiter</button>"];
+        var options008 = ["<button id=b16  onclick=q8c()>False</button><button id=b15  onclick=q8i()>True</button>"];
+        var options009 = ["<button id=b18  onclick=q9c()>50</button><button id=b17  onclick=q9i()>60</button><button id=b17  onclick=q9i()>55</button>"];
+        var options010 = ["<button id=b19  onclick=q10i()>22</button><button id=b19  onclick=q10i()>25</button><button id=b20  onclick=q10c()>24</button><button id=b19  onclick=q10i()>23</button>"];
 
         var a = 0;
         a++;
@@ -62,112 +62,133 @@
         function q1c() {
 
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button onclick=next001()>Next</button>";
+            document.getElementById("b2").onclick = null;
         }
 
         function q1i() {
-   
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+
+            document.getElementById("b1").onclick= null;
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            
         }
 
         function q2c() {
 
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b4").onclick = null;
         }
 
         function q2i() {
 
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button onclick=next001()>Next</button>";
+            document.getElementById("b3").onclick = null;
         }
 
         function q3c() {
 
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b6").onclick = null;
         }
 
         function q3i() {
 
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b5").onclick = null;
         }
 
         function q4c() {
 
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b8").onclick = null;
         }
 
         function q4i() {
 
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b7").onclick = null;
         }
 
         function q5c() {
 
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b10").onclick = null;
         }
 
         function q5i() {
 
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b9").onclick = null;
         }
 
         function q6c() {
    
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b12").onclick = null;
         }
 
         function q6i() {
 
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b11").onclick = null;
         }
 
         function q7c() {
            
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b14").onclick = null;
         }
 
         function q7i() {
        
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b13").onclick = null;
         }
 
         function q8c() {
    
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b16").onclick = null;
         }
 
         function q8i() {
     
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b15").onclick = null;
         }
 
         function q9c() {
   
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b18").onclick = null;
         }
 
         function q9i() {
    
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b17").onclick = null;
         }
 
         function q10c() {
 
             score001.innerHTML = b++;
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b20").onclick = null;
         }
 
         function q10i() {
 
             
-            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+            message004.innerHTML = "<button  onclick=next001()>Next</button>";
+            document.getElementById("b19").onclick = null;
         }
 
         function next001() {
@@ -247,7 +268,7 @@
                 message001.innerHTML = "End of Quiz";
                 message002.innerHTML = "";
                 message003.innerHTML = "";
-                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+                message004.innerHTML = "<button  onclick=repeat001()>Repeat</button>";
             }
         }
 
@@ -262,7 +283,7 @@
                 message001.innerHTML = "Time's up";
                 message002.innerHTML = "";
                 message003.innerHTML = "";
-                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+                message004.innerHTML = "<button onclick=repeat001()>Repeat</button>";
             }
         }
 
