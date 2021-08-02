@@ -191,10 +191,11 @@
     </style>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="">About</a>
-            <a href="">Services</a>
-            <a href="">Clients</a>
-            <a href="">Contact</a>
+            <a href="">Menu 1</a>
+            <a href="">Menu 2</a>
+            <a href="#about">About</a>
+      
+            <a href="#contact">Contact</a>
         </div>
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
         <div id="main">
@@ -209,11 +210,11 @@
         <footer>
             <div class="content">
                 <div class="left-box">
-                    <div class="upper">
+                    <div id="about" class="upper">
                         <div class="topic">About us</div>
                         <p>This is Web Project</p>
                     </div>
-                    <div class="lower">
+                    <div id="contact" class="lower">
                         <div class="topic">Contact us</div>
                         <div class="phone"><a href="#"><i class="fa fa-phone"></i>+123456789</a></div>
                         <div class="email"><a href="#"><i class="fa fa-envelope"></i>abc@gmail.com</a></div>
