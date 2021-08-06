@@ -7,16 +7,27 @@
   
   
   <img src="Images/screen2.png">
-  <li>After clicking on <b>Join</b>, you will have to create one application. Provide the application name and what does the application do.</li>
+  <li>After clicking on <b>Join</b>, you will have to create one application.</li>
   
   <img src="Images/screen4.png">
+  <br>
   
+  <li>Accept all the <b>Guidelines</b></li>
   <img src="Images/screen5.png">
+  <br>
   
+  <li>Provide the application name and what does the application do.</li>
   <img src="Images/screen6.png">
-  <li>Once the creation is done, you will get your <b>Access Key</b> and <b>Secret Key</b>. Copy the <b>Access Key</b></li>
+  <br>
+  
+  <li>Once the creation is done, you will get your <b>Access Key</b> and <b>Secret Key</b>. Copy the <b>Access Key</b>, you will use this as <b>Client Id</b></li>
   
   <img src="Images/screen3.jpg">
+
+
+<li>Use this URL: "https://api.unsplash.com/search/photos/?client_id="+ clientId+"&query="+query (Enter the Access key as Client Id)</li>
+
+<li>Use this Code</li>
 </ul>
     
     <!DOCTYPE html>
