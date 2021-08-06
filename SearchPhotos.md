@@ -1,5 +1,5 @@
 # Steps for calling unsplash Photo Search API 
- <ul>
+<ul>
   <li>Go to website <a href="https://unsplash.com/developers">Unsplash Developers</a></li>
   <li>Here click on <b>Register as a Developer</b></li>
   <li>On the new window provide basic details like <b>First name, Last name, Email address, Username</b> and <b>Password</b></li>
