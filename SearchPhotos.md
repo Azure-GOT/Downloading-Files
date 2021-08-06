@@ -1,3 +1,7 @@
+# Search Photos using Unsplash API
+
+We can get the Images from Unsplash server to our website by calling the unsplash photo search API.
+
 # Steps for calling unsplash Photo Search API 
 <ul>
   <li>Go to website <a href="https://unsplash.com/developers">Unsplash Developers</a></li>
