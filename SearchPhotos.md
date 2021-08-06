@@ -1,4 +1,4 @@
-# Steps for callinng unsplash Photo Search API 
+# Steps for calling unsplash Photo Search API 
  <ul>
   <li>Go to website <a href="https://unsplash.com/developers">Unsplash Developers</a></li>
   <li>Here click on <b>Register as a Developer</b></li>
