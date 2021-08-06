@@ -29,9 +29,9 @@ We can get the Images from Unsplash server to our website by calling the unsplas
   <img src="Images/screen3.jpg">
 
 
-<li>Use this URL: "https://api.unsplash.com/search/photos/?client_id="+ clientId+"&query="+query (Enter the Access key as Client Id)</li>
+<li>Use this URL: "https: //api.unsplash.com /search/photos/?client_id="+ clientId+"&query="+query (Enter the Access key as Client Id)</li>
 
-<li>Use this Code</li>
+<li>You can use this Sample Code</li>
 </ul>
     
     <!DOCTYPE html>
