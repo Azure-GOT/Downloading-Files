@@ -147,3 +147,7 @@ We can get the Images from Unsplash server to our website by calling the unsplas
 
 
     </html>
+
+The unslash image search API will provide the following output:
+<br>
+<img src="Images/screen7.png">
