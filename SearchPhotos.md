@@ -135,8 +135,8 @@ We can get the Images from Unsplash server to our website by calling the unsplas
         console.log(data);
         data.results.forEach(photo => {
         let result = `
-        <img src="${photo.urls.regular}">
-        <a href="${photo.links.download}"></a>
+        <img width=100% height=auto src="${photo.urls.regular}" >
+        <button><a target="_blank" href="${photo.links.download}">Download</a></button><br><br><br>
         `;
         $("#result").append(result);
         });
