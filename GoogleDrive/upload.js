@@ -28,9 +28,6 @@ $(document).ready(function(){
            localStorage.setItem("expires_in",resultData.expires_in);
            window.history.pushState({}, document.title, "/GitLoginApp/" + "upload.html");
            
-           
-           
-           
         }
   });
 
@@ -109,14 +106,8 @@ $(document).ready(function(){
     $("#upload").on("click", function (e) {
         var file = $("#files")[0].files[0];
         var upload = new Upload(file);
-    
-        // maby check size or type here with upload.getSize() and upload.getType()
-    
-        // execute upload
+
         upload.doUpload();
     });
 
-
-
-    
 });
