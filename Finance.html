@@ -89,8 +89,8 @@ function SearchStocks() {
 
     let url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol="+Symbol+".BSE&outputsize=compact&apikey="+API_KEY;
 
-    let stockChartXValuesFunction = [];
-    let stockChartYValuesFunction = [];
+    let stockChartXValues = [];
+    let stockChartYValues = [];
 
     fetch(url)
     .then(function (response) {
@@ -102,14 +102,25 @@ function SearchStocks() {
     console.log(data);
 
     for (var key in data['Time Series (Daily)']) {
-            stockChartXValuesFunction.push(key);
-            stockChartYValuesFunction.push(data['Time Series (Daily)']
-            [key]['1. open']);
+            stockChartXValues.push(key);
+            stockChartYValues.push(data['Time Series (Daily)'][key]['1. open']);
           }
          
     })
+
+var data = [{
+    x: stockChartXValues,
+    y: stockChartYValues,
+    mode: "lines",
+    type: "scatter"
+}];
+    var layout = {
+        xaxis: stockChartXValues,
+        yaxis: stockChartYValues,
+        title: 'Stock Analysis',
+};
    
-    
+Plotly.newPlot('result',data,layout)
 }
 
    
