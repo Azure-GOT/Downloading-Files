@@ -67,4 +67,28 @@ The First step is to create the Azure Active Directory that will holds all the u
 # Add guest user to the organization
 
 <ul>
-  <li></li>
+  <li>Under the all users pane, select <b>New guest user</b> from the top menu</li>
+  <img src="">
+  
+  <li>Under the <b>Invite user</b>, provie <b>Name</b> and <b>Email address</b> of the user</li>
+  <img src="">
+  
+  <li>You will see the invited user in the all users pane. Notice it has <b>User type</b> as <b>Guest</b></li>
+  <img src="">
+  
+</ul>
+
+# Add guest user to an application
+
+We can give access to the guest user for specific application within azure active directory
+
+<ul>
+  
+  <li>First step is create a new application in Azure AD, for that go to Azure AD organization and under <b>Manage</b> select <b>Enterprise applications</b></li>
+  
+  <li>Click on <b>New application</b></li>
+  <img src="">
+  
+  <li>Search for the application you want, under the <b>Users and groups</b> add the guest user</li>
+  <img src="">
+</ul>
