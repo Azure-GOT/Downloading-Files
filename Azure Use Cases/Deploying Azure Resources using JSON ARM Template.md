@@ -1,17 +1,26 @@
 # Deploying Azure Resources using JSON ARM Template
 
 Create an ARM Template
+
+
 <ul>
-	<li>In the Visual Studio Code or any other editor you want, create a new file deploy.json</li>
-	<li>If you have <b>Azure Resource Manager Tool for Visual Studio Code extension</b> installed, simply write <b>arm!</b> and press enter</li>
-	<img src="Images/arm-snippet.png">
-	<li> Your new file will look like this</li>
-	<img src="">
+	
+<li>In the Visual Studio Code or any other editor you want, create a new file deploy.json</li>
+	
+	
+<li>If you have <b>Azure Resource Manager Tool for Visual Studio Code extension</b> installed, simply write <b>arm!</b> and press enter</li>
+	
+<img src="Images/arm-snippet.png">
+	
+
+<li> Your new file will look like this</li>	
+<img src="Images/ARM.png">
+
 </ul>
 
 
 
-Deploy ARM Template to Azure
+# Deploy ARM Template to Azure
 
 Make sure you have installed Azure Powershell, and sign in with the same Azure account
 <ul>
@@ -43,7 +52,7 @@ Make sure you have installed Azure Powershell, and sign in with the same Azure a
 <img src="Images/Deployment.png">
 </ul>
 
-Add Resource to the ARM Template
+# Add Resource to the ARM Template
 
 <ul>
 
@@ -65,7 +74,7 @@ Add Resource to the ARM Template
 
 </ul>
 
-Create parameters for the ARM template
+# Create parameters for the ARM template
 
 <ul>
 	
