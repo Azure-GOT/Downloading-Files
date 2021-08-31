@@ -5,7 +5,7 @@ Follow this steps to see what roles are assigned at resource group scope
 <ul>
   <li>Select the <b>Resource Group</b> that you want and on the left menu select <b>Access control(IAM)</b></li>
   
-  <li>From this you can see <b>Role assignments</b>, this will show who has access to the resouce group.
+  <li>From this you can see <b>Role assignments</b>, this will show who has access to the resouce group.</li>
   <img src="Images/">
   
   <li>From the <b>Roles</b> tab, you can see all built-in and custom roles</li>
