@@ -90,10 +90,10 @@ We can give access to the guest user for specific application within azure activ
   <img src="Images/NewApplication.png">
   
   <li>Search for <b>DocuSign</b> Application and click on <b>Create</b></li>
-  <img src="Images/">
+  <img src="Images/NewApplicationDocuSign.png">
   
   <li>Under the <b>Users and groups</b> add the guest user that you invited</li>
-  <img src="Images/">
+  <img src="Images/NewUserDocuSign.png">
   
   <li>The selected user will be seen in the Application</li>
   <img src="Images/ApplicationUser.png">
