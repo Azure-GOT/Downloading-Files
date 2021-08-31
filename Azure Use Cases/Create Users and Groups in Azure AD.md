@@ -1,4 +1,4 @@
-# Add and Delete Users in Azure AD
+# Users and Groups in Azure AD
 
 The First step is to create the Azure Active Directory that will holds all the user and groups.
 
@@ -49,3 +49,22 @@ The First step is to create the Azure Active Directory that will holds all the u
   <li>Select the user and click on <b>Restore user</b> from the top menu</li>
   <img src="Images/RestoreDeleteUser.png">
 </ul>
+
+# Create a new group
+
+<ul>
+  
+  <li>Under <b>Manage</b> select <b>Groups</b>. Click on <b>New group</b></li>
+  <img src="">
+  
+  <li>Provide the details in the <b>New Page</b> pane and select <b>Create</b></li>
+  <img src="">
+  
+  <li>New group will be created. You can add members in the group under <b>Members</b> pane from left menu</li>
+  <img src="">
+</ul>
+
+# Add guest user to the organization
+
+<ul>
+  <li></li>
