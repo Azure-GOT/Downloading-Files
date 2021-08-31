@@ -90,5 +90,5 @@ We can give access to the guest user for specific application within azure activ
   <img src="Images/NewApplication.png">
   
   <li>Search for the application you want, under the <b>Users and groups</b> add the guest user</li>
-  <img src="Images/AppicationUser.png">
+  <img src="Images/ApplicationUser.png">
 </ul>
