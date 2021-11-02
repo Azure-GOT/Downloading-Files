@@ -143,6 +143,25 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
     <li><b>Confirm Password</b> : Enter the same password</li>
     <li><b>Public inbound ports</b> : None</li>
   </ul>
+  <li>Go to the Networking tab</li>
+  <ul>
+    <li><b>Virtual network</b> : select Virtual network that you created</li>
+    <li><b>Subnet</b> : myBackendSubnet</li>
+    <li><b>Public IP</b> : None</li>
+    <li><b>NIC network security group</b> : Advanced</li>
+    <li><b>Configure network security group</b> : Select <b>Create new</b>, enter name as myNSG, click on <b>+Add an inbound rule</b> under Inbound Rules, select <b>HTTP</b>
+      as Service, set priority as 100, in the name enter myNSGRule and click on Add</li>
+    <li><b>Place this virtual machine behind an existing load-balancing solution?</b> :Select the Box</li>
+    <ul>
+      <li><b>Load-balancing options</b> : Azure load balancing</li>
+      <li><b>Select a load balancer</b> : myLoadBalancer</li>
+      <li><b>Select a backend pool</b> : myBackendPool</li>
+    </ul>
+    </ul>
+  <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
+  <li>Wait for the deployment to complete</li>
+ </ul>
+      
  
  <img src="Images/Creation of VM-1.png">
  <img src="Images/Creation of Vm-2.png">
