@@ -58,4 +58,6 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
   <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
   <li>Wait for the deployment to complete</li>
  </ul>
+ 
+ <b>Step 2:</b> Create a Load Balancer
   
