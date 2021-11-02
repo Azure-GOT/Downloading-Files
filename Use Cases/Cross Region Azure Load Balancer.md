@@ -67,6 +67,33 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
  
  <b>Step 2:</b> Create a Load Balancer
  
+ Load balancing will evenly distributes the load (incoming network traffic) across a group of backend resources or servers.
+ 
+ <ul>
+  <li><li>Select the <b>＋Create a resource</b> button, search for <b>Load Balancer</b>, and create with the following settings:</li>
+  <ul>
+    <li><b>Subscription</b> : Select your Azure Subscription</li>
+    <li><b>Resource Group</b> : Choose or create a resource group</li>
+    <li><b>Name</b> : Enter a unique name</li>
+    <li><b>Region</b> : Choose any available region that is closest to you</li>
+    <li><b>SKU</b> : Standard</li>
+    <li><b>Type</b> : Public</li>
+    <li><b>Tier</b> : Regional</li>
+  </ul>
+  <li>Go to the next tab <b>Frontend IP configuration</b></li>
+  <ul>
+    <li>Click on <b>+Add a Frontend IP configuration</b></li>
+    <li><b>Name</b> : LoadBalancerFrontend </li>
+    <li><b>IP version</b> : IPv4</li>
+    <li><b>IP type</b> : IP address</li>
+    <li>Select <b>Create new</b> in the <b>Public IP address</b>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  <img src="Images/Creation of Load Balancer.png">
  
  <b>Step 2:</b> Create a Virual Machine
