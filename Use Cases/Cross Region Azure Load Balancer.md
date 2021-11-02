@@ -4,9 +4,9 @@
 
 <img src="Images/cross-region-load-balancer.png">
 
-<b>Creating Load Balancer in one region</b> 
-
 Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/load-balancer/quickstart-load-balancer-standard-public-portal?tabs=option-1-create-load-balancer-standard">Link</a>
+
+<b>Creating Load Balancer in one region</b> 
 
 <b>Step 1:</b> Create a <b>Virtual Network</b>
 <ul>
