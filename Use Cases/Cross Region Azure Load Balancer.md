@@ -65,7 +65,7 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
  
  <img src="Images/Creation of NAT Gateway.png">
  
- <b>Step 2:</b> Create a Load Balancer
+ <b>Step 3:</b> Create a Load Balancer
  
  Load balancing will evenly distributes the load (incoming network traffic) across a group of backend resources or servers.
  
@@ -124,7 +124,7 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
  
  <img src="Images/Creation of Load Balancer.png">
  
- <b>Step 2:</b> Create a Virual Machine
+ <b>Step 4:</b> Create a Virual Machine
  
  <ul>
   <li>Select the <b>＋Create a resource</b> button, search for <b>Virtual Machine</b>, and create with the following settings:</li>
@@ -161,8 +161,54 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
   <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
   <li>Wait for the deployment to complete</li>
  </ul>
-      
+    
+ <b>Follow the same procedure for the rest of the two VMs changing thier names, select 2 and 3 as Availability zone for the respective VMs, and choose the existing NSGs as
+  Network Security Group</b>
  
  <img src="Images/Creation of VM-1.png">
  <img src="Images/Creation of Vm-2.png">
   
+<b>Step 5:</b> Install IIS 
+
+<ul>
+  <li>Go to the first VM( myVM-01) that you created</li>
+  <li>In the <b>Overview</b> page select Connect and then Bastion</li>
+  <li>Select <b>Use Bastion</b></li>
+  <li>Enter the username and password and click on <b>Create</b></li>
+  <li>From the Start Menu, search for Windows PowerShell and add the following commands</li>
+        
+        # Install IIS server role
+        Install-WindowsFeature -name Web-Server -IncludeManagementTools
+
+        # Remove default htm file
+        Remove-Item  C:\inetpub\wwwroot\iisstart.htm
+
+        # Add a new htm file that displays server name
+        Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
+  
+  <img src="Images/">
+  
+  <li>Close the Bastion and follow this on rest of the VMs</li>
+ </ul>
+ 
+ <b>Create the second load balancer in the different region, and also add R2 as suffix to all the resources associated with it.</b>
+ 
+ <b>Step 6:</b> Create a Cross Region Load Balancer
+ 
+ <b>Follow the same procedure for creating the Load Balancer except for the following details</b>
+ <ul>
+  <li>Choose <b>Region</b> only from the following options</li>
+  <ul>
+    <li>East US 2</li>
+    <li>West US</li>
+    <li>West Europe</li>
+    <li>Southeast Asia</li>
+    <li>Central US</li>
+    <li>North Europe</li>
+    <li>East Asia</li>
+  </ul>
+  <li><b>Tier</b> : Global</li>
+  <li>In the <b>Backend pool</b> select the Load Balancer that you created</li>
+ </ul>
+ 
+ From the overview page copy the public IP address and paste it in the web browser
