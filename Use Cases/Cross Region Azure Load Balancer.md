@@ -186,7 +186,7 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
         # Add a new htm file that displays server name
         Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
   
-  <img src="Images/">
+  <img src="Images/Install-IIS.png">
   
   <li>Close the Bastion and follow this on rest of the VMs</li>
  </ul>
@@ -208,7 +208,16 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
     <li>East Asia</li>
   </ul>
   <li><b>Tier</b> : Global</li>
+  
+  <img src="Images/BackendPool.png">
   <li>In the <b>Backend pool</b> select the two Load Balancers that you created</li>
+  
+  <img src="Images/Load Balancer CR.png">
  </ul>
  
  From the overview page copy the public IP address and paste it in the web browser, you will be redirct to one of the VM. Now shut down the virtual machines and see the load balancer will redirect to another VM.
+ 
+ <img src="Images/Test1.png">
+ <img src="Images/Test2.png">
+ <img src="Images/Test3.png">
+ <img src="Images/Test4.png">
