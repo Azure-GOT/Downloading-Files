@@ -86,7 +86,42 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
     <li><b>Name</b> : LoadBalancerFrontend </li>
     <li><b>IP version</b> : IPv4</li>
     <li><b>IP type</b> : IP address</li>
-    <li>Select <b>Create new</b> in the <b>Public IP address</b>
+    <li>Select <b>Create new</b> in the <b>Public IP address</b> and enter <b>name</b> as myPublicIP</li>
+    <li><b>Availability zone</b> : Zone-redundant</li>
+    <li>Select <b>Ok</b> and <b>Add</b></li>
+  </ul>
+  <li>Go to the the next tab <b>Backend pools</b></li>
+  <ul>
+    <li>Click on <b>+ Add a backend pool</b></li>
+    <li><b>Name</b> : myBackendPool</li>
+    <li><b>Virtual network</b> : That you created earlier</li>
+    <li><b>Backend Pool Configuration</b> : NIC</li>
+    <li><b>IP version</b> : IPv4</li>
+    <li>Click on <b>Add</b></li>
+  </ul>
+  <li>Go to next tab <b>Inbound rules</b></li>
+  <ul>
+    <li>Click on <b>+ Add a load balancing rule</b> and add the following details</li>
+    <li><b>Name</b> : myHTTPRule</li>
+    <li><b>IP Version</b> : IPv4</li>
+    <li><b>Frontend IP address</b> : LoadBalancerFrontend</li>
+    <li><b>Protocol</b> : TCP</li>
+    <li><b>Port</b> : 80</li>
+    <li><b>Bakend port</b> : 80</li>
+    <li><b>Backend pool</b> : myBackendPool</li>
+    <li><b>Health probe</b> : Click on <b>Create New</b>, enter name as myHealthProbe, <b>protocol</b>:HTTP, and click on Ok</li>
+    <li><b>Session persistence</b> : None</li>
+    <li><b>Idle timeout (minutes)</b> : 15</li>
+    <li><b>TCP reset</b> : Enabled</li>
+    <li><b>Floating IP</b> : Disabled</li>
+    <li><b>Outbound source network address translation (SNAT)</b> : Leave the Default</li>
+    <li>Click on <b>Add</b>
+  </ul>
+  <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
+  <li>Wait for the deployment to complete</li>
+ </ul>
+    
+    
  
  
  
