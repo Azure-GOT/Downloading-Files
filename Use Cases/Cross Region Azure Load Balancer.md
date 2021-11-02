@@ -16,7 +16,7 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
     <li><b>Subscription</b> : Select your Azure Subscription</li>
     <li><b>Resource Group</b> : Choose or create a resource group</li>
     <li><b>Name</b> : Enter a unique name</li>
-    <li><b>Region</b> : Choose any available region that is closest to you</li>
+    <li><b>Region</b> : East US</li>
   </ul>
   <li>In the Next tab: IP Addresses, enter the following details</li>
   <ul>
@@ -46,7 +46,7 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
     <li><b>Subscription</b> : Select your Azure Subscription</li>
     <li><b>Resource Group</b> : Choose or create a resource group</li>
     <li><b>NAT Gateway Name</b> : Enter a unique name</li>
-    <li><b>Region</b> : Choose any available region that is closest to you</li>
+    <li><b>Region</b> : East US</li>
     <li><b>Availability zone</b> : None</li>
     <li><b>Idle timeout (minutes)</b> : 15</li>
   </ul>
@@ -70,12 +70,12 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
  Load balancing will evenly distributes the load (incoming network traffic) across a group of backend resources or servers.
  
  <ul>
-  <li><li>Select the <b>＋Create a resource</b> button, search for <b>Load Balancer</b>, and create with the following settings:</li>
+  <li>Select the <b>＋Create a resource</b> button, search for <b>Load Balancer</b>, and create with the following settings:</li>
   <ul>
     <li><b>Subscription</b> : Select your Azure Subscription</li>
     <li><b>Resource Group</b> : Choose or create a resource group</li>
     <li><b>Name</b> : Enter a unique name</li>
-    <li><b>Region</b> : Choose any available region that is closest to you</li>
+    <li><b>Region</b> : East US</li>
     <li><b>SKU</b> : Standard</li>
     <li><b>Type</b> : Public</li>
     <li><b>Tier</b> : Regional</li>
@@ -120,18 +120,29 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
   <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
   <li>Wait for the deployment to complete</li>
  </ul>
-    
-    
- 
- 
- 
- 
- 
  
  
  <img src="Images/Creation of Load Balancer.png">
  
  <b>Step 2:</b> Create a Virual Machine
+ 
+ <ul>
+  <li>Select the <b>＋Create a resource</b> button, search for <b>Virtual Machine</b>, and create with the following settings:</li>
+  <ul>
+    <li><b>Subscription</b> : Select your Azure Subscription</li>
+    <li><b>Resource Group</b> : Choose or create a resource group</li>
+    <li><b>Name</b> : myVM1</li>
+    <li><b>Region</b> : East US</li>
+    <li><b>Availability Options</b> : Availability zones</li>
+    <li><b>Availability zone</b> : 1</li>
+    <li><b>Image</b> : Windows Server 2019 Datacenter - Gen1</li>
+    <li><b>Azure Spot instance</b> : Unchecked</li>
+    <li><b>Size</b> : Leave default</li>
+    <li><b>Username</b> : Enter the username as per your wish</li>
+    <li><b>Password</b> : Enter the password</li>
+    <li><b>Confirm Password</b> : Enter the same password</li>
+    <li><b>Public inbound ports</b> : None</li>
+  </ul>
  
  <img src="Images/Creation of VM-1.png">
  <img src="Images/Creation of Vm-2.png">
