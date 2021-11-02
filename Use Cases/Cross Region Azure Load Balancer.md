@@ -208,7 +208,7 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
     <li>East Asia</li>
   </ul>
   <li><b>Tier</b> : Global</li>
-  <li>In the <b>Backend pool</b> select the Load Balancer that you created</li>
+  <li>In the <b>Backend pool</b> select the two Load Balancers that you created</li>
  </ul>
  
- From the overview page copy the public IP address and paste it in the web browser
+ From the overview page copy the public IP address and paste it in the web browser, you will be redirct to one of the VM. Now shut down the virtual machines and see the load balancer will redirect to another VM.
