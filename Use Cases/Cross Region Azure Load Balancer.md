@@ -55,4 +55,7 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
     <li>In the <b>Virtual network</b>, select the virtual network that you created earlier</li>
     <li>Under the <b>Subnet name</b> select <b>myBackendSubnet</b></li>
   </ul>
+  <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
+  <li>Wait for the deployment to complete</li>
+ </ul>
   
