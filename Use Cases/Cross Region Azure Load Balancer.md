@@ -2,6 +2,8 @@
 
 <b>Use-Case Scenario:</b> If the region fails, then the taffic should be routed to the closest regional load balancer which must be healthy. We can use Cross-Region Load Balancer.
 
+<img src="Images/cross-region-load-balancer.png">
+
 <b>Creating Load Balancer in one region</b> 
 
 Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/load-balancer/quickstart-load-balancer-standard-public-portal?tabs=option-1-create-load-balancer-standard">Link</a>
@@ -32,6 +34,8 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
   <li>Wait for the deployment to complete</li>
  </ul>
  
+ <img src="Images/Creation of Virtual Network.png">
+ 
  <b>Step 2:</b> Create a NAT Gateway
  
  NAT Gateway is for outbound internet access for resources in the virtual network
@@ -59,5 +63,14 @@ Follow this link for reference: <a href="https://docs.microsoft.com/en-in/azure/
   <li>Wait for the deployment to complete</li>
  </ul>
  
+ <img src="Images/Creation of NAT Gateway.png">
+ 
  <b>Step 2:</b> Create a Load Balancer
+ 
+ <img src="Images/Creation of Load Balancer.png">
+ 
+ <b>Step 2:</b> Create a Virual Machine
+ 
+ <img src="Images/Creation of VM-1.png">
+ <img src="Images/Creation of Vm-2.png">
   
