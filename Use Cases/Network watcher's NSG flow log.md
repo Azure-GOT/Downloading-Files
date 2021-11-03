@@ -89,7 +89,7 @@ Open the downloaded file, you will see the data in the JSON format for each flow
 
 <img src="Images/ex2.png">
 
-The value in the mac is the MAC address of the network interface. The comma seperated present in the flowTuples is:
+The value in the mac is the MAC address of the network interface. The comma seperated values present in the flowTuples are:
 
 <ul>
   <li><b>1635924568</b> - Time stamp(when the flow occured in UNIX EPOCH format)</li>
