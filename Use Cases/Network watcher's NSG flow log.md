@@ -88,3 +88,20 @@ Open the downloaded file, you will see the data in the JSON format for each flow
 <img src="Images/ex1.png">
 
 <img src="Images/ex2.png">
+
+The value in the mac is the MAC address of the network interface. The comma seperated present in the flowTuples is:
+
+<ul>
+  <li><b>1635924568</b> - Time stamp(when the flow occured in UNIX EPOCH format)</li>
+  <li><b>10.1.0.4</b> - Source IP address</li>
+  <li><b>52.239.169.164</b> - Destination IP address</li>
+  <li><b>49924</b> - Source port</li>
+  <li><b>443</b> - Destination port</li>
+  <li><b>T</b> - Protocol (TCP (T) or UDP (U))</li>
+  <li><b>O</b> - Direction (inbound (I) or outbound (O)</li>
+  <li><b>A</b> - Action (allowed (A) or denied (D))</li>
+  <li><b>B</b> - Flow State (Version 2 Only)(B-Begin, C-Continuing, E-End)</li>
+  <li><b>4</b> - Packets sent - Source to destination (Version 2 Only)</li>
+  <li><b>575</b> - Bytes sent - Source to destination (Version 2 Only)</li>
+  <li><b>2</b> - Packets sent - Destination to source (Version 2 Only)</li>
+  <li><b>171</b> - Bytes sent - Destination to source (Version 2 Only)</li>
