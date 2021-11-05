@@ -226,6 +226,7 @@ For reference: https://docs.microsoft.com/en-in/azure/virtual-network/tutorial-r
   <li>You can access the storage account as you can see in the bolow image</li>
   <img src="Images/Restrict network access 25.png">
 
-  <li>Now go to your second Virtual machine <i>myVmPublic</i> and follow the same procedure. You can see the access the denied for that VM.<li>
+  <li>Now go to your second Virtual machine <i>myVmPublic</i> and follow the same procedure. You can see the access is denied for that VM.</li>
+  
   <img src="Images/Restrict network access 26.png">
 </ul>
