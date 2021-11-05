@@ -85,24 +85,60 @@ For reference: https://docs.microsoft.com/en-in/azure/virtual-network/tutorial-r
 
   <img src="Images/Restrict network access 8.png">
   
+
+  <li>Add another <b>Outbound security Rule</b> with the following details</li>
+  <ul>
+    <li><b>Source</b>: VirtualNetwork</li>
+    <li><b>Source port ranges</b>: *</li>
+    <li><b>Destination</b>: Service Tag</li>
+    <li><b>Destination service tag</b>: Internet</li>
+    <li><b>Service</b>: Leave as default</li>
+    <li><b>Destination port ranges</b>: *</li>
+    <li><b>Protocol</b>: Any</li>
+    <li><b>Action</b>: Deny</li>
+    <li><b>Priority</b>: 110</li>
+    <li><b>Name</b>: Deny-Internet-All</li>
+  </ul>
+  
+  <img src="Images/Restrict network access 9.png">
+
+  <img src="Images/Restrict network access 10.png">
 </ul>
 
-<img src="Images/Restrict network access 9.png">
+<ul>
+  <li>Select Inbound security rules under Settings and click on <b>+ Add</b></li> 
+  
+  <img src="Images/Restrict network access 11.png">
 
-<img src="Images/Restrict network access 10.png">
+  <li>Enter the following details in the <b>Add Inbound security rule</b> pane</li>
+  <ul>
+    <li><b>Source</b>: Any</li>
+    <li><b>Source port ranges</b>: *</li>
+    <li><b>Destination</b>: VirtualNetwork</li>
+    <li><b>Service</b>: RDP</li>
+    <li><b>Destination port ranges</b>: 3389</li>
+    <li><b>Action</b>: Allow</li>
+    <li><b>Priority</b>: 120</li>
+    <li><b>Name</b>:Allow-RDP-All</li>
+  </ul>
+  <img src="Images/Restrict network access 12.png">
 
-<img src="Images/Restrict network access 11.png">
+  <img src="Images/Restrict network access 13.png">
 
-<img src="Images/Restrict network access 12.png">
+  <img src="Images/Restrict network access 14.png">
 
-<img src="Images/Restrict network access 13.png">
+  <img src="Images/Restrict network access 15.png">
+</ul>
 
-<img src="Images/Restrict network access 14.png">
+<ul>
+  <li>Under <b>Settings</b>, select <b>Subnets</b> and click on <b>+ Associate</b> with the <b>myVirtualNetwork</b> as virtual network and <b>Private</b> as subnet</li>
+  <img src="Images/Restrict network access 16.png">
+  
+</ul>
 
-<img src="Images/Restrict network access 15.png">
+<h3>Restrict network access to a resource</h3>
 
-<img src="Images/Restrict network access 16.png">
-
+<h4>Create a <b>storage account</b></h4>
 <img src="Images/Restrict network access 17.png">
 
 <img src="Images/Restrict network access 18.png">
