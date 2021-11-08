@@ -2,7 +2,12 @@
 
 For reference: https://docs.microsoft.com/en-in/azure/firewall-manager/secure-cloud-network?WT.mc_id=APC-FirewallManager
 
-<b>Create two virtual networks that contains servers in them and those will be protected by firewall</b>
+
+With the help of Azure Firewall Manager, we can create secured virtual hubs which will secured the cloud network traffic.
+
+<img src="Images/secure-cloud-network.png">
+
+<h3>Create two virtual networks that contains servers in them and those will be protected by firewall</h3>
 
 <b>Steps:</b>
 
@@ -37,7 +42,7 @@ Repeat the same process with the following changes:
   <img src="Images/Firewall 2.png">
 </ul>
 
-<b>Create the secured virtual hub</b>
+<h3>Create the secured virtual hub</h3>
  
 <ul>
   <li>From the Azure Portal, in the top search bar search for <b>Firewall Manager</b></li>
@@ -56,5 +61,56 @@ Repeat the same process with the following changes:
   
   <img src="Images/Firewall 4.png">
 </ul>
+
+Once the deployment done, get the firewall public IP address.
+<ul>
+  <li>Go to Firewall Manager, click on <b>Virtual hubs</b></li>
+  <li>Select the <b>Hub-01</b> and from under Public IP configuration note down the public IP address</li>
+</ul>
+
+<h3>Connect the hub with the virtual networks</h3>
+
+<ul>
+  <li>Go to the resource group <b>fw-manager-rg</b> and select <b>Vwan-01</b> virtual WAN</li>
+  <li>From the <b>Connectivity</b> section, click on Virtual network connections</li>
+  <li>Click on <b>Add connection</b> and enter the following details</li>
+  <ul>
+    <li><b>Connection name</b>: hub-spoke-01</li>
+    <li><b>Hubs</b>: Hub-01</li>
+    <li><b>Subscription</b> : Select your Azure Subscription</li>
+    <li><b>Resource group</b> : fw-manager-rg</li>
+    <li><b>Virtual network</b> : Spoke-01</li>
+  </ul>
+  <li>And click on <b>Create</b></li>
+  
+  <img src="Images/Firewall 5.png">
+</ul>
+
+Repeat the same procedure for the second virtual network <b>Spoke-02</b> with the connection name <b>hub-spoke-02</b>
+
+<img src="Images/Firewall 6.png">
+
+<img src="Images/Firewall 7.png">
+
+<img src="Images/Firewall 8.png">
+
+<img src="Images/Firewall 9.png">
+
+<img src="Images/Firewall 10.png">
+
+<img src="Images/Firewall 11.png">
+
+<img src="Images/Firewall 12.png">
+
+<img src="Images/Firewall 13.png">
+
+<img src="Images/Firewall 14.png">
+
+<img src="Images/Firewall 15.png">
+
+<img src="Images/Firewall 16.png">
+
+<img src="Images/Firewall 17.png">
+
     
  
