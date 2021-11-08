@@ -23,6 +23,8 @@ For reference: https://docs.microsoft.com/en-in/azure/firewall-manager/secure-cl
   </ul>
   <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
   <li>Wait for the deployment to complete</li>
+  
+  <img src="Images/Firewall 1.png">
  </ul>
  
 Repeat the same process with the following changes:
@@ -31,6 +33,8 @@ Repeat the same process with the following changes:
   <li><b>Address space:</b> 10.1.0.0/16</li>
   <li><b>Subnet name:</b> Workload-02-SN</li>
   <li><b>Subnet address range:</b> 10.1.1.0/24</li>
+  
+  <img src="Images/Firewall 2.png">
 </ul>
 
 <b>Create the secured virtual hub</b>
@@ -38,6 +42,8 @@ Repeat the same process with the following changes:
 <ul>
   <li>From the Azure Portal, in the top search bar search for <b>Firewall Manager</b></li>
   <li>From the Firewall Manager page, go to <b>Virtual Hub</b> and click on Create new secured virtual hub. Provide the following details</li>
+  
+  <img src="Images/Firewall 3.png">
   <ul>
     <li><b>Resource group</b>: fw-manager-rg</li>
     <li><b>Region</b>: East US</li>
@@ -47,6 +53,8 @@ Repeat the same process with the following changes:
   </ul>
   <li>Leave the rest as default and click on <b>Create</b></li>
   <li>It will takes about 30 minutes to deploy</li>
+  
+  <img src="Images/Firewall 4.png">
 </ul>
     
  
