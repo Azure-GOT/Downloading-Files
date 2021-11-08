@@ -203,19 +203,46 @@ Firewall policy defines the collection of rules.
   </ul>
   <li>Click on <b>Review + create</b> and after validation passed click on <b>Create</b></li>
   <li>Wait for the deployment to complete</li>
+  
+  <img src="Images/Firewall 12.png">
 </ul>
 
-<img src="Images/Firewall 12.png">
+<b>Now associate the firewall policy with the hub</b>
+<ul>
+  <li>From Firewall Manager, select Azure Firewall policies</li>
+  <li>Select the check box for the <b>Policy-01</b></li>
+  <li>Click on <b>Manage associations</b> and then select <b>Associate hubs</b></li>
+  <li>Select Hub-01 and click on Add</li>
 
-<img src="Images/Firewall 13.png">
+  <img src="Images/Firewall 13.png">
+</ul>
 
-<img src="Images/Firewall 14.png">
+After the we wants to make sure that the network traffic gets routed through firewall, so for that follow these steps:
+<ul>
+  <li>Go to Firewall Manager, and select Virtual hubs. Select <b>Hub-01</b></li>
+  <li>Under Settings, select Security configuration</li>
+  <li>In the Internet traffic, select Azure Firewall</li>
+  <li>In the Private traffic, select Send via Azure Firewall</li>
+  <li>Click on Save. Wait for few minutes and verify the connection got <b>Secured by Azure Firewall</b>
 
-<img src="Images/Firewall 15.png">
+  <img src="Images/Firewall 14.png">
+
+
+  <img src="Images/Firewall 15.png">
+</ul>
+
+<h3>Test the Firewall</h3>
+
+For the <b>Application rule</b>, Connect the remote desktop to firewall public IP address using virtual machine Srv-Workload-01 credentials.
+
+Open the Internet Explorer and browse to https://www.microsoft.com , you should be able to see the Microsoft home page.
 
 <img src="Images/Firewall 16.png">
 
+Now browse to https://www.google.com , it will be blocked by firewall
+
 <img src="Images/Firewall 17.png">
 
-    
- 
+For the <b>Network Rule</b> to check, open a remote desktop to the VM Srv-Workload-02 private IP address from the VM Srv-Workload-01.
+
+The remote desktop should work.
