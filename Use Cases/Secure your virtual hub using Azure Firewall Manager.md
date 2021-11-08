@@ -90,15 +90,120 @@ Repeat the same procedure for the second virtual network <b>Spoke-02</b> with th
 
 <img src="Images/Firewall 6.png">
 
-<img src="Images/Firewall 7.png">
+<h3>Deploy the servers in the virtual network</h3>
 
-<img src="Images/Firewall 8.png">
+<ul>
+ <li>Select the <b>＋Create a resource</b> button, search for <b>Virtual Machine</b>, and create with the following settings:</li>
+ <ul>
+   <li><b>Subscription</b> : Select your Azure Subscription</li>
+   <li><b>Resource Group</b> : fw-manager-rg</li>
+   <li><b>Name</b> : Srv-workload-01</li>
+   <li><b>Region</b> : East US</li>
+   <li><b>Availability Options</b> : No infrastructure redundancy required</li>
+   <li><b>Image</b> : Windows Server 2019 Datacenter - Gen1</li>
+   <li><b>Azure Spot instance</b> : Unchecked</li>
+   <li><b>Size</b> : Leave default</li>
+   <li><b>Username</b> : Enter the username as per your wish</li>
+   <li><b>Password</b> : Enter the password</li>
+   <li><b>Confirm Password</b> : Enter the same password</li>
+   <li><b>Public inbound ports</b> : None</li>
+ </ul>
+ <li>Go to the Networking tab</li>
+ <ul>
+   <li><b>Virtual network</b> : Select Virtual network Spoke-01</li>
+   <li><b>Subnet</b> : Workload-01-SN</li>
+   <li><b>Public IP</b> : None</li>
+ </ul>
+  <li>Leave the rest details as default</li>
+ <li>Click on the <b>Review and Create</b> button. After validation passed <b>Create</b> the resource </li>
+ <li>Wait for the deployment to complete</li>
 
-<img src="Images/Firewall 9.png">
+ <img src="Images/Firewall 7.png">
 
-<img src="Images/Firewall 10.png">
+ <img src="Images/Firewall 8.png">
+</ul>
 
-<img src="Images/Firewall 11.png">
+<ul>
+  <li>Create the second server with the following changes:</li>
+  <ul>
+    <li><b>Name:</b> Srv-Workload-02</li>
+    <li><b>Virtual network:</b> Spoke-02</li>
+    <li><b>Subnet:</b> Workload-02-SN</li>
+  </ul>
+
+  <img src="Images/Firewall 9.png">
+
+  <img src="Images/Firewall 10.png">
+</ul>
+<b>Note down the private IP address of both the virtual machines from the networking tab</b>
+
+<h3>Secure the hub with the help of Firewall policy</h3>
+
+Firewall policy defines the collection of rules.
+
+<ul>
+  <li>Navigate to the Firewall Manager and select <b>Azure Firewall policies</b></li>
+  <img src="Images/Firewall 11.png">
+  
+  <li>The new pane will appear to create the firewall policy and so provide the following details:</li>
+  <ul>
+    <li><b>Subscription</b>: Select your Azure Subscription</li>
+    <li><b>Resource group</b>: fw-manager-rg</li>
+    <li><b>Name</b>: Policy-01</li>
+    <li><b>Region</b>: East US</li>
+    <li><b>Policy Tier</b>: Standard</li>
+  </ul>
+  <li>Leave the rest as default and go to <b>Rules</b> tab, under that click on <b>+ Add a rule collection</b>. When the pane appears provide the following details</li>
+  <ul>
+    <li><b>Name:</b> App-RC-01</li>
+    <li><b>Rule collection type:</b> Application</li>
+    <li><b>Priority:</b> 100</li>
+    <li><b>Rule collection action:</b> Allow</li>
+    <li><b>Rule name:</b> Allow-msft</li>
+    <li><b>Source type:</b> IP address</li>
+    <li><b>Source:</b> *</li>
+    <li><b>Protocol:</b> http,https</li>
+    <li><b>Destination type:</b> FQDN</li>
+    <li><b>Destination:</b> *.microsoft.com</li>
+    <li>Click on <b>Add</b></li>
+  </ul>
+  <li>Add the DNAT rule to connect the remote desktop to the virtual machine</li>
+  <ul>
+    <li>Click on <b>+ Add a rule collection</b></li>
+    <li><b>Name:</b> dnat-rdp</li>
+    <li><b>Rule collection type:</b> DNAT</li>
+    <li><b>Priority:</b> 100</li>
+    <li><b>Rule collection action:</b> Allow</li>
+    <li><b>Rule name:</b> Allow-rdp</li>
+    <li><b>Source type:</b> IP address</li>
+    <li><b>Source:</b> *</li>
+    <li><b>Protocol:</b> TCP</li>
+    <li><b>Destination Ports:</b> 3389</li>
+    <li><b>Destination type:</b> IP address</li>
+    <li><b>Destination:</b> firewall public IP address</li>
+    <li><b>Translated address:</b> private IP address for VM Srv-Workload-01</li>
+    <li><b>Translated port:</b> 3389</li>
+    <li>Click on <b>Add</b></li>
+  </ul>
+  <li>Add a network rule to connect a remote desktop from one server to another</li>
+  <ul>
+    <li>Click on <b>+ Add a rule collection</b></li>
+    <li><b>Name:</b> vnet-rdp</li>
+    <li><b>Rule collection type:</b> Network</li>
+    <li><b>Priority:</b> 100</li>
+    <li><b>Rule collection action:</b> Allow</li>
+    <li><b>Rule name:</b> Allow-vnet</li>
+    <li><b>Source type:</b> IP address</li>
+    <li><b>Source:</b> *</li>
+    <li><b>Protocol:</b> TCP</li>
+    <li><b>Destination Ports:</b> 3389</li>
+    <li><b>Destination type:</b> IP address</li>
+    <li><b>Destination:</b> private IP address for VM Srv-Workload-02</li>
+    <li>Click on <b>Add</b></li>
+  </ul>
+  <li>Click on <b>Review + create</b> and after validation passed click on <b>Create</b></li>
+  <li>Wait for the deployment to complete</li>
+</ul>
 
 <img src="Images/Firewall 12.png">
 
