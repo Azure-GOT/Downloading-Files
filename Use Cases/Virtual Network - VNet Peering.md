@@ -14,7 +14,7 @@ Here we will learn how to add peering between two virtual networks
 
 - You should have two virtual netwoks created in azure for VNet peering
 
-> Note: If the virtual networks are in different regions, the VNet peering will work.
+> Note: The VNet peering will work across different subscription and across regions.
 
 - Go to any one of the virtual network, under **Settings** click on **Peering**
 - The existing peering should be available there, if there is not any click on **+ Add**
