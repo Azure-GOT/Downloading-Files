@@ -14,7 +14,7 @@ In this we will learn about
 
 ## Instruction
 
-- You should have virtual network created in the azure portal
+- You should have virtual network created in the azure
 - Go to virtual network, under **settings** section click on **Subnets**
 
   <img src="Images/Virtual Network/Virtual network subnet.png">
