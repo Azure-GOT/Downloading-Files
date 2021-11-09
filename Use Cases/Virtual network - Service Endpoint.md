@@ -44,7 +44,7 @@ Here we will restrict the storage account access only to the subnet that has ser
 
 <img src="Images/Virtual Network/Storage account add network empty.png">
 
-- Provide the details as shown below
+- Provide the details of virtual network and subnet as shown below
 
 <img src="Images/Virtual Network/Storage account add network.png">
 
