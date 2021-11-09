@@ -46,6 +46,8 @@ Here we will restrict the storage account access only to the subnet that has ser
 
 - Provide the details of virtual network and subnet as shown below
 
+> Note: You can enable the service endpoint for specific subnet from here as well. Just select the subnet and click on enable
+
 <img src="Images/Virtual Network/Storage account add network.png">
 
 - The subnet from the virtual network should now able to access the storage account
