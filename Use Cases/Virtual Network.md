@@ -13,4 +13,29 @@ In this we will learn about
 ## Instructions
 
 1. Create and configure virtual network
+
+- Create the virtual network with the following setting ( Leave other as default):
+
+| Setting | Value |
+| -- | -- |
+| Subscription | Select your active subscription |
+| Resource Group | VNet-demo |
+| Name | VNet-01-demo |
+| Region | East US |
+
+<img src="Images/Virtual Network/Creating VNet basic.png"> 
+
+<img src="Images/Virtual Network/Creating VNet ip address.png"> 
+
+<img src="Images/Virtual Network/Creating VNet security.png"> 
+
+<img src="Images/Virtual Network/Creating VNet tags.png"> 
+
+<img src="Images/Virtual Network/Creating VNet final validation.png"> 
+
+<img src="Images/Virtual Network/VNet address spaces.png"> 
+
+<img src="Images/Virtual Network/VNet additional address spaces.png"> 
+
+<img src="Images/Virtual Network/VNet address spaces done.png"> 
  
