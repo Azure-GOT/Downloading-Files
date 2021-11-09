@@ -4,6 +4,8 @@
 
 We can use VNet Peering between two virtual networks when we want to route traffic between them privately through IPv4 addresses. The virtual machines in the peered network uses Microsoft backbone infrastructure for communication.
 
+![image](Images/Virtual Network/Virtual Network Peering diagram.png)
+
 ## Objective
 
 Here we will learn how to add peering between two virtual networks
