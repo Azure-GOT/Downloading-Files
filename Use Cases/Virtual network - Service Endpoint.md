@@ -18,6 +18,8 @@ In this we will learn how to add service endpoint in virtual network and add tha
 
 - Click on **+ Add** for creating new service endpoint for the virtual network.
 - The new **Add service endpoint** pane will appear. Provide the details and click on **Add**
+
+> Note: There are around 10 different services that you can choose according to your need. Here we have demonstrate storage service.
   
   <img src="Images/Virtual Network/Add service endpoint pane.png">
   
