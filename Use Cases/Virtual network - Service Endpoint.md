@@ -39,7 +39,7 @@ Here we will restrict the storage account access only to the subnet that has ser
 <img src="Images/Virtual Network/Storage account networking tab.png">
 
 - From that click on **Selected networks**.
-- After that click on **+ Add existing virtual network**(if you already have created virtual machine)
+- After that click on **+ Add existing virtual network**(if you already have created virtual network)
 - The new **Add networks** pane will appear
 
 <img src="Images/Virtual Network/Storage account add network empty.png">
