@@ -10,7 +10,7 @@ We can use VNet Peering between two virtual networks when we want to route traff
 
 Here we will learn how to add peering between two virtual networks
 
-# Instruction
+## Instruction
 
 - You should have two virtual netwoks created in azure for VNet peering
 
