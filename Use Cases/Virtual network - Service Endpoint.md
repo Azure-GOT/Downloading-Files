@@ -7,7 +7,7 @@ The traffic using service endpoints flows over Microsoft backbone providing addi
 
 ## Objective
 
-In this we will learn how to add service endpoint in virtual network
+In this we will learn how to add service endpoint in virtual network and add that subnet to storage account
 
 ## Instruction
 
