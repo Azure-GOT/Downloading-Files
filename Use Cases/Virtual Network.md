@@ -43,9 +43,15 @@ When the deployment completes, go to the **virtual network**, under **settings**
 
 According to the requirement, we can add additional address space, after adding click on save it will be reflected in the virtual network.
 
->Note: The subnets should belong to these address ranges only
+> Note: The subnets should belong to these address ranges only
 
 <img src="Images/Virtual Network/VNet additional address spaces.png"> 
 
 <img src="Images/Virtual Network/VNet address spaces done.png"> 
  
+> Note: The following address ranges you cannot add into virtual network
+> - 224.0.0.0/4 (Multicast)
+> - 255.255.255.255/32 (Broadcast)
+> - 127.0.0.0/8 (Loopback)
+> - 169.254.0.0/16 (Link-local)
+> - 168.63.129.16/32 (Internal DNS) 
