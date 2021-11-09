@@ -12,5 +12,40 @@ In this we will learn how to add service endpoint in virtual network
 ## Instruction
 
 - Navigate to the **virtual network**
+- Under **Settings** section, click on **Service endpoints**. The page will be blank if there are no service endpoints are created.
 
-<img src="Images/Virtual Network/Virtual Network service endpoint.png">
+  <img src="Images/Virtual Network/Virtual Network service endpoint.png">
+
+- Click on **+ Add** for creating new service endpoint for the virtual network.
+- The new **Add service endpoint** pane will appear. Provide the details and click on **Add**
+  
+  <img src="Images/Virtual Network/Add service endpoint pane.png">
+  
+- After clicking on Add the service endpoint should appear on the page with the associated subnet. 
+
+  <img src="Images/Virtual Network/Virtual network service endpoint page.png">
+
+### Add this service endpoint to the Azure service
+
+Here we will restrict the storage account access only to the subnet that has service endpoint associated.
+
+> Note: We need storage account here, so if you don't have one first create it.
+
+- Go to your created storage account
+- Under **Security + networking** section, click on **Networking**
+
+ <img src="Images/Virtual Network/Storage account networking tab.png">
+
+- From that click on **Selected networks**.
+- After that click on **+ Add existing virtual network**(if you already have created virtual machine)
+- The new **Add networks** pane will appear
+
+  <img src="Images/Virtual Network/Storage account add network empty.png">
+
+- Provide the details as shown below
+
+  <img src="Images/Virtual Network/Storage account add network.png">
+
+- The subnet from the virtual network should now able to access the storage account
+  
+  <img src="Images/Virtual Network/Storage account final.png">
