@@ -4,7 +4,7 @@
 
 When there is a requirement for different sub-network for the each department in the organization, so we can divide the virtual network into multiple subnets for different department and security.
 
-> Note: The address range of one subnet should not overlap into address range of another subnet.
+> Note: We can add 3,000 subnets per virtual network. The address range of one subnet should not overlap into address range of another subnet. 
 
 ## Objective
 
@@ -50,5 +50,8 @@ In this we will learn about
 <img src="Images/Virtual Network/Virtual network subnet 4.png">
 
 - The list of available subnets should appear on the **Subnet** page
+- They have also provided the number of available IPs in each subnet. So the number of servers are depend on that
+
+> Note: 5 IPs within each subnet will be reserved by Azure. These are x.x.x.0 - x.x.x.3 and last address x.x.x.255
 
 <img src="Images/Virtual Network/Virtual network subnet 5.png">
