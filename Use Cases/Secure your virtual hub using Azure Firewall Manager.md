@@ -46,7 +46,7 @@ Repeat the same process with the following changes:
  
 <ul>
   <li>From the Azure Portal, in the top search bar search for <b>Firewall Manager</b></li>
-  <li>From the Firewall Manager page, go to <b>Virtual Hub</b> and click on Create new secured virtual hub. Provide the following details</li>
+  <li>From the Firewall Manager page, go to <b>Virtual Hub</b> and click on Create new secured virtual hub. Provide the following details:</li>
   
   <img src="Images/Firewall 3.png">
   <ul>
