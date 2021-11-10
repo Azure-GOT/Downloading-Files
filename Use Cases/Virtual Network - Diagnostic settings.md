@@ -4,6 +4,8 @@
 
 ## Objective
 
+In this we will learn about how to enable Diagnostic settings for any specific virtual network
+
 ## Instruction
 
 - You should have virtual network created in the azure
@@ -14,6 +16,7 @@
 - If there is Diagnostic settings already exist, it is displayed here.
 - For adding another Diagnostic settings or creating new click on **+ Add diagnostic settings**
 - The new Diagnostic settings window will open
+> Note: The available destinations are *Log Analytics Workspace, Storage account, Event hub* and *Partner solution*. We have used *storage account* as destination
 
 <img src="Images/Virtual Network - Diagnostic setting/2 Adding diagnostic setting.png">
 
