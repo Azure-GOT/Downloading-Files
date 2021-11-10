@@ -60,7 +60,7 @@ In this we will learn about how to add condition based alert and action group re
 <img src="Images/Virtual Network - Add alert/Create action group notification 2.png">
 
 - If you want to add some action when the alert is fired you can add in the *Actions* tab.
-> Note: The available actions are: Automation runbook, Azure function, ITSM, Logic app, Secured webhook, Webhook.
+> Note: The available *action type* are: Automation runbook, Azure function, ITSM, Logic app, Secured webhook, Webhook.
 
 <img src="Images/Virtual Network - Add alert/Create action group actions.png">
 
