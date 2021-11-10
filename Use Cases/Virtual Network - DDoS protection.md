@@ -2,6 +2,8 @@
 
 ## Lab scenario
 
+DDoS(Distributed denial of service) attacks can be targeted at any endpoint that is publicly reachable through the internet. So it can make the application unavailable to users. We can reduced this by enabling the DDoS protection 
+
 ## Objective
 
 In this we will learn about how we can enable DDoS protection for the virtual network
