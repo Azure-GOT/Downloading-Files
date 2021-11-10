@@ -56,23 +56,42 @@ In this we will learn about how to add condition based alert and action group re
 <img src="Images/Virtual Network - Add alert/Email or SMS.png">
 
 - Click **Ok** after adding Email and Phone number.
+
 <img src="Images/Virtual Network - Add alert/Create action group notification 2.png">
+
+- If you want to add some action when the alert is fired you can add in the *Actions* tab.
 
 <img src="Images/Virtual Network - Add alert/Create action group actions.png">
 
+- Once you finish with all the setting, give the name for the **Alert** in Alert rule name and click on **Create alert rule**
+
 <img src="Images/Virtual Network - Add alert/Create alert rule final.png">
+
+- You have prvided the email address in the notification tab, so the email will be sent to that email address after the alert is fired.
 
 <img src="Images/Virtual Network - Add alert/Email alert activated 1.png">
 
 <img src="Images/Virtual Network - Add alert/Email alert activated 2.png">
 
+- Go back to the **Alerts** page under **Monitoring** section in virtual network
+- You should see all the alerts on that page with the *Severity* associated with that.
+> Note: It will take few minutes for alerts to appear on the screen
+
 <img src="Images/Virtual Network - Add alert/Alert page with alerts.png">
+
+- Click on *Total alerts* on that page, the list of alerts will be present on the page.
 
 <img src="Images/Virtual Network - Add alert/All alerts.png">
 
+- If you want to see detailed information about specific alert, click on that specific alert. New window will appear.
+
 <img src="Images/Virtual Network - Add alert/Change alert state.png">
 
+- Now that you have received all the information regarding alert, you can solve that alert and change it's state to any of the given options. Click on *Save* after changing the state of the alert
+
 <img src="Images/Virtual Network - Add alert/Select a alert state.png">
+
+- After that you can see the changed state of the specific alert in the alerts page
 
 <img src="Images/Virtual Network - Add alert/Closed and acknowledge alerts.png">
 
