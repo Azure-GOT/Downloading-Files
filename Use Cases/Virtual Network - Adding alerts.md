@@ -32,15 +32,30 @@ In this we will learn about how to add condition based alert and action group re
 
 - Now you have added condition for the alert, but the necessary **action group** is also required. 
 - The action group will contain the information about the users who will receive the notification of alert and also required action for the alert
+- From the **alert rule page** click on *Add action groups*. And then click on **+ Create action group**
 
 <img src="Images/Virtual Network - Add alert/Add action group.png">
 
+- Provide the details on the **basics** tab:
+
+| Setting | Value |
+| -- | -- |
+| Resource group | **VNet-demo** |
+| Action group name | **VNet- alerts* |
+
 <img src="Images/Virtual Network - Add alert/Create action group basic.png">
+
+-In the **notifications** tab, select *Email/SMS message/Push/Voice* in the Notification type.
 
 <img src="Images/Virtual Network - Add alert/Create action group notification.png">
 
+- After selecting notification type, new pane will appear
+- Enter the *Email* and *Phone number* of the user who will recieve the notification
+> Note: You can specify one email address per notification. To add another email address, add another notification.
+
 <img src="Images/Virtual Network - Add alert/Email or SMS.png">
 
+-Click **Ok** after adding Email and Phone number.
 <img src="Images/Virtual Network - Add alert/Create action group notification 2.png">
 
 <img src="Images/Virtual Network - Add alert/Create action group actions.png">
