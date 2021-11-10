@@ -2,6 +2,8 @@
 
 ## Lab scenario
 
+When you want to send the Azure Activity log and resource log for any specific resource to another destination for further diagnostic and auditing information, we have to use Diagnostic setting 
+
 ## Objective
 
 In this we will learn about how to enable Diagnostic settings for any specific virtual network
@@ -29,6 +31,7 @@ In this we will learn about how to enable Diagnostic settings for any specific v
 <img src="Images/Virtual Network - Diagnostic setting/4 Diagnostic setting page.png">
 
 - If you wish to add the Diagnostic settings from activity log click on **Activity log** and from that click on **Diagnostic settings**
+> Note: You can select more than one destination for one Diagnostic setting, but if you want to send data to more than one of a particular destination type (for example, two different Log Analytics workspaces), then create multiple Diagnostic settings.
 
 <img src="Images/Virtual Network - Diagnostic setting/5 Diagnostic setting from activity log.png">
 
