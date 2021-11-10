@@ -2,7 +2,7 @@
 
 ## Lab scenario
 
-We can use **alerts** from the monitoring section, when you want to get a notification when someone modify any resource in the azure. 
+We can use **alerts** from the monitoring section, when you want to get a notification when someone modify any resource in the azure. You can set alerts on metrics, logs, and the activity log.
 
 ## Objective
 
@@ -60,6 +60,7 @@ In this we will learn about how to add condition based alert and action group re
 <img src="Images/Virtual Network - Add alert/Create action group notification 2.png">
 
 - If you want to add some action when the alert is fired you can add in the *Actions* tab.
+> Note: The available actions are: Automation runbook, Azure function, ITSM, Logic app, Secured webhook, Webhook.
 
 <img src="Images/Virtual Network - Add alert/Create action group actions.png">
 
