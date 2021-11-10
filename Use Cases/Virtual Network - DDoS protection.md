@@ -21,10 +21,22 @@ In this we will learn about how we can enable DDoS protection for the virtual ne
 - The new window will open for creating DDoS protection plan
 - Provide the basic details:
 
+| Setting | Value |
+| -- | -- |
+| Resource group | **VNet-demo** |
+| Name | **VNet-DDoS-Protection** |
+| Region | **East US** |
+
 <img src="Images/Virtual Network - DDoS protection/Create DDoS protection.png">
+
+- After providing details click on **Review + create** and if validation passed click on **Create**
 
 <img src="Images/Virtual Network - DDoS protection/DDoD protection created.png">
 
+- You can see the newly created DDoS protection plan in the virtual network page.
+
 <img src="Images/Virtual Network - DDoS protection/VNet DDoS protection selected.png">
+
+- Navigate to the **DDoS protection** resource that you created. Under **Settings** section click on **Protected resource**. The virtual network will be there
 
 <img src="Images/Virtual Network - DDoS protection/Enabled DDoS protection for VNet.png">
