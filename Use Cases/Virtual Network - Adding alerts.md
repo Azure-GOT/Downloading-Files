@@ -41,7 +41,7 @@ In this we will learn about how to add condition based alert and action group re
 | Setting | Value |
 | -- | -- |
 | Resource group | **VNet-demo** |
-| Action group name | **VNet- alerts* |
+| Action group name | **VNet- alerts** |
 
 <img src="Images/Virtual Network - Add alert/Create action group basic.png">
 
@@ -55,7 +55,7 @@ In this we will learn about how to add condition based alert and action group re
 
 <img src="Images/Virtual Network - Add alert/Email or SMS.png">
 
--Click **Ok** after adding Email and Phone number.
+- Click **Ok** after adding Email and Phone number.
 <img src="Images/Virtual Network - Add alert/Create action group notification 2.png">
 
 <img src="Images/Virtual Network - Add alert/Create action group actions.png">
