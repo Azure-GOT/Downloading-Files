@@ -15,13 +15,23 @@ In this we will learn about how to add condition based alert and action group re
 
 <img src="Images/Virtual Network - Add alert/VNet alert page.png">
 
+- From the **Alerts** page click on **+ New alert rule**. New window will appear for creating alert rule. 
+
 <img src="Images/Virtual Network - Add alert/Create alert rule 1.png">
 
 <img src="Images/Virtual Network - Add alert/Create alert rule 2.png">
 
+- From the **Create rule** window click on **Add condition**, the alert will be based on this condition
+- You can select the **signal name** as per your requirement. Here we have selected *Create or Update virtual network*
+
 <img src="Images/Virtual Network - Add alert/Select a signal.png">
 
+- You will see the signal logic once you select the specific signal name. After that click on **Done**.
+  
 <img src="Images/Virtual Network - Add alert/Configure signal logic.png">
+
+- Now you have added condition for the alert, but the necessary **action group** is also required. 
+- The action group will contain the information about the users who will receive the notification of alert and also required action for the alert
 
 <img src="Images/Virtual Network - Add alert/Add action group.png">
 
