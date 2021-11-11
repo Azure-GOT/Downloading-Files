@@ -96,15 +96,15 @@ You need to ensure that **app1** can connect directly to **service1** without ro
 
 **Solution 1:** You deploy **service1** and a public endpoint to a new virtual network, and you configure Azure Private Link
 
-**Ans: No**
+**Ans: Yes**
 
 **Solution 2:** You deploy service1 and a public endpoint, and you configure an IP firewall rule
 
-**Ans:** 
+**Ans: No** 
 
 **Solution 3:** You deploy service1 and a public endpoint, and you configure a network security group (NSG) for vnet1
 
-**Ans:**
+**Ans: No**
 
 ---
 
