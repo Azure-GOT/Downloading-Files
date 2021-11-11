@@ -20,7 +20,7 @@ In this we will learn about how we can enable DDoS protection for the virtual ne
 <img src="Images/Virtual Network - DDoS protection/VNet DDoS protection enable.png">
 
 - You can select you existing DDoS protection plan if you have one, otherwise click on **Create a DDoS protection plan**
-- The new window will open for creating DDoS protection plan
+- The new window will open for creating DDoS protection plan.
 - Provide the basic details:
 
 | Setting | Value |
