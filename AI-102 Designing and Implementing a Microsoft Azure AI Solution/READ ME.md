@@ -74,6 +74,6 @@ What are three implications of the planned change? Each correct answer presents 
 5. Query times will decrease
 6. Azure Key Vault is required
 
-**Ans: 1. The index size will increase, 2. Query times will increase, 3. Azure Key Vault is required**
+**Ans: 1. The index size will increase, 2. Query times will increase, 6. Azure Key Vault is required**
 
 ---
