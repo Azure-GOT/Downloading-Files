@@ -505,4 +505,3 @@ What should you do?
 
 ---
 
-What should you do?
