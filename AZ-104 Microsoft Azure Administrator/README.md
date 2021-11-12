@@ -745,3 +745,16 @@ What should you do?
 **Ans: 
 
 ---
+
+**Q45.** You have an Azure subscription that contains a user named User1.
+You need to ensure that User1 can deploy virtual machines and manage virtual networks. The solution must use the principle of least privilege.
+
+Which role-based access control (RBAC) role should you assign to User1?
+1. Owner
+2. Virtual Machine Contributor
+3. Contributor
+4. Virtual Machine Administrator Login
+
+**Ans: 3. Contributor
+
+---
