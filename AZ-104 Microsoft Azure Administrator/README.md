@@ -742,7 +742,7 @@ What should you do?
 3. Assign the Global administrator role to User1, and then instruct User1 to configure access management for Azure resources
 4. Create a new management group and delegate User1 as the owner of the new management group
 
-**Ans: 
+**Ans: **
 
 ---
 
@@ -755,6 +755,6 @@ Which role-based access control (RBAC) role should you assign to User1?
 3. Contributor
 4. Virtual Machine Administrator Login
 
-**Ans: 3. Contributor
+**Ans: 3. Contributor**
 
 ---
