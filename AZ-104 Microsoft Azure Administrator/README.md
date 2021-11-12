@@ -572,10 +572,10 @@ RG26 is set to the West Europe location and is used to create temporary resource
 
 | Name | Type | Location |
 | -- | -- | -- |
-| VM1 |Virtual Machine | North Europe |
-| RGV1 |Recovery Service Vault | North Europe |
-| SQLD01 |SQL server in Azure VM | North Europe |
-| sa001 |Storage account | West Europe |
+| VM1 | Virtual Machine | North Europe |
+| RGV1 | Recovery Service Vault | North Europe |
+| SQLD01 | SQL server in Azure VM | North Europe |
+| sa001 | Storage account | West Europe |
 
 SQLDB01 is backed up to RGV1.
 When the project is complete, you attempt to delete RG26 from the Azure portal. The deletion fails.
@@ -649,4 +649,99 @@ You need to provide the Developers group with the ability to create Azure logic 
 
 ---
 
-**Q39.** 
+**Q39.** You have an Azure subscription named Subscription1 that contains an Azure Log Analytics workspace named Workspace1.
+You need to view the error events from a table named Event.
+
+Which query should you run in Workspace1?
+1. Get-Event Event | where {$_.EventType == "error"}
+2. search in (Event) "error"
+3. select * from Event where EventType == "error"
+4. search in (Event) * | where EventType -eq "error"
+
+**Ans: 2. search in (Event) "error"**
+
+*To search a term in a specific table, add the table-name just after the search operator*
+
+---
+
+**Q40.** You have an Azure subscription named Subscription1. Subscription1 contains the resource groups in the following table:
+
+| Name | Azure region | Policy |
+| -- | -- | -- |
+| RG1 | West Europe | Policy1 |
+| RG2 | North Europe | Policy2 |
+| RG3 | France Central | Policy3 |
+
+RG1 has a web app named WebApp1. WebApp1 is located in West Europe.
+You move WebApp1 to RG2.
+
+What is the effect of the move?
+1. The App Service plan for WebApp1 remains in West Europe. Policy2 applies to WebApp1
+2. The App Service plan for WebApp1 moves to North Europe. Policy2 applies to WebApp1
+3. The App Service plan for WebApp1 remains in West Europe. Policy1 applies to WebApp1
+4. The App Service plan for WebApp1 moves to North Europe. Policy1 applies to WebApp1
+
+**Ans: 1. The App Service plan for WebApp1 remains in West Europe. Policy2 applies to WebApp1**
+
+---
+
+**Q41.** You have an Azure subscription.
+Users access the resources in the subscription from either home or from customer sites. From home, users must establish a point-to-site VPN to access the Azure resources. The users on the customer sites access the Azure resources by using site-to-site VPNs.
+You have a line-of-business-app named App1 that runs on several Azure virtual machine. The virtual machines run Windows Server 2016.
+You need to ensure that the connections to App1 are spread across all the virtual machines.
+
+What are two possible Azure services that you can use?
+1. an internal load balancer
+2. a public load balancer
+3. an Azure Content Delivery Network (CDN)
+4. Traffic Manager
+5. an Azure Application Gateway
+
+**Ans: 1. an internal load balancer, 5. an Azure Application Gateway
+
+---
+
+**Q42.** You have an Azure subscription.
+You have 100 Azure virtual machines.
+You need to quickly identify underutilized virtual machines that can have their service tier changed to a less expensive offering.
+
+Which blade should you use?
+1. Monitor
+2. Advisor
+3. Metrics
+4. Customer insights
+
+**Ans: 2. Advisor**
+
+*Advisor helps you optimize and reduce your overall Azure spend by identifying idle and underutilized resources. You can get cost recommendations from the Cost tab on the Advisor dashboard*
+
+---
+
+**Q43.** You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com.
+The User administrator role is assigned to a user named Admin1.
+An external partner has a Microsoft account that uses the user1@outlook.com sign in.
+Admin1 attempts to invite the external partner to sign in to the Azure AD tenant and receives the following error message: `Unable to invite user user1@outlook.com `" Generic authorization exception.`
+You need to ensure that Admin1 can invite the external partner to sign in to the Azure AD tenant.
+
+What should you do?
+1. From the Users blade, modify the External collaboration settings
+2. From the Custom domain names blade, add a custom domain
+3. From the Organizational relationships blade, add an identity provider
+4. From the Roles and administrators blade, assign the Security administrator role to Admin1
+
+**Ans: 1. From the Users blade, modify the External collaboration settings**
+
+---
+
+**Q44.** You have an Azure subscription linked to an Azure Active Directory tenant. The tenant includes a user account named User1.
+You need to ensure that User1 can assign a policy to the tenant root management group.
+
+What should you do?
+1. Assign the Owner role for the Azure Subscription to User1, and then modify the default conditional access policies
+2. Assign the Owner role for the Azure subscription to User1, and then instruct User1 to configure access management for Azure resources
+3. Assign the Global administrator role to User1, and then instruct User1 to configure access management for Azure resources
+4. Create a new management group and delegate User1 as the owner of the new management group
+
+**Ans: 
+
+---
