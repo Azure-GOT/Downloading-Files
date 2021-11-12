@@ -505,3 +505,64 @@ What should you do?
 
 ---
 
+**Q31.** You have an Azure Active Directory (Azure AD) tenant that contains 5,000 user accounts.
+You create a new user account named AdminUser1.
+You need to assign the User administrator administrative role to AdminUser1.
+
+What should you do from the user account properties?
+1. From the Licenses blade, assign a new license
+2. From the Directory role blade, modify the directory role
+3. From the Groups blade, invite the user account to a new group
+
+**Ans: 2. From the Directory role blade, modify the directory role**
+
+*select Active directory --> Users--> select the username --> Assigned roles --> click on +add Assignments --> select User administrator role*
+
+---
+
+**Q32.** You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com that contains 100 user accounts.
+You purchase 10 Azure AD Premium P2 licenses for the tenant.
+You need to ensure that 10 users can use all the Azure AD Premium features.
+
+What should you do?
+1. From the Licenses blade of Azure AD, assign a license
+2. From the Groups blade of each user, invite the users to a group
+3. From the Azure AD domain, add an enterprise application
+4. From the Directory role blade of each user, modify the directory role
+
+**Ans: 1. From the Licenses blade of Azure AD, assign a license**
+
+*Active Directory-> Manage Section > Choose Licenses -> All Products -> Select Azure Active Directory Premium P2 -> Then assign a user to it*
+
+---
+
+**Q33.** You have an Azure subscription named Subscription1 and an on-premises deployment of Microsoft System Center Service Manager.
+Subscription1 contains a virtual machine named VM1.
+You need to ensure that an alert is set in Service Manager when the amount of available memory on VM1 is below 10 percent.
+
+What should you do first?
+1. Create an automation runbook
+2. Deploy a function app
+3. Deploy the IT Service Management Connector (ITSM)
+4. Create a notification
+
+**Ans: 3. Deploy the IT Service Management Connector (ITSM)**
+
+**Explanation:** The IT Service Management Connector (ITSMC) allows you to connect Azure and a supported IT Service Management (ITSM) product/service, such as the
+Microsoft System Center Service Manager.
+With ITSMC, you can create work items in ITSM tool, based on your Azure alerts (metric alerts, Activity Log alerts and Log Analytics alerts).
+
+---
+
+**Q34.** You sign up for Azure Active Directory (Azure AD) Premium.
+You need to add a user named admin1@contoso.com as an administrator on all the computers that will be joined to the Azure AD domain.
+
+What should you configure in Azure AD?
+1. Device settings from the Devices blade
+2. Providers from the MFA Server blade
+3. User settings from the Users blade
+4. General settings from the Groups blade
+
+**Ans: 1. Device settings from the Devices blade**
+
+---
