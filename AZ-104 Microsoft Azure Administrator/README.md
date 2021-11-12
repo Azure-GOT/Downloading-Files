@@ -26,6 +26,77 @@ Which of the following should you use to create the virtual machine?
 
 ---
 
+**Q3.** Your company has a Microsoft Azure subscription.
+The company has datacenters in Los Angeles and New York.
+You are configuring the two datacenters as geo-clustered sites for site resiliency.
+You need to recommend an Azure storage redundancy option.
+You have the following data storage requirements:
+- Data must be stored on multiple nodes.
+- Data must be stored on nodes in separate geographic locations.
+- Data can be read from the secondary location as well as from the primary location. 
+
+Which of the following Azure stored redundancy options should you recommend?
+1. Geo-redundant storage
+2. Read-only geo-redundant storage
+3. Zone-redundant storage
+4. Locally redundant storage
+
+**Ans: 2. Read-only geo-redundant storage**
+
+**Explanation:** RA-GRS allows to have higher read availability for the storage account by providing read only access to the data replicated to the secondary location
+
+---
+
+**Q4.** Your company has three virtual machines (VMs) that are included in an availability set.
+You try to resize one of the VMs, which returns an allocation failure message.
+It is imperative that the VM is resized.
+
+Which of the following actions should you take?
+1. You should only stop one of the VMs.
+2. You should stop two of the VMs
+3. You should stop all three VMs
+4. You should remove the necessary VM from the availability set
+
+**Ans: 3. You should stop all three VMs**
+
+**Explanation:** The reason all VMs in the availability set must be stopped before performing the resize operation to a size that requires different hardware is that all running VMs in the availability set must be using the same physical hardware cluster. Therefore, if a change of physical hardware cluster is required to change the VM size then all VMs must be first stopped and then restarted one-by-one to a different physical hardware clusters
+
+---
+
+**Q5.** You have an Azure virtual machine (VM) that has a single data disk. You have been tasked with attaching this data disk to another Azure VM.
+You need to make sure that your strategy allows for the virtual machines to be offline for the least amount of time possible.
+
+Which of the following is the action you should take FIRST?
+1. Stop the VM that includes the data disk.
+2. Stop the VM that the data disk must be attached to
+3. Detach the data disk
+4. Delete the VM that includes the data disk
+
+**Ans: 3. Detach the data disk**
+
+**Explanation:** You can hot remove a data disk, but make sure nothing is actively using the disk before detaching it from the VM.
+
+---
+
+**Q.** Your company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.
+A colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.
+You want to review the ARM template that was used by Jon Ross.
+
+**Solution 1:** You access the Virtual Machine blade.
+
+**Ans: No**
+
+**Solution 2:** You access the Resource Group blade.
+
+**Ans: Yes**
+
+**Solution 3:** You access the Container blade.
+
+**Ans: No**
+
+
+
+
 **Q.** Your company has an Azure Active Directory (Azure AD) tenant named weyland.com that is configured for hybrid coexistence with the on-premises Active
 Directory domain.
 You have a server named DirSync1 that is configured as a DirSync server.
