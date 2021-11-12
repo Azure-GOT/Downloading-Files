@@ -309,3 +309,103 @@ You need to configure an Azure internal load balancer as a listener for the avai
 **Ans: Yes**
 
 ---
+
+**Q19.** Your company has two on-premises servers named SRV01 and SRV02. Developers have created an application that runs on SRV01. The application calls a service on SRV02 by IP address.
+You plan to migrate the application on Azure virtual machines (VMs). You have configured two VMs on a single subnet in an Azure virtual network.
+You need to configure the two VMs with static internal IP addresses.
+
+What should you do?
+1. Run the New-AzureRMVMConfig PowerShell cmdlet
+2. Run the Set-AzureSubnet PowerShell cmdlet
+3. Modify the VM properties in the Azure Management Portal
+4. Modify the IP properties in Windows Network and Sharing Center
+5. Run the Set-AzureStaticVNetIP PowerShell cmdlet
+
+**Ans: 5. Run the Set-AzureStaticVNetIP PowerShell cmdlet**
+
+---
+
+**Q20.** Your company has an Azure Active Directory (Azure AD) subscription.
+You need to deploy five virtual machines (VMs) to your company's virtual network subnet.
+The VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical.
+
+Which of the following is the least amount of **network interfaces** needed for this configuration?
+1. 5
+2. 10
+3. 20
+4. 40
+
+**Ans 1. 5**
+
+---
+
+**Q21.** Your company has an Azure Active Directory (Azure AD) subscription.
+You need to deploy five virtual machines (VMs) to your company's virtual network subnet.
+The VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical.
+
+Which of the following is the least amount of **security groups** needed for this configuration?
+1. 4
+2. 3
+3. 2
+4. 1
+
+**Ans: 4. 1**
+
+---
+
+**Q22.** Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.
+One of the VMs is backed up every day using Azure Backup Instant Restore.
+When the VM becomes infected with data encrypting ransomware, you decide to *recover the VM's files.*
+
+Which of the following is TRUE in this scenario?
+1. You can only recover the files to the infected VM
+2. You can recover the files to any VM within the companyג€™s subscription
+3. You can only recover the files to a new VM
+4. You will not be able to recover the files
+
+**Ans: You can only recover the files to the infected VM** (Not confirm)
+
+---
+
+**Q23.** Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.
+One of the VMs is backed up every day using Azure Backup Instant Restore.
+When the VM becomes infected with data encrypting ransomware, you are required to restore the VM.
+
+Which of the following actions should you take?
+1. You should restore the VM after deleting the infected VM
+2. You should restore the VM to any VM within the companyג€™s subscription
+3. You should restore the VM to a new Azure VM
+4. You should restore the VM to an on-premise Windows device
+
+**Ans: 3. You should restore the VM to a new Azure VM**
+
+---
+
+**Q24.** You administer a solution in Azure that is currently having performance issues.
+You need to find the cause of the performance issues pertaining to metrics on the Azure infrastructure.
+
+Which of the following is the tool you should use?
+1. Azure Traffic Analytics
+2. Azure Monitor
+3. Azure Activity Log
+4. Azure Advisor
+
+**Ans: 2. Azure Monitor**
+
+Metrics in Azure Monitor are stored in a time-series database which is optimized for analyzing time-stamped data. This makes metrics particularly suited for alerting and fast detection of issues.
+
+---
+
+**Q25.** Your company has an Azure subscription that includes a Recovery Services vault.
+You want to use Azure Backup to schedule a backup of your company's virtual machines (VMs) to the Recovery Services vault.
+
+Which of the following VMs can you back up?
+1. VMs that run Windows 10
+2. VMs that run Windows Server 2012 or higher
+3. VMs that have NOT been shut down
+4. VMs that run Debian 8.2+
+5. VMs that have been shut down
+
+**Ans: ALL**
+
+---
