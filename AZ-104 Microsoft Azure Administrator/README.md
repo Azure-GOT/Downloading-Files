@@ -409,3 +409,100 @@ Which of the following VMs can you back up?
 **Ans: ALL**
 
 ---
+
+**Q26.** You have an Azure subscription that contains the following users in an Azure Active Directory tenant named contoso.onmicrosoft.com   :
+| Name | Role | Scope |
+| -- | -- | -- |
+| User 1 | Global Administrator | Azure Active Directory |
+| User 2 | Global Administrator | Azure Active Directory |
+| User 3 | User Administrator | Azure Active Directory |
+| User 4 | Owner | Azure Subscription |
+
+User1 creates a new Azure Active Directory tenant named external.contoso.onmicrosoft.com.
+You need to create new user accounts in external.contoso.onmicrosoft.com.
+
+**Solution 1:** You instruct User3 to create the user accounts
+
+**Ans: Yes**
+
+*Only a global administrator can add users to the tenant*
+
+**Solution 2:** You instruct User4 to create the user accounts
+
+**Ans: No**
+
+**Solution 3:** You instruct User3 to create the user accounts
+
+**Ans: No**
+
+---
+
+**Q27.** You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant named contoso.com and an Azure Kubernetes Service (AKS) cluster named AKS1.
+An administrator reports that she is unable to grant access to AKS1 to the users in contoso.com.
+You need to ensure that access to AKS1 can be granted to the contoso.com users.
+
+What should you do first?
+1. From contoso.com, modify the Organization relationships settings
+2. From contoso.com, create an OAuth 2.0 authorization endpoint
+3. Recreate AKS1
+4. From AKS1, create a namespace
+
+**Ans: 2. From contoso.com, create an OAuth 2.0 authorization endpoint**
+
+---
+
+**Q28.** You have a Microsoft 365 tenant and an Azure Active Directory (Azure AD) tenant named contoso.com.
+You plan to grant three users named User1, User2, and User3 access to a temporary Microsoft SharePoint document library named Library1.
+You need to create groups for the users. The solution must ensure that the groups are deleted automatically after 180 days.
+
+Which two groups should you create?
+1. a Microsoft 365 group that uses the Assigned membership type
+2. a Security group that uses the Assigned membership type
+3. a Microsoft 365 group that uses the Dynamic User membership type
+4. a Security group that uses the Dynamic User membership type
+5. a Security group that uses the Dynamic Device membership type
+
+**Ans: 1. a Microsoft 365 group that uses the Assigned membership type, 3. a Microsoft 365 group that uses the Dynamic User membership type**
+
+*You can set expiration policy only for Office 365 groups in Azure Active Directory (Azure AD)*
+
+---
+
+**Q29.** You have an Azure subscription named AZPT1 that contains the resources shown in the following table:
+| Name | Type | 
+| -- | -- |
+| storage1 | Azure storage account |
+| VNET1 | Virtual network |
+| VM1 | Azure virtual machine |
+| VM1Managed | Managed disk for VM1 |
+| RVAULT1 | Recovery service vault for the site recovery of VM1 |
+
+You create a new Azure subscription named AZPT2.
+You need to identify which resources can be moved to AZPT2.
+
+Which resources should you identify?
+1. VM1, storage1, VNET1, and VM1Managed only
+2. VM1 and VM1Managed only
+3. VM1, storage1, VNET1, VM1Managed, and RVAULT1
+4. RVAULT1 only
+
+**Ans: 3. VM1, storage1, VNET1, VM1Managed, and RVAULT1**
+
+---
+
+**Q30.** You recently created a new Azure subscription that contains a user named Admin1.
+Admin1 attempts to deploy an Azure Marketplace resource by using an Azure Resource Manager template. Admin1 deploys the template by using Azure
+PowerShell and receives the following error message: `User failed validation to purchase resources. Error message: "Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal (http:// go.microsoft.com /fwlink/?LinkId=534873) and configure programmatic deployment for the Marketplace item or create it there for the first time."
+You need to ensure that Admin1 can deploy the Marketplace resource successfully.
+
+What should you do?
+1. From Azure PowerShell, run the Set-AzApiManagementSubscription cmdlet
+2. From the Azure portal, register the Microsoft.Marketplace resource provider
+3. From Azure PowerShell, run the Set-AzMarketplaceTerms cmdlet
+4. From the Azure portal, assign the Billing administrator role to Admin1
+
+**Ans: 3. From Azure PowerShell, run the Set-AzMarketplaceTerms cmdlet**
+
+---
+
+What should you do?
