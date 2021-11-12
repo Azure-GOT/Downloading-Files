@@ -126,7 +126,7 @@ Which of the following should you create to achieve your goal?
 
 ---
 
-**Q.** Your company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.
+**Q9.** Your company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.
 A colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.
 You want to review the ARM template that was used by Jon Ross.
 
@@ -144,7 +144,7 @@ You want to review the ARM template that was used by Jon Ross.
 
 ---
 
-**Q.** Your company has an Azure Active Directory (Azure AD) tenant named weyland.com that is configured for hybrid coexistence with the on-premises Active
+**Q10.** Your company has an Azure Active Directory (Azure AD) tenant named weyland.com that is configured for hybrid coexistence with the on-premises Active
 Directory domain.
 You have a server named DirSync1 that is configured as a DirSync server.
 You create a new user account in the on-premise Active Directory. You now need to replicate the user information to Azure AD immediately.
@@ -165,7 +165,7 @@ You create a new user account in the on-premise Active Directory. You now need t
 
 ---
 
-**Q.** Your company makes use of Multi-Factor Authentication for when users are not in the office. The Per Authentication option has been configured as the usage model.
+**Q11.** Your company makes use of Multi-Factor Authentication for when users are not in the office. The Per Authentication option has been configured as the usage model.
 After the acquisition of a smaller business and the addition of the new staff to Azure Active Directory (Azure AD) obtains a different company and adding the new employees to Azure Active Directory (Azure AD), you are informed that these employees should also make use of Multi-Factor Authentication.
 To achieve this, the Per Enabled User setting must be set for the usage model.
 
@@ -186,7 +186,7 @@ To achieve this, the Per Enabled User setting must be set for the usage model.
 ---
 
 
-**Q.** Consider the scenario: Your company has an Azure Active Directory (Azure AD) subscription.
+**Q12.** Consider the scenario: Your company has an Azure Active Directory (Azure AD) subscription.
 You want to implement an Azure AD conditional access policy.
 The policy must be configured to require members of the Global Administrators group to use Multi-Factor Authentication and an Azure AD-joined device when they connect to Azure AD from untrusted locations.
 
@@ -204,4 +204,108 @@ The policy must be configured to require members of the Global Administrators gr
 
 ---
 
-**Q.** 
+**Q13.** Your company has an Azure Active Directory (Azure AD) tenant that is configured for hybrid coexistence with the on-premises Active Directory domain.
+The on-premise virtual environment consists of virtual machines (VMs) running on Windows Server 2012 R2 Hyper-V host servers.
+You have created some PowerShell scripts to automate the configuration of newly created VMs. You plan to create several new VMs.
+You need a solution that ensures the scripts are run on the new VMs.
+
+Which of the following is the best solution?
+1. Configure a SetupComplete.cmd batch file in the %windir%\setup\scripts directory
+2. Configure a Group Policy Object (GPO) to run the scripts as logon scripts
+3. Configure a Group Policy Object (GPO) to run the scripts as startup scripts
+4. Place the scripts in a new virtual hard disk (VHD)
+
+**Ans: 1. Configure a SetupComplete.cmd batch file in the %windir%\setup\scripts directory**
+
+**Explanation:** After Windows is installed but before the logon screen appears, Windows Setup searches for the SetupComplete.cmd file in the %windir%\setup\scripts directory
+
+---
+
+**Q14.** Your company has an Azure Active Directory (Azure AD) tenant that is configured for hybrid coexistence with the on-premises Active Directory domain.
+You plan to deploy several new virtual machines (VMs) in Azure. The VMs will have the same operating system and custom software requirements.
+You configure a reference VM in the on-premise virtual environment. You then generalize the VM to create an image.
+You need to upload the image to Azure to ensure that it is available for selection when you create the new Azure VMs.
+
+Which PowerShell cmdlets should you use?
+1. Add-AzVM
+2. Add-AzVhd
+3. Add-AzImage
+4. Add-AzImageDataDisk
+
+**Ans: 2. Add-AzVhd**
+
+**Explanation:** The Add-AzVhd cmdlet uploads on-premises virtual hard disks, in .vhd file format, to a blob storage account as fixed virtual hard disks. 
+Example: *Add-AzVhd -ResourceGroupName $resourceGroup -Destination $urlOfUploadedImageVhd -LocalFilePath $localPath*
+
+---
+
+**Q15.** Your company has an Azure subscription that includes a number of Azure virtual machines (VMs), which are all part of the same virtual network.
+Your company also has an on-premises Hyper-V server that hosts a VM, named VM1, which must be replicated to Azure.
+
+Which of the following objects that must be created to achieve this goal?
+1. Hyper-V site
+2. Storage account
+3. Azure Recovery Service Vault
+4. Azure Traffic Manager instance
+5. Replication policy
+6. Endpoint
+
+**Ans: 1. Hyper-V site, 3. Azure Recovery Service Vault, 5. Replication policy**
+
+---
+
+**Q16.** Your company's Azure subscription includes two Azure networks named VirtualNetworkA and VirtualNetworkB.
+VirtualNetworkA includes a VPN gateway that is configured to make use of static routing. Also, a site-to-site VPN connection exists between your company's on- premises network and VirtualNetworkA.
+You have configured a point-to-site VPN connection to VirtualNetworkA from a workstation running Windows 10. After configuring virtual network peering between
+VirtualNetworkA and VirtualNetworkB, you confirm that you are able to access VirtualNetworkB from the company's on-premises network. However, you find that you cannot establish a connection to VirtualNetworkB from the Windows 10 workstation.
+You have to make sure that a connection to VirtualNetworkB can be established from the Windows 10 workstation.
+
+**Solution 1:** You choose the Allow gateway transit setting on VirtualNetworkA.
+
+**Ans: No**
+
+**Solution 1:** You choose the Allow gateway transit setting on VirtualNetworkB.
+
+**Ans: No**
+
+**Solution 3:** You download and re-install the VPN client configuration package on the Windows 10 workstation
+
+**Ans: Yes**
+
+**Explanation:** If you make a change to the topology of your network and have Windows VPN clients, the VPN client package for Windows clients must be downloaded and installed again in order for the changes to be applied to the client.
+
+---
+
+**Q17.** Your company has virtual machines (VMs) hosted in Microsoft Azure. The VMs are located in a single Azure virtual network named VNet1.
+The company has users that work remotely. The remote workers require access to the VMs on VNet1.
+You need to provide access for the remote workers.
+
+What should you do?
+1. Configure a Site-to-Site (S2S) VPN.
+2. Configure a VNet-toVNet VPN
+3. Configure a Point-to-Site (P2S) VPN
+4. Configure DirectAccess on a Windows Server 2012 server VM
+5. Configure a Multi-Site VPN
+
+**Ans: 3. Configure a Point-to-Site (P2S) VPN**
+
+**Explanation:** A Point-to-Site (P2S) VPN gateway connection lets you create a secure connection to your virtual network from an individual client computer.
+
+---
+
+**Q18.** Your company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).
+You need to configure an Azure internal load balancer as a listener for the availability group.
+
+**Solution 1:** You create an HTTP health probe on port 1433
+
+**Ans: No**
+
+**Solution 2:** You set Session persistence to Client IP
+
+**Ans: No**
+
+**Solution 3:** You enable Floating IP
+
+**Ans: Yes**
+
+---
