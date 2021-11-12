@@ -78,6 +78,54 @@ Which of the following is the action you should take FIRST?
 
 ---
 
+**Q6.** You need to deploy a number of Azure virtual machines (VMs) using Azure Resource Manager (ARM) templates. You have been informed that the VMs will be included in a single availability set.
+You are required to make sure that the ARM template you configure allows for as many VMs as possible to remain accessible in the event of fabric failure or maintenance.
+
+Which of the following is the value that you should configure for the platformFaultDomainCount property?
+1. 10
+2. 30
+3. Min Value
+4. Max Value
+
+**Ans: 4. Max Value**
+
+**Explanation:** The number of fault domains for managed availability sets varies by region - either two or three per region.
+
+---
+
+**Q7.** You need to deploy a number of Azure virtual machines (VMs) using Azure Resource Manager (ARM) templates. You have been informed that the VMs will be included in a single availability set.
+You are required to make sure that the ARM template you configure allows for as many VMs as possible to remain accessible in the event of fabric failure or maintenance.
+
+Which of the following is the value that you should configure for the platformUpdateDomainCount property?
+1. 10
+2. 20
+3. 30
+4. 40
+
+**Ans: 2. 20**
+
+**Explanation:** Each availability set can be configured with up to three fault domains and twenty update domains.
+
+---
+
+**Q8.** You have downloaded an Azure Resource Manager (ARM) template to deploy numerous virtual machines (VMs). The ARM template is based on a current VM, but must be adapted to reference an administrative password.
+You need to make sure that the password cannot be stored in plain text.
+You are preparing to create the necessary components to achieve your goal.
+
+Which of the following should you create to achieve your goal?
+1. An Azure Key Vault
+2. Az Azure storage account
+3. Azure Active Directory(AD) Identity protection
+4. An Access policy
+5. Az Azure policy
+6. A backup policy
+
+**Ans: 1. An Azure Key Vault, 4. An Access policy
+
+**Explanation:** Key Vault will store your KV pairs and you need to configure the access policy to determine the level of access that a service principal (ARM template will use) can perform against the key vault.
+
+---
+
 **Q.** Your company has an azure subscription that includes a storage account, a resource group, a blob container and a file share.
 A colleague named Jon Ross makes use of a solitary Azure Resource Manager (ARM) template to deploy a virtual machine and an additional Azure Storage account.
 You want to review the ARM template that was used by Jon Ross.
@@ -94,8 +142,7 @@ You want to review the ARM template that was used by Jon Ross.
 
 **Ans: No**
 
-
-
+---
 
 **Q.** Your company has an Azure Active Directory (Azure AD) tenant named weyland.com that is configured for hybrid coexistence with the on-premises Active
 Directory domain.
