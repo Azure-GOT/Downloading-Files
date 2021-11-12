@@ -720,7 +720,7 @@ Which blade should you use?
 **Q43.** You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com.
 The User administrator role is assigned to a user named Admin1.
 An external partner has a Microsoft account that uses the user1@outlook.com sign in.
-Admin1 attempts to invite the external partner to sign in to the Azure AD tenant and receives the following error message: `Unable to invite user user1@outlook.com `" Generic authorization exception.`
+Admin1 attempts to invite the external partner to sign in to the Azure AD tenant and receives the following error message: 'Unable to invite user user1@outlook.com' " Generic authorization exception.`
 You need to ensure that Admin1 can invite the external partner to sign in to the Azure AD tenant.
 
 What should you do?
