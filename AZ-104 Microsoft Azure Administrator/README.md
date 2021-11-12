@@ -566,3 +566,87 @@ What should you configure in Azure AD?
 **Ans: 1. Device settings from the Devices blade**
 
 ---
+
+**Q35.** You have an Azure subscription that contains a resource group named RG26.
+RG26 is set to the West Europe location and is used to create temporary resources for a project. RG26 contains the resources shown in the following table:
+
+| Name | Type | Location |
+| -- | -- | -- |
+| VM1 |Virtual Machine | North Europe |
+| RGV1 |Recovery Service Vault | North Europe |
+| SQLD01 |SQL server in Azure VM | North Europe |
+| sa001 |Storage account | West Europe |
+
+SQLDB01 is backed up to RGV1.
+When the project is complete, you attempt to delete RG26 from the Azure portal. The deletion fails.
+You need to delete RG26.
+
+What should you do first?
+1. Delete VM1
+2. Stop VM1
+3. Stop the backup of SQLDB01
+4. Delete sa001
+
+**Ans: 3. Stop the backup of SQLDB01**
+
+---
+
+**Q36.** You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.
+Subscription1 has a user named User1. User1 has the following roles:
+- Reader
+- Security Admin
+- Security Reader
+You need to ensure that User1 can assign the Reader role for VNet1 to other users.
+
+What should you do?
+1. Remove User1 from the Security Reader and Reader roles for Subscription1
+2. Assign User1 the User Access Administrator role for VNet1
+3. Assign User1 the Network Contributor role for VNet1
+4. Assign User1 the Network Contributor role for RG1
+
+**Ans: 2. Assign User1 the User Access Administrator role for VNet1**
+
+*Has full access to all resources including the right to delegate access to others*
+
+---
+
+**Q37.** You have an Azure Active Directory (Azure AD) tenant named contosocloud.onmicrosoft.com.
+Your company has a public DNS zone for contoso.com.
+You add contoso.com as a custom domain name to Azure AD.
+You need to ensure that Azure can verify the domain name.
+
+Which type of DNS record should you create?
+1. MX
+2. NSEC
+3. PTR
+4. RRSIG
+
+**Ans: MX**
+
+*When you add a custom domain in azure you are not allowed to use that unless you prove its your domain. So once you add the custom domain name azure asks you to verify and you have to provide some inputs to verify that its your's. These inputs can be provided in TXT or MX, so its MX in this case*
+
+---
+
+**Q38.** You have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers.
+Subscription1 contains a resource group named Dev.
+You need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.
+
+**Solution 1:** On Subscription1, you assign the DevTest Labs User role to the Developers group
+
+**Ans: No**
+
+*DevTest Labs User role only lets you connect, start, restart, and shutdown virtual machines in your Azure DevTest Labs*
+
+**Solution 2:** On Subscription1, you assign the Logic App Operator role to the Developers group
+
+**Ans: No**
+
+**Solution 3:** On Dev, you assign the Contributor role to the Developers group
+
+**Ans: Yes**
+
+*The Contributor role can manage all resources (and add resources) in a Resource Group.*
+
+---
+
+**Q39.** 
