@@ -785,3 +785,43 @@ What should you do?
 **Ans: 1. Create an NS record named research in the adatum.com zone.**
 
 ---
+
+**Q48.** You have an Azure subscription named Subscription1 that contains an Azure Log Analytics workspace named Workspace1.
+You need to view the error events from a table named Event.
+
+Which query should you run in Workspace1?
+1. Get-Event Event | where {$_.EventType == "error"}
+2. Event | search "error"
+3. select * from Event where EventType == "error"
+4. Event | where EventType is "error"
+
+**Ans: 2. Event | search "error"**
+
+---
+
+**Q49.** You have a registered DNS domain named contoso.com.
+You create a public Azure DNS zone named contoso.com.
+You need to ensure that records created in the contoso.com zone are resolvable from the internet.
+
+What should you do?
+1. Create NS records in contoso.com
+2. Modify the SOA record in the DNS domain registrar
+3. Create the SOA record in contoso.com
+4. Modify the NS records in the DNS domain registrar
+
+**Ans: 4. Modify the NS records in the DNS domain registrar**
+
+---
+
+**Q50.** You have an Azure Storage account named storage1 that contains a blob container named container1.
+You need to prevent new content added to container1 from being modified for one year.
+
+What should you configure?
+1. the access tier
+2. an access policy
+3. the Access control (IAM) settings
+4. the access level
+
+**Ans: 2. an access policy**
+
+---
