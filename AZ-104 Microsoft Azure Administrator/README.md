@@ -880,6 +880,7 @@ What should you identify?
 - Standard General Purpose v2 storage accounts (recommended for most scenarios)
 - Blob Storage accounts
 - General Purpose v1 storage accounts (both Classic or Azure Resource Manager deployments),
+
 Azure Import/Export service supports the following storage types:
 - Import supports Azure Blob storage and Azure File storage
 - Export supports Azure Blob storage
