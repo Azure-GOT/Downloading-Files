@@ -758,3 +758,30 @@ Which role-based access control (RBAC) role should you assign to User1?
 **Ans: 3. Contributor**
 
 ---
+
+**Q46.** You have an Azure subscription named Subscription1 that contains an Azure virtual machine named VM1. VM1 is in a resource group named RG1.
+VM1 runs services that will be used to deploy resources to RG1.
+You need to ensure that a service running on VM1 can manage the resources in RG1 by using the identity of VM1.
+
+What should you do first?
+1. From the Azure portal, modify the Managed Identity settings of VM1
+2. From the Azure portal, modify the Access control (IAM) settings of RG1
+3. From the Azure portal, modify the Access control (IAM) settings of VM1
+4. From the Azure portal, modify the Policies settings of RG1
+
+**Ans: 1. From the Azure portal, modify the Managed Identity settings of VM1**
+
+---
+
+**Q47.** You have an Azure DNS zone named adatum.com.
+You need to delegate a subdomain named research.adatum.com to a different DNS server in Azure.
+
+What should you do?
+1. Create an NS record named research in the adatum.com zone.
+2. Create a PTR record named research in the adatum.com zone.
+3. Modify the SOA record of adatum.com.
+4. Create an A record named *.research in the adatum.com zone.
+
+**Ans: 1. Create an NS record named research in the adatum.com zone.**
+
+---
