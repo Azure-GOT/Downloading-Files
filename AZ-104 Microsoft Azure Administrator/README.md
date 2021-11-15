@@ -825,3 +825,86 @@ What should you configure?
 **Ans: 2. an access policy**
 
 ---
+
+**Q51.** You have an on-premises server that contains a folder named D:\Folder1.
+You need to copy the contents of D:\Folder1 to the public container in an Azure Storage account named contosodata.
+
+Which command should you run?
+1. https://contosodata.blob.core.windows.net/public
+2. azcopy sync D:\folder1 https://contosodata.blob.core.windows.net/public --snapshot
+3. azcopy copy D:\folder1 https://contosodata.blob.core.windows.net/public --recursive
+4. az storage blob copy start-batch D:\Folder1 https://contosodata.blob.core.windows.net/public
+
+**Ans: 3. azcopy copy D:\folder1 https://contosodata.blob.core.windows.net/public --recursive**
+
+---
+
+**Q52.** You have an Azure subscription.
+In the Azure portal, you plan to create a storage account named storage1 that will have the following settings:
+- Performance: Standard
+- Replication: Zone-redundant storage (ZRS)
+- Access tier (default): Cool
+- Hierarchical namespace: Disabled
+You need to ensure that you can set Account kind for storage1 to BlockBlobStorage.
+
+Which setting should you modify first?
+1. Performance
+2. Replication
+3. Access tier (default)
+4. Hierarchical namespace
+
+**Ans: 1. Performance**
+
+---
+
+**Q53.** You have an Azure subscription named Subscription1 that contains the storage accounts shown in the following table:
+| Name | Account kind | Azure services that contain data |
+| -- | -- | -- |
+| storage1 | Storage | File |
+| storage2 | StorageV2 (general purpose v2) | File, Table |
+| storage3 | Storage (general purpose v2)| Queue |
+| storage4 | BlobStorage | Blob |
+
+You plan to use the Azure Import/Export service to export data from Subscription1.
+You need to identify which storage account can be used to export the data.
+
+What should you identify?
+1. storage1
+2. storage2
+3. storage3
+4. storage4
+
+**Ans: 4. storage4**
+
+**Explanation:** Azure Import/Export service supports the following of storage accounts:
+- Standard General Purpose v2 storage accounts (recommended for most scenarios)
+- Blob Storage accounts
+- General Purpose v1 storage accounts (both Classic or Azure Resource Manager deployments),
+Azure Import/Export service supports the following storage types:
+- Import supports Azure Blob storage and Azure File storage
+- Export supports Azure Blob storage
+
+---
+
+**Q54.** You have Azure subscription that includes data in following locations:
+| Name | Type |
+| -- | -- |
+| container1 | Blob container |
+| share1 | Azure file share|
+| DB1 | SQL database|
+| Table1 | Azure table |
+
+You plan to export data by using Azure import/export job named Export1.
+You need to identify the data that can be exported by using Export1.
+
+Which data should you identify?
+1. DB1
+2. container1
+3. share1
+4. Table1
+
+**Ans: 2. container1**
+
+---
+
+**Q55.** 
