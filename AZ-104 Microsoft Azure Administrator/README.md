@@ -907,4 +907,51 @@ Which data should you identify?
 
 ---
 
-**Q55.** 
+**Q55.** You have an Azure subscription that contains the resources in the following table:
+| Name | Type |
+| -- | -- |
+| RG1 | Resource group |
+| store1 | Azure storage account |
+| Sync1 | Azure File  Sync |
+
+Store1 contains a file share named data. Data contains 5,000 files.
+You need to synchronize the files in the file share named data to an on-premises server named Server1.
+
+Which three actions should you perform?
+1. Create a container instance
+2. Register Server1
+3. Install the Azure File Sync agent on Server1
+4. Download an automation script
+5. Create a sync group
+
+**Ans: 2. Register Server1, 3. Install the Azure File Sync agent on Server1, 5. Create a sync group**
+
+---
+
+**Q56.** You plan to use the Azure Import/Export service to copy files to a storage account.
+
+Which two files should you create before you prepare the drives for the import job?
+1. an XML manifest file
+2. a dataset CSV file
+3. a JSON configuration file
+4. a PowerShell PS1 file
+5. a driveset CSV file
+
+**Ans: 2. a dataset CSV file, 5. a driveset CSV file**
+
+---
+
+**Q57.** You have a Recovery Service vault that you use to test backups. The test backups contain two protected virtual machines.
+You need to delete the Recovery Services vault.
+
+What should you do first?
+1. From the Recovery Service vault, delete the backup data
+2. Modify the disaster recovery properties of each virtual machine
+3. Modify the locks of each virtual machine
+4. From the Recovery Service vault, stop the backup of each backup item
+
+**Ans:  4. From the Recovery Service vault, stop the backup of each backup item** 
+
+*You can't delete a Recovery Services vault if it is registered to a server and holds backup data. If you try to delete a vault, but can't, the vault is still configured to receive backup data. Remove vault dependencies and delete vault*
+
+---
