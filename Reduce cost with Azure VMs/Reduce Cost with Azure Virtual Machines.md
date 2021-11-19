@@ -41,11 +41,10 @@ We will consider some situations for which we can reduce the cost associate to A
 - Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
 - Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory utilization is less than 25, Free Disk Space is 80% of Total Disk Space*
 
-- Log data for last **7 Days** of Virual Machine Performance. 
-- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 7 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25. 
-- In the Memory part, *% Committed Bytes In Use* is for Windows and *% Used Memory* is for Linux
+### Log data for last **7 Days** of Virual Machine Performance. 
 
-- Where Maximum CPU utilization is less than 25
+- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average and maximum CPU utilization from last 7 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
+
 
         Perf
         | where TimeGenerated > ago(7d)
@@ -53,7 +52,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
-- Where Maximum Memory utilization is less than 25
+ 
+ - We are providing the minimum, average, maximum Memory utilization from last 7 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
         Perf
         | where TimeGenerated > ago(7d)
@@ -79,11 +79,10 @@ We will consider some situations for which we can reduce the cost associate to A
 
 <img src="Images/Log-Query-7days.png">
 
-- Log data for last **15 Days** of Virual Machine Performance.
-- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 15 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
-- In the Memory part, *% Committed Bytes In Use* is for Windows and *% Used Memory* is for Linux
+### Log data for last **15 Days** of Virual Machine Performance.
 
-  - Maximum CPU utilization is less than 25
+- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average and maximum CPU utilization from last 15 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
+
   
         Perf
         | where TimeGenerated > ago(15d)
@@ -91,7 +90,7 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
-- Where Maximum Memory utilization is less than 25
+ - We are providing the minimum, average, maximum Memory utilization from last 15 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
         Perf
         | where TimeGenerated > ago(15d)
@@ -117,11 +116,10 @@ We will consider some situations for which we can reduce the cost associate to A
 
 <img src="Images/Log-Query-15days.png">
 
-- Log data for last **30 Days** of Virual Machine Performance.
-- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 30 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
-- In the Memory part, *% Committed Bytes In Use* is for Windows and *% Used Memory* is for Linux
+### Log data for last **30 Days** of Virual Machine Performance.
 
-  - Maximum CPU utilization is less than 25
+- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average and maximum CPU utilization from last 30 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
+
 
         Perf
         | where TimeGenerated > ago(30d)
@@ -129,7 +127,7 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
-- Where Maximum Memory utilization is less than 25
+ - We are providing the minimum, average, maximum Memory utilization from last 30 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
         Perf
         | where TimeGenerated > ago(30d)
