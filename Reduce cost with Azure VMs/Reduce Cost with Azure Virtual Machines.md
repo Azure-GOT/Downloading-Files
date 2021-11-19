@@ -40,7 +40,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
 - Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory utilization is less than 25, Free Disk Space is 80% of Total Disk Space*
-
+> Note: This is for Windows Virtual Machines
 ### Log data for last **7 Days** of Virual Machine Performance. 
 
 - Here the **Perf** is the performance of hardware components operating systems and applications. The ObjectName is the Name of the performance object, CounterName is the Name of the performance counter and InstanceName is the Name of the event instance.
