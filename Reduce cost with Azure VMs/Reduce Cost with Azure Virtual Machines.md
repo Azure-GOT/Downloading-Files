@@ -41,5 +41,112 @@ We will consider some situations for which we can reduce the cost associate to A
 - Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
 - Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory is less than 25, Free Disk Space is 80% of Total Disk Space*
 
+- Log data for last **7 Days**
+  
+  - Where Maximum CPU utilization is less than 25
+
+`Perf
+| where TimeGenerated > ago(7d)
+| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+| where MAX_CPU < 25`
+
+- Where Maximum Memory is less than 25
+
+`Perf
+| where TimeGenerated > ago(7d)
+| where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+| summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+| where MAX_MEM < 25`
+
+- Combination of Maximum CPU utilization and Maximum Memory
+
+`Perf
+| where TimeGenerated > ago(7d)
+| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+| where MAX_CPU < 40
+| join
+(
+    Perf
+    | where TimeGenerated > ago(7d)
+    | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+    | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+    | where MAX_MEM < 40
+) on Computer`
+
+
+- Log data for last **15 Days**
+
+  - Maximum CPU utilization is less than 25
+  
+`Perf
+| where TimeGenerated > ago(15d)
+| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+| where MAX_CPU < 25`
+
+- Where Maximum Memory is less than 25
+
+`Perf
+| where TimeGenerated > ago(15d)
+| where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+| summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+| where MAX_MEM < 25`
+
+- Combination of Maximum CPU utilization and Maximum Memory
+
+`Perf
+| where TimeGenerated > ago(15d)
+| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+| where MAX_CPU < 40
+| join
+(
+    Perf
+    | where TimeGenerated > ago(15d)
+    | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+    | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+    | where MAX_MEM < 40
+) on Computer`
+
+
+- Log data for last **30 Days**
+  
+  - Maximum CPU utilization is less than 25
+
+`Perf
+| where TimeGenerated > ago(30d)
+| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+| where MAX_CPU < 25`
+
+- Where Maximum Memory is less than 25
+
+`Perf
+| where TimeGenerated > ago(30d)
+| where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+| summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+| where MAX_MEM < 25`
+
+- Combination of Maximum CPU utilization and Maximum Memory
+
+`Perf
+| where TimeGenerated > ago(30d)
+| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+| where MAX_CPU < 40
+| join
+(
+    Perf
+    | where TimeGenerated > ago(30d)
+    | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+    | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+    | where MAX_MEM < 40
+) on Computer`
+
+- Free Disk Space is 80% of Total Disk Space
+
 ## Step 4: Resize the Virtual Machine
-- 
+
+
