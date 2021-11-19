@@ -1,16 +1,3 @@
-<h1> Query </h1>
-
-    Perf
-    | where TimeGenerated > ago(7d)
-    | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-    | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-    | where MAX_CPU < 25
-
-<pre>
-  Perf  | where TimeGenerated > ago(7d)  | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"  | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer  | where MAX_CPU < 25
-</pre>
-  
-
 # Reduce Cost with Azure Virtual Machine
 
 VM insights monitors the performance and health of the virtual machines, including their running processes and dependencies on other resources. This could be helpful in determining the ways to reduce the cost of Virtual Machines.
@@ -52,110 +39,111 @@ We will consider some situations for which we can reduce the cost associate to A
 ## Step 3: Perform some Log Queries
 
 - Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
-- Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory is less than 25, Free Disk Space is 80% of Total Disk Space*
+- Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory utilization is less than 25, Free Disk Space is 80% of Total Disk Space*
 
-- Log data for last **7 Days**
+- Log data for last **7 Days** of Virual Machine Performance. 
+- Here the **Perf** is the performance of hardware components operating systems and applications
 - Where Maximum CPU utilization is less than 25
 
-  Perf
-  | where TimeGenerated > ago(7d)
-  | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-  | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-  | where MAX_CPU < 25
+        Perf
+        | where TimeGenerated > ago(7d)
+        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+        | where MAX_CPU < 25
 
-- Where Maximum Memory is less than 25
+- Where Maximum Memory utilization is less than 25
 
-`Perf
-| where TimeGenerated > ago(7d)
-| where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
-| summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-| where MAX_MEM < 25`
+        Perf
+        | where TimeGenerated > ago(7d)
+        | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+        | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+        | where MAX_MEM < 25
 
-- Combination of Maximum CPU utilization and Maximum Memory
+- Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
-`Perf
-| where TimeGenerated > ago(7d)
-| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-| where MAX_CPU < 40
-| join
-(
-    Perf
-    | where TimeGenerated > ago(7d)
-    | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
-    | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-    | where MAX_MEM < 40
-) on Computer`
+        Perf
+        | where TimeGenerated > ago(7d)
+        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+        | where MAX_CPU < 40
+        | join
+        (
+            Perf
+            | where TimeGenerated > ago(7d)
+            | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+            | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+            | where MAX_MEM < 40
+        ) on Computer
 
 
 - Log data for last **15 Days**
 
   - Maximum CPU utilization is less than 25
   
-`Perf
-| where TimeGenerated > ago(15d)
-| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-| where MAX_CPU < 25`
+        Perf
+        | where TimeGenerated > ago(15d)
+        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+        | where MAX_CPU < 25
 
-- Where Maximum Memory is less than 25
+- Where Maximum Memory utilization is less than 25
 
-`Perf
-| where TimeGenerated > ago(15d)
-| where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
-| summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-| where MAX_MEM < 25`
+        Perf
+        | where TimeGenerated > ago(15d)
+        | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+        | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+        | where MAX_MEM < 25
 
-- Combination of Maximum CPU utilization and Maximum Memory
+- Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
-`Perf
-| where TimeGenerated > ago(15d)
-| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-| where MAX_CPU < 40
-| join
-(
-    Perf
-    | where TimeGenerated > ago(15d)
-    | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
-    | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-    | where MAX_MEM < 40
-) on Computer`
+        Perf
+        | where TimeGenerated > ago(15d)
+        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+        | where MAX_CPU < 40
+        | join
+        (
+            Perf
+            | where TimeGenerated > ago(15d)
+            | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+            | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+            | where MAX_MEM < 40
+        ) on Computer
 
 
 - Log data for last **30 Days**
   
   - Maximum CPU utilization is less than 25
 
-`Perf
-| where TimeGenerated > ago(30d)
-| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-| where MAX_CPU < 25`
+        Perf
+        | where TimeGenerated > ago(30d)
+        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+        | where MAX_CPU < 25
 
-- Where Maximum Memory is less than 25
+- Where Maximum Memory utilization is less than 25
 
-`Perf
-| where TimeGenerated > ago(30d)
-| where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
-| summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-| where MAX_MEM < 25`
+        Perf
+        | where TimeGenerated > ago(30d)
+        | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+        | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+        | where MAX_MEM < 25
 
-- Combination of Maximum CPU utilization and Maximum Memory
+- Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
-`Perf
-| where TimeGenerated > ago(30d)
-| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-| where MAX_CPU < 40
-| join
-(
-    Perf
-    | where TimeGenerated > ago(30d)
-    | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
-    | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-    | where MAX_MEM < 40
-) on Computer`
+        Perf
+        | where TimeGenerated > ago(30d)
+        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+        | where MAX_CPU < 40
+        | join
+        (
+            Perf
+            | where TimeGenerated > ago(30d)
+            | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+            | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+            | where MAX_MEM < 40
+        ) on Computer
 
 - Free Disk Space is 80% of Total Disk Space
 
@@ -167,3 +155,15 @@ We will consider some situations for which we can reduce the cost associate to A
 - Select the size of the Virtual Machine, which has less number of vCPUs, RAM so the cost should be less compared to others.
 > Note: If the virtual machine is in running state, changing the size will cause it to be restarted.
 - Click on **Resize**, once you selected the desired size for virtual machine
+
+## Step 5: Adding the data to Dashboard
+
+- To visualize the all collected data in one place, we can create one dashboard for that.
+- On the left corner side of the Azure portal, click on the Menu option and select **Dashboard**
+- Click on the **+ New dashboard** from the top menu and select Blank dashboard.
+- Give the new name of dashboard and click on Done customizing.
+- When you perform any operation in the portal there is an option **Pin to dashboard**. Simply click on that
+- Select the existing Dashboard available or create the new one from here.
+- After that click on **Pin**, the data then will be available on the dashboard.
+
+
