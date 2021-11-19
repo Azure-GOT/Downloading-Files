@@ -43,7 +43,9 @@ We will consider some situations for which we can reduce the cost associate to A
 
 ### Log data for last **7 Days** of Virual Machine Performance. 
 
-- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average and maximum CPU utilization from last 7 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
+- Here the **Perf** is the performance of hardware components operating systems and applications. The ObjectName is the Name of the performance object, CounterName is the Name of the performance counter and InstanceName is the Name of the event instance.
+- Here we are using the ObjectName as *Processor*: The Processor Object in the perfomance counter gives us details on how our processor that is driving our computer is being used and CounterName as *% Processor Time*: % Processor time is the percentage measure of how much time the processor spends on any particular process
+- We are providing the minimum, average and maximum CPU utilization from last 7 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
 
 
         Perf
@@ -52,8 +54,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
- 
- - We are providing the minimum, average, maximum Memory utilization from last 7 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
+- Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit 
+- We are providing the minimum, average, maximum Memory utilization from last 7 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
         Perf
         | where TimeGenerated > ago(7d)
@@ -81,7 +83,9 @@ We will consider some situations for which we can reduce the cost associate to A
 
 ### Log data for last **15 Days** of Virual Machine Performance.
 
-- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average and maximum CPU utilization from last 15 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
+- Here the **Perf** is the performance of hardware components operating systems and applications. The ObjectName is the Name of the performance object, CounterName is the Name of the performance counter and InstanceName is the Name of the event instance.
+- Here we are using the ObjectName as *Processor*: The Processor Object in the perfomance counter gives us details on how our processor that is driving our computer is being used and CounterName as *% Processor Time*: % Processor time is the percentage measure of how much time the processor spends on any particular process
+- We are providing the minimum, average and maximum CPU utilization from last 15 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
 
   
         Perf
@@ -90,7 +94,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
- - We are providing the minimum, average, maximum Memory utilization from last 15 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
+- Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
+- We are providing the minimum, average, maximum Memory utilization from last 15 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
         Perf
         | where TimeGenerated > ago(15d)
@@ -118,7 +123,9 @@ We will consider some situations for which we can reduce the cost associate to A
 
 ### Log data for last **30 Days** of Virual Machine Performance.
 
-- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average and maximum CPU utilization from last 30 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
+- Here the **Perf** is the performance of hardware components operating systems and applications. The ObjectName is the Name of the performance object, CounterName is the Name of the performance counter and InstanceName is the Name of the event instance.
+- Here we are using the ObjectName as *Processor*: The Processor Object in the perfomance counter gives us details on how our processor that is driving our computer is being used and CounterName as *% Processor Time*: % Processor time is the percentage measure of how much time the processor spends on any particular process
+- We are providing the minimum, average and maximum CPU utilization from last 30 days and Based on that we are filtering the result where the maximum CPU utilization is less than 25 percentage.
 
 
         Perf
@@ -127,6 +134,7 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
+- Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
  - We are providing the minimum, average, maximum Memory utilization from last 30 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
         Perf
