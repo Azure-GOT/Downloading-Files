@@ -59,7 +59,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
         Perf
         | where TimeGenerated > ago(7d)
-        | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+        | where CounterName == "% Committed Bytes In Use" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
 
@@ -74,7 +74,7 @@ We will consider some situations for which we can reduce the cost associate to A
         (
             Perf
             | where TimeGenerated > ago(7d)
-            | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+            | where CounterName == "% Committed Bytes In Use" 
             | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
             | where MAX_MEM < 40
         ) on Computer
@@ -99,7 +99,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
         Perf
         | where TimeGenerated > ago(15d)
-        | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+        | where CounterName == "% Committed Bytes In Use" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
 
@@ -114,7 +114,7 @@ We will consider some situations for which we can reduce the cost associate to A
         (
             Perf
             | where TimeGenerated > ago(15d)
-            | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+            | where CounterName == "% Committed Bytes In Use" 
             | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
             | where MAX_MEM < 40
         ) on Computer
@@ -139,7 +139,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
         Perf
         | where TimeGenerated > ago(30d)
-        | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+        | where CounterName == "% Committed Bytes In Use" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
 
@@ -154,7 +154,7 @@ We will consider some situations for which we can reduce the cost associate to A
         (
             Perf
             | where TimeGenerated > ago(30d)
-            | where CounterName == "% Used Memory" or CounterName == "% Committed Bytes In Use" 
+            | where CounterName == "% Committed Bytes In Use" 
             | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
             | where MAX_MEM < 40
         ) on Computer
