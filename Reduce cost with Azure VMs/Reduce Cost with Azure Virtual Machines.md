@@ -7,11 +7,7 @@
     | where MAX_CPU < 25
 
 <pre>
-  Perf
-  | where TimeGenerated > ago(7d)
-  | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-  | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-  | where MAX_CPU < 25
+  Perf  | where TimeGenerated > ago(7d)  | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"  | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer  | where MAX_CPU < 25
 </pre>
   
 
