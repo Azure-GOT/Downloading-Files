@@ -45,11 +45,11 @@ We will consider some situations for which we can reduce the cost associate to A
   
   - Where Maximum CPU utilization is less than 25
 
-`Perf
-| where TimeGenerated > ago(7d)
-| where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-| summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-| where MAX_CPU < 25`
+    Perf
+    | where TimeGenerated > ago(7d)
+    | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+    | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+    | where MAX_CPU < 25
 
 - Where Maximum Memory is less than 25
 
