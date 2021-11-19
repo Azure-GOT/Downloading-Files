@@ -1,15 +1,13 @@
 # Reduce Cost with Azure Virtual Machine
 
-VM insights monitors the performance and health of your virtual machines, including their running processes and 
-dependencies on other resources. This could be helpful in determining the ways to reduce the cost of Virtual Machine
+VM insights monitors the performance and health of the virtual machines, including their running processes and dependencies on other resources. This could be helpful in determining the ways to reduce the cost of Virtual Machines.
 
 The cost of the virtual machine depends on various conditions:
 - The size of virtual machine
 - The region where the VM is deployed
 - The operating system of the VM
 
-We will consider some situations for which we can reduce the cost associate to Azure Virtual Machines. For that you should have
-Vitual Machines deployed in your subscription.
+We will consider some situations for which we can reduce the cost associate to Azure Virtual Machines. For that you should have Vitual Machines deployed in your subscription.
 
 ## Step 1: Create the dependent resources
 
@@ -32,7 +30,7 @@ Vitual Machines deployed in your subscription.
 ## Step 2: Connect the Virtual Machines to Log Analytics Workspace
 
 - Navigate to the previously created **Log Analytics Workspace**
-- Under **Workspace Data Sources** section select **Virtual Machines**
+- Under **Workspace Data Sources** section, select **Virtual Machines**
 - Search for the Virtual Machine in the Search tab, Open the Virtual Machine and then click on **Connect**
 - Now, under **Settings** section, click on **Agents configuration**
 - Go to **Windows performance counter** tab and click on **Add recommended counters**. Perform the same action on **Linux performance counter**
@@ -40,3 +38,8 @@ Vitual Machines deployed in your subscription.
 
 ## Step 3: Perform some Log Queries
 
+- Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
+- Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory is less than 25, Free Disk Space is 80% of Total Disk Space*
+
+## Step 4: Resize the Virtual Machine
+- 
