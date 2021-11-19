@@ -40,7 +40,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
 - Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory utilization is less than 25, Free Disk Space is 80% of Total Disk Space*
-> Note: This is for Windows Virtual Machines
+
 ### Log data for last **7 Days** of Virual Machine Performance. 
 
 - Here the **Perf** is the performance of hardware components operating systems and applications. The ObjectName is the Name of the performance object, CounterName is the Name of the performance counter and InstanceName is the Name of the event instance.
@@ -57,9 +57,17 @@ We will consider some situations for which we can reduce the cost associate to A
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit 
 - We are providing the minimum, average, maximum Memory utilization from last 7 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
+        For Windows:
         Perf
         | where TimeGenerated > ago(7d)
         | where CounterName == "% Committed Bytes In Use" 
+        | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+        | where MAX_MEM < 25
+        
+        For Linux:
+        Perf
+        | where TimeGenerated > ago(7d)
+        | where CounterName == "% Used Memory" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
 
@@ -97,9 +105,17 @@ We will consider some situations for which we can reduce the cost associate to A
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
 - We are providing the minimum, average, maximum Memory utilization from last 15 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
+        For Windows:
         Perf
         | where TimeGenerated > ago(15d)
         | where CounterName == "% Committed Bytes In Use" 
+        | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+        | where MAX_MEM < 25
+        
+        For Linux:
+        Perf
+        | where TimeGenerated > ago(15d)
+        | where CounterName == "% Used Memory" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
 
@@ -137,9 +153,17 @@ We will consider some situations for which we can reduce the cost associate to A
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
  - We are providing the minimum, average, maximum Memory utilization from last 30 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
+        For Windows:
         Perf
         | where TimeGenerated > ago(30d)
         | where CounterName == "% Committed Bytes In Use" 
+        | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+        | where MAX_MEM < 25
+        
+        For Linux:
+        Perf
+        | where TimeGenerated > ago(30d)
+        | where CounterName == "% Used Memory" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
 
