@@ -42,7 +42,8 @@ We will consider some situations for which we can reduce the cost associate to A
 - Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory utilization is less than 25, Free Disk Space is 80% of Total Disk Space*
 
 - Log data for last **7 Days** of Virual Machine Performance. 
-- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 7 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
+- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 7 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25. 
+- In the Memory part, *% Committed Bytes In Use* is for Windows and *% Used Memory* is for Linux
 
 - Where Maximum CPU utilization is less than 25
 
@@ -78,7 +79,8 @@ We will consider some situations for which we can reduce the cost associate to A
 
 
 - Log data for last **15 Days** of Virual Machine Performance.
-- - Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 15 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
+- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 15 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
+- In the Memory part, *% Committed Bytes In Use* is for Windows and *% Used Memory* is for Linux
 
   - Maximum CPU utilization is less than 25
   
@@ -114,8 +116,9 @@ We will consider some situations for which we can reduce the cost associate to A
 
 
 - Log data for last **30 Days** of Virual Machine Performance.
-- - Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 30 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
-  
+- Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 30 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
+- In the Memory part, *% Committed Bytes In Use* is for Windows and *% Used Memory* is for Linux
+
   - Maximum CPU utilization is less than 25
 
         Perf
@@ -159,14 +162,17 @@ We will consider some situations for which we can reduce the cost associate to A
 > Note: If the virtual machine is in running state, changing the size will cause it to be restarted.
 - Click on **Resize**, once you selected the desired size for virtual machine
 
-## Step 5: Create the Metrics chart from Azure Monitor
+## Step 5: Reduce the size of OS Disk
+
+## Step 6: Create the Metrics chart from Azure Monitor
 
 - To monitor the virtual machines individualy we can use Metrics chart
 - Navigate to the Azure monitor, click on **Metrics**
 - First it will ask for Select a scope, you can select only one resource here
 - After selecting the resource, select the required Metric and aggregation
+- You can pin this metric chart to dashboard by clicking **Pin to dashboard** from the top menu
 
-## Step 6: Adding the data to Dashboard
+## Step 7: Adding the data to Dashboard
 
 - To visualize the all collected data in one place, we can create one dashboard for that.
 - On the left corner side of the Azure portal, click on the Menu option and select **Dashboard**
@@ -176,7 +182,7 @@ We will consider some situations for which we can reduce the cost associate to A
 - Select the existing Dashboard available or create the new one from here.
 - After that click on **Pin**, the data then will be available on the dashboard.
 
-## Step 7: Add the alerts 
+## Step 8: Add the alerts 
 
 The users should get notification when some conditions met like when there is a resource which is not properly utilized for last some days, the cost can be reduced for such resouces.
 
