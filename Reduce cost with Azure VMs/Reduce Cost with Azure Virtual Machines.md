@@ -77,6 +77,7 @@ We will consider some situations for which we can reduce the cost associate to A
             | where MAX_MEM < 40
         ) on Computer
 
+<img src="Images/Log-Query-7days.png">
 
 - Log data for last **15 Days** of Virual Machine Performance.
 - Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 15 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
@@ -114,6 +115,7 @@ We will consider some situations for which we can reduce the cost associate to A
             | where MAX_MEM < 40
         ) on Computer
 
+<img src="Images/Log-Query-15days.png">
 
 - Log data for last **30 Days** of Virual Machine Performance.
 - Here the **Perf** is the performance of hardware components operating systems and applications. We are providing the minimum, average, maximum CPU utilization and minimum, average, maximum Memory utilization from last 30 days. Based on that we are filtering the result where the maximum CPU utilization is less than 25 and maximum Memory utilization is less than 25
@@ -150,6 +152,8 @@ We will consider some situations for which we can reduce the cost associate to A
             | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
             | where MAX_MEM < 40
         ) on Computer
+
+<img src="Images/Log-Query-30days.png">
 
 - Free Disk Space is 80% of Total Disk Space
 
