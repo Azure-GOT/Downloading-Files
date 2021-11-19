@@ -1,3 +1,11 @@
+  
+  
+  Perf
+  | where TimeGenerated > ago(7d)
+  | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+  | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+  | where MAX_CPU < 25
+
 # Reduce Cost with Azure Virtual Machine
 
 VM insights monitors the performance and health of the virtual machines, including their running processes and dependencies on other resources. This could be helpful in determining the ways to reduce the cost of Virtual Machines.
@@ -42,8 +50,7 @@ We will consider some situations for which we can reduce the cost associate to A
 - Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory is less than 25, Free Disk Space is 80% of Total Disk Space*
 
 - Log data for last **7 Days**
-  
-  - Where Maximum CPU utilization is less than 25
+- Where Maximum CPU utilization is less than 25
 
   Perf
   | where TimeGenerated > ago(7d)
