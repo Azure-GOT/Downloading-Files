@@ -54,6 +54,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
+<img src="Images/CPU utilization 7days.png">
+
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit 
 - We are providing the minimum, average, maximum Memory utilization from last 7 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
@@ -70,6 +72,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | where CounterName == "% Used Memory" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
+
+<img src="Images/Memory utilization 7days.png">
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
@@ -102,6 +106,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
+<img src="Images/CPU utilization 15days.png">
+
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
 - We are providing the minimum, average, maximum Memory utilization from last 15 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
@@ -118,6 +124,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | where CounterName == "% Used Memory" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
+
+<img src="Images/Memory utilization 15days.png">
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
@@ -150,6 +158,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
         | where MAX_CPU < 25
 
+<img src="Images/CPU utilization 30days.png">
+
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
  - We are providing the minimum, average, maximum Memory utilization from last 30 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
@@ -166,6 +176,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | where CounterName == "% Used Memory" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
+
+<img src="Images/Memory utilization 30days.png">
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
@@ -191,10 +203,12 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Navigate to the Virtual Machine that we found from the log queries
 - First **Stop** the Virtual Machine
+  <img src="Images/Stop the VM.png">
 - Under **Settings** section, go to **Size**
 - Select the size of the Virtual Machine, which has less number of vCPUs, RAM so the cost should be less compared to others.
 > Note: If the virtual machine is in running state, changing the size will cause it to be restarted.
 - Click on **Resize**, once you selected the desired size for virtual machine
+  <img src="Images/Resize VM.png">
 
 ## Step 5: Reduce the size of OS Disk
 
@@ -205,6 +219,7 @@ We will consider some situations for which we can reduce the cost associate to A
 - First it will ask for Select a scope, you can select only one resource here
 - After selecting the resource, select the required Metric and aggregation
 - You can pin this metric chart to dashboard by clicking **Pin to dashboard** from the top menu
+  <img src="Images/Metric chart of VM.png">
 
 ## Step 7: Adding the data to Dashboard
 
@@ -213,8 +228,10 @@ We will consider some situations for which we can reduce the cost associate to A
 - Click on the **+ New dashboard** from the top menu and select Blank dashboard.
 - Give the new name of dashboard and click on Done customizing.
 - When you perform any operation in the portal there is an option **Pin to dashboard**. Simply click on that
+  <img src="Images/Pin to dashboad.png">
 - Select the existing Dashboard available or create the new one from here.
 - After that click on **Pin**, the data then will be available on the dashboard.
+  <img src="Images/sample-dashboard.png">
 
 ## Step 8: Add the alerts 
 
