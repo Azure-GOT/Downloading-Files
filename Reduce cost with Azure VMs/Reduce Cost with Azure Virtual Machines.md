@@ -26,7 +26,7 @@ We will consider some situations for which we can reduce the cost associate to A
 - Give the **Tags** to the resource as per requirement.
 - Click on the **Review and Create** button. After validation passed **Create** the resource
 - Wait for the deployment to complete
-
+---
 ## Step 2: Connect the Virtual Machines to Log Analytics Workspace
 
 - Navigate to the previously created **Log Analytics Workspace**
@@ -35,7 +35,7 @@ We will consider some situations for which we can reduce the cost associate to A
 - Now, under **Settings** section, click on **Agents configuration**
 - Go to **Windows performance counter** tab and click on **Add recommended counters**. Perform the same action on **Linux performance counter**
 - Click on **Apply**
-
+---
 ## Step 3: Perform some Log Queries
 
 - Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
@@ -93,6 +93,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
 <img src="Images/Log-Query-7days.png">
 
+---
 ### Log data for last **15 Days** of Virual Machine Performance.
 
 - Here the **Perf** is the performance of hardware components operating systems and applications. The ObjectName is the Name of the performance object, CounterName is the Name of the performance counter and InstanceName is the Name of the event instance.
@@ -145,6 +146,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
 <img src="Images/Log-Query-15days.png">
 
+---
 ### Log data for last **30 Days** of Virual Machine Performance.
 
 - Here the **Perf** is the performance of hardware components operating systems and applications. The ObjectName is the Name of the performance object, CounterName is the Name of the performance counter and InstanceName is the Name of the event instance.
@@ -199,6 +201,7 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Free Disk Space is 80% of Total Disk Space
 
+---
 ## Step 4: Resize the Virtual Machine
 
 - Navigate to the Virtual Machine that we found from the log queries
@@ -210,8 +213,10 @@ We will consider some situations for which we can reduce the cost associate to A
 - Click on **Resize**, once you selected the desired size for virtual machine
   <img src="Images/Resize VM.png">
 
+---
 ## Step 5: Reduce the size of OS Disk
 
+---
 ## Step 6: Create the Metrics chart from Azure Monitor
 
 - To monitor the virtual machines individualy we can use Metrics chart
@@ -221,6 +226,7 @@ We will consider some situations for which we can reduce the cost associate to A
 - You can pin this metric chart to dashboard by clicking **Pin to dashboard** from the top menu
   <img src="Images/Metric chart of VM.png">
 
+---
 ## Step 7: Adding the data to Dashboard
 
 - To visualize the all collected data in one place, we can create one dashboard for that.
@@ -233,6 +239,7 @@ We will consider some situations for which we can reduce the cost associate to A
 - After that click on **Pin**, the data then will be available on the dashboard.
   <img src="Images/sample-dashboard.png">
 
+---
 ## Step 8: Add the alerts 
 
 The users should get notification when some conditions met like when there is a resource which is not properly utilized for last some days, the cost can be reduced for such resouces.
@@ -269,7 +276,9 @@ The users should get notification when some conditions met like when there is a 
 - Give the name of alert, it's resource group and severity. At last click on **Create alert rule**
 <img src="Images/Create alert rule final.png">
 
-Now the **Alert rule** has been added. In some scenario during planned maintenance, you want to suppress the notifications of the alert. Here we can use **Action rule**
+---
+
+- Now the **Alert rule** has been added. In some scenario during planned maintenance, you want to suppress the notifications of the alert. Here we can use **Action rule**
 
 - Go to the **Alerts** page on **Monitor** and click on **Action rules**. After that select **+ Create**
 <img src="Images/Create action rules.png">
