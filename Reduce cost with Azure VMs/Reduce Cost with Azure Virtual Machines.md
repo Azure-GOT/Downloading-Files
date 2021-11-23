@@ -39,7 +39,7 @@ We will consider some situations for which we can reduce the cost associate to A
 ## Step 3: Perform some Log Queries
 
 - Under **General** section, select **Logs**. Here you can type some Log Queries on which we can decide what action should be performed.
-- Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory utilization is less than 25, Free Disk Space is 80% of Total Disk Space*
+- Some scenarios we can consider such as *Maximum CPU utilization is less than 25, Maximum Memory utilization is less than 25, Free Disk Space is 90% of Total Disk Space*
 
 ### Log data for last **7 Days** of Virual Machine Performance. 
 
@@ -236,6 +236,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | project Computer, InstanceName, round(FreeDiskGB), TotalSizeGB, FreeDiskPercentage
         | where FreeDiskPercentage > 90
 
+<img src="Images/Free-disk-space-1.png">
+<img src="Images/Free-disk-space-2.png">
 
 ---
 ## Step 4: Resize the Virtual Machine
