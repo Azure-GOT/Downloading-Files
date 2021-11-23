@@ -211,9 +211,7 @@ We will consider some situations for which we can reduce the cost associate to A
         | summarize UsedMemory = (avg(CounterValue)) by bin(TimeGenerated, 1h), Computer, InstanceName
         | sort by TimeGenerated, Computer desc;
         //UsedMemory
-        let TotalMemory = FreeMemory | join UsedMemory on Computer, InstanceName
-        | project TimeGenerated, Computer, InstanceName, FreeMemory, UsedMemory
-        | extend TotalMemGB = toint((FreeMemory + (UsedMemory / 1024 / 1024)) / 1024);
+        let TotalMemory = FreeMemory | join UsedMemory on Computer, InstanceName;
         //TotalMemory
         let FreeMB = Perf
         | where CounterName == "Free Megabytes"
@@ -236,8 +234,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | project Computer, InstanceName, round(FreeDiskGB), TotalSizeGB, FreeDiskPercentage
         | where FreeDiskPercentage > 90
 
-<img src="Images/Free-disk-space-1.png">
-<img src="Images/Free-disk-space-2.png">
+
+
 
 ---
 ## Step 4: Resize the Virtual Machine
