@@ -240,3 +240,14 @@ The users should get notification when some conditions met like when there is a 
 - When writing the log queries there is an option for the **+ New alert rule** in the top menu. This will be based on that specific query.
 - Click on that, the condition should be already there define the logic in that condition
 - Now click on the **Add action group**, in that we can add the email address or SMS for the required user which will be notified 
+- The steps are shown below:
+
+<img src="Images/Create alert rule 1.png">
+<img src="Images/Configure signal logic.png">
+<img src="Images/Create alert rule 2.png">
+<img src="Images/Add action group.png">
+<img src="Images/Basic-tab-action-group.png">
+<img src="Images/Notification-tab-action-group.png">
+<img src="Images/Email-SMS-action-group.png">
+<img src="Images/Actions-tab-action-group.png">
+<img src="Images/Create alert rule final.png">
