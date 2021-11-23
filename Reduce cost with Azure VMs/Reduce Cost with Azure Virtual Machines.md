@@ -234,8 +234,8 @@ We will consider some situations for which we can reduce the cost associate to A
         | project Computer, InstanceName, round(FreeDiskGB), TotalSizeGB, FreeDiskPercentage
         | where FreeDiskPercentage > 90
 
-
-
+<img src="Images/Free-disk-space.png">
+<img src="Images/Free-disk-space-2.png">
 
 ---
 ## Step 4: Resize the Virtual Machine
