@@ -242,12 +242,19 @@ The users should get notification when some conditions met like when there is a 
 - Now click on the **Add action group**, in that we can add the email address or SMS for the required user which will be notified 
 - The steps are shown below:
 
+- Click on the condition so that you can define the logic behind that condition
 <img src="Images/Create alert rule 1.png">
+- After Defining the logic click on **Done**
 <img src="Images/Configure signal logic.png">
 <img src="Images/Create alert rule 2.png">
+- An action group is a collection of notification preferences defined in the Azure. To add the action group click on **Add action group**
 <img src="Images/Add action group.png">
+- Provide the basic details on the **Basics** tab
 <img src="Images/Basic-tab-action-group.png">
+- On the notification tab, select the notification type as **Email/SMS message/Push/Voice**
 <img src="Images/Notification-tab-action-group.png">
+- Enter the **Email** and **Phone number** of the user who you want to receive the notification when the alert is fired
 <img src="Images/Email-SMS-action-group.png">
+- You can add the actions on the **Actions** tab, 
 <img src="Images/Actions-tab-action-group.png">
 <img src="Images/Create alert rule final.png">
