@@ -333,6 +333,7 @@ Extra queries
               | summarize arg_max(TimeGenerated, *) by CounterPath // arg_max over TimeGenerated returns the latest record
               | project Drive=InstanceName, bin(FreePercent = CounterValue, 0.1), Computer)
                on Drive, Computer
+               | join kind=inner (Heartbeat | distinct  Computer,OSType) on Computer
           | extend TotalGB = toint((FreeGB*100)/FreePercent)
-          | project Computer, Drive, FreeGB,TotalGB, FreePercent
+          | project Computer,OSType, Drive, FreeGB,TotalGB, FreePercent
           | order by Computer asc
