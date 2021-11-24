@@ -286,19 +286,19 @@ Extra queries
     | join (Heartbeat | distinct Computer) on Computer
     | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
     
-    ---
+---
     
-      Perf
-  | where TimeGenerated > ago(7d)
-  | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-  | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-  | join (Heartbeat ) on Computer
-  | join
-      (
+    Perf
+    | where TimeGenerated > ago(7d)
+    | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+    | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+    | join (Heartbeat ) on Computer
+    | join
+    (
           Perf
           | where TimeGenerated > ago(7d)
           | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
           | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-  ) on Computer
-  | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-  | where MAX_CPU < 25 and MAX_MEM < 25
+    ) on Computer
+    | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+    | where MAX_CPU < 25 and MAX_MEM < 25
