@@ -93,7 +93,7 @@ We will consider some situations for which we can reduce the cost associate to A
         | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
         | where MAX_CPU < 25 and MAX_MEM < 25
 
-
+<img src="Images/Log-Query-7days.png">
 
 ---
 ### Log data for last **15 Days** of Virual Machine Performance.
@@ -148,7 +148,7 @@ We will consider some situations for which we can reduce the cost associate to A
         | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
         | where MAX_CPU < 25 and MAX_MEM < 25
 
-
+<img src="Images/Log-Query-15days.png">
 
 ---
 ### Log data for last **30 Days** of Virual Machine Performance.
@@ -203,7 +203,7 @@ We will consider some situations for which we can reduce the cost associate to A
         | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
         | where MAX_CPU < 25 and MAX_MEM < 25
 
-
+<img src="Images/Log-Query-30days.png">
 
 - Free Disk Space is 90% of Total Disk Space
 
