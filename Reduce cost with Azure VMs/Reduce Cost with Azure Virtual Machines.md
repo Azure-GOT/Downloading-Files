@@ -304,3 +304,12 @@ Extra queries
     | where MAX_CPU < 25 and MAX_MEM < 25
    
 <img src="Images/Extra query.png">
+
+---
+      Perf
+      | where TimeGenerated > ago(30d)
+      | where CounterName == "% Committed Bytes In Use" 
+      | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+      | join (Heartbeat | distinct Computer,OSType) on Computer
+      | project Computer,OSType,MIN_MEM,AVG_MEM,MAX_MEM
+      | where MAX_MEM < 25
