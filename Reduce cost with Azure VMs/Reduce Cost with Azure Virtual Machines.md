@@ -302,3 +302,5 @@ Extra queries
     ) on Computer
     | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
     | where MAX_CPU < 25 and MAX_MEM < 25
+   
+<img src="Images/Extra query.png">
