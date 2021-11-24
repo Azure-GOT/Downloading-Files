@@ -59,14 +59,14 @@ We will consider some situations for which we can reduce the cost associate to A
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit 
 - We are providing the minimum, average, maximum Memory utilization from last 7 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
-        For Windows:
+        //For Windows:
         Perf
         | where TimeGenerated > ago(7d)
         | where CounterName == "% Committed Bytes In Use" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
         
-        For Linux:
+        //For Linux:
         Perf
         | where TimeGenerated > ago(7d)
         | where CounterName == "% Used Memory" 
@@ -81,15 +81,17 @@ We will consider some situations for which we can reduce the cost associate to A
         | where TimeGenerated > ago(7d)
         | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-        | where MAX_CPU < 40
         | join
-        (
-            Perf
-            | where TimeGenerated > ago(7d)
-            | where CounterName == "% Committed Bytes In Use" 
-            | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-            | where MAX_MEM < 40
+            (
+                Perf
+                | where TimeGenerated > ago(7d)
+                | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
+                | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         ) on Computer
+        | join (Heartbeat) on Computer
+        | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+        | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+        | where MAX_CPU < 25 and MAX_MEM < 25
 
 <img src="Images/Log-Query-7days.png">
 
@@ -112,14 +114,14 @@ We will consider some situations for which we can reduce the cost associate to A
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
 - We are providing the minimum, average, maximum Memory utilization from last 15 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
-        For Windows:
+        //For Windows:
         Perf
         | where TimeGenerated > ago(15d)
         | where CounterName == "% Committed Bytes In Use" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
         
-        For Linux:
+        //For Linux:
         Perf
         | where TimeGenerated > ago(15d)
         | where CounterName == "% Used Memory" 
@@ -134,15 +136,17 @@ We will consider some situations for which we can reduce the cost associate to A
         | where TimeGenerated > ago(15d)
         | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-        | where MAX_CPU < 40
         | join
-        (
-            Perf
-            | where TimeGenerated > ago(15d)
-            | where CounterName == "% Committed Bytes In Use" 
-            | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-            | where MAX_MEM < 40
+            (
+                Perf
+                | where TimeGenerated > ago(15d)
+                | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
+                | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         ) on Computer
+        | join (Heartbeat) on Computer
+        | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+        | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+        | where MAX_CPU < 25 and MAX_MEM < 25
 
 <img src="Images/Log-Query-15days.png">
 
@@ -165,14 +169,14 @@ We will consider some situations for which we can reduce the cost associate to A
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
  - We are providing the minimum, average, maximum Memory utilization from last 30 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
 
-        For Windows:
+        //For Windows:
         Perf
         | where TimeGenerated > ago(30d)
         | where CounterName == "% Committed Bytes In Use" 
         | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         | where MAX_MEM < 25
         
-        For Linux:
+        //For Linux:
         Perf
         | where TimeGenerated > ago(30d)
         | where CounterName == "% Used Memory" 
@@ -187,15 +191,17 @@ We will consider some situations for which we can reduce the cost associate to A
         | where TimeGenerated > ago(30d)
         | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
         | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-        | where MAX_CPU < 40
         | join
-        (
-            Perf
-            | where TimeGenerated > ago(30d)
-            | where CounterName == "% Committed Bytes In Use" 
-            | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-            | where MAX_MEM < 40
+            (
+                Perf
+                | where TimeGenerated > ago(30d)
+                | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
+                | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
         ) on Computer
+        | join (Heartbeat) on Computer
+        | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+        | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+        | where MAX_CPU < 25 and MAX_MEM < 25
 
 <img src="Images/Log-Query-30days.png">
 
