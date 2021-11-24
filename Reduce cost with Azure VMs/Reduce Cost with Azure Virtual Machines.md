@@ -313,3 +313,26 @@ Extra queries
       | join (Heartbeat | distinct Computer,OSType) on Computer
       | project Computer,OSType,MIN_MEM,AVG_MEM,MAX_MEM
       | where MAX_MEM < 25
+      
+---
+
+          Perf
+          | where ObjectName == "LogicalDisk" or // the object name used in Windows records
+          ObjectName == "Logical Disk" // the object name used in Linux records
+          | where CounterName == "Free Megabytes"
+          | where InstanceName != "_Total"
+          | where InstanceName !startswith "HarddiskVolume"
+          | summarize arg_max(TimeGenerated, *) by CounterPath // arg_max over TimeGenerated returns the latest record
+          | project Drive=InstanceName, bin(FreeGB = CounterValue / 1024, 0.1), Computer
+          | join kind=inner (Perf
+              | where ObjectName == "LogicalDisk" or // the object name used in Windows records
+              ObjectName == "Logical Disk" // the object name used in Linux records
+              | where CounterName == "% Free Space"
+              | where InstanceName != "_Total"
+              | where InstanceName !startswith "HarddiskVolume"
+              | summarize arg_max(TimeGenerated, *) by CounterPath // arg_max over TimeGenerated returns the latest record
+              | project Drive=InstanceName, bin(FreePercent = CounterValue, 0.1), Computer)
+               on Drive, Computer
+          | extend TotalGB = toint((FreeGB*100)/FreePercent)
+          | project Computer, Drive, FreeGB,TotalGB, FreePercent
+          | order by Computer asc
