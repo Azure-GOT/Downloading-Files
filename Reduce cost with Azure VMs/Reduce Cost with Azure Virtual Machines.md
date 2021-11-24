@@ -58,7 +58,6 @@ We will consider some situations for which we can reduce the cost associate to A
           | where MAX_CPU < 25
 
 
-<img src="Images/CPU utilization 7days.png">
 
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit 
 - We are providing the minimum, average, maximum Memory utilization from last 7 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
@@ -83,7 +82,7 @@ We will consider some situations for which we can reduce the cost associate to A
          | distinct Computer,OSType,MIN_MEM,AVG_MEM,MAX_MEM
          | where MAX_MEM < 25
 
-<img src="Images/Memory utilization 7days.png">
+
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
@@ -123,7 +122,7 @@ We will consider some situations for which we can reduce the cost associate to A
           | where MAX_CPU < 25
 
 
-<img src="Images/CPU utilization 15days.png">
+
 
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
 - We are providing the minimum, average, maximum Memory utilization from last 15 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
@@ -148,7 +147,7 @@ We will consider some situations for which we can reduce the cost associate to A
          | distinct Computer,OSType,MIN_MEM,AVG_MEM,MAX_MEM
          | where MAX_MEM < 25
 
-<img src="Images/Memory utilization 15days.png">
+
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
@@ -188,7 +187,7 @@ We will consider some situations for which we can reduce the cost associate to A
           | where MAX_CPU < 25
 
 
-<img src="Images/CPU utilization 30days.png">
+
 
 - Here we are using the ObjectName as *% Committed Bytes in Use*: which displays the ratio of memory/committed bytes to memory/commit limit
  - We are providing the minimum, average, maximum Memory utilization from last 30 days and Based on that we are filtering the result where the maximum Memory utilization is less than 25 percentage.
@@ -213,7 +212,7 @@ We will consider some situations for which we can reduce the cost associate to A
          | distinct Computer,OSType,MIN_MEM,AVG_MEM,MAX_MEM
          | where MAX_MEM < 25
 
-<img src="Images/Memory utilization 30days.png">
+
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
