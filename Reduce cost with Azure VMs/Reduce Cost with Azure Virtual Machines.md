@@ -338,6 +338,6 @@ Extra queries
           | project Computer,OSType, Drive, FreeGB,TotalGB, FreePercent
           | order by Computer asc
           
- <img src="Images/Free-space-percentage.png">
-
+<img src="Images/Free-space-percentage.png">
+<img src="Images/Free-space-percentage-1.png">
  
