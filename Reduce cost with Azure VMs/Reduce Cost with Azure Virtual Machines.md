@@ -378,5 +378,17 @@ For 30 days:
           
 <img src="Images/InsightsMetrics CPU 30days.png">
 
-
+          InsightsMetrics
+          | where TimeGenerated > ago(15d)
+          | where Namespace == "LogicalDisk" and Name == "FreeSpacePercentage"
+          | extend MountID = substring(Tags,22,1)
+          | join
+          (
+              InsightsMetrics
+              | where TimeGenerated > ago(15d)
+              | where Namespace == "LogicalDisk" and Name == "FreeSpaceMB"
+              | extend FreeSpace = (Val/1024)
+          ) on Computer
+          | join (Heartbeat) on Computer
+          | project Computer,OSType,MountID,FreeSpace,Val
 
