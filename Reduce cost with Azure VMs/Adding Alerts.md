@@ -14,17 +14,23 @@ The users should get notification when some conditions met like when there is a 
 - After Defining the logic click on **Done**
 
 - This condition will trigger the alert when the average CPU utilization is more than 90%
-- In the query we have defined the average CPU utilization, when the threshold value will become greater than 90 the alert will fired
+- In the query we have defined the average CPU utilization, when the threshold value will become greater than 90 the alert will fired.
+- We are calculating the avearage CPU utilization for last 15 minutes, which is evaluated every 5 minutes
 <img src="Images/Alert-CPU-90.png">
 
-
 <img src="Images/Alert-CPU-90-02.png">
+
+- Give the proper Alert rule name, the description of alert, if the alert is critical then the severity of the alert and at last click on Create alert rule
 <img src="Images/Alert-CPU-90-03.png">
 
 - This condition will trigger the alert when the average CPU utilization is less than 10% in last 2 days
-- In the query we have defined the average CPU utilization, when the threshold value will become less than 10 the alert will fired
+- In the query we have defined the average CPU utilization, when the threshold value will become less than 10 the alert will fired.
+- We are calculating the avearage CPU utilization for last 2 days, which is evaluated every 5 minutes
 <img src="Images/Alert-CPU-10.png">
+
 <img src="Images/Alert-CPU-10-02.png">
+
+- Give the proper Alert rule name, the description of alert, if the alert is critical then the severity of the alert and at last click on Create alert rule
 <img src="Images/Alert-CPU-10-03.png">
 
 - An action group is a collection of notification preferences defined in the Azure. To add the action group click on **Add action group**
