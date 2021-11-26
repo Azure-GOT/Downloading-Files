@@ -352,7 +352,10 @@ For 7 days:
           | summarize MIN_CPU = min(Val), AVG_CPU = avg(Val), MAX_CPU = max(Val) by Computer
           | join (Heartbeat | distinct Computer,OSType) on Computer
           | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
-          
+
+<img src="Images/InsightsMetrics CPU 7days.png">
+
+     
 For 15 days:
 
           InsightsMetrics
@@ -362,6 +365,8 @@ For 15 days:
           | join (Heartbeat | distinct Computer,OSType) on Computer
           | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
           
+<img src="Images/InsightsMetrics CPU 15days.png">
+
 For 30 days:
 
           InsightsMetrics
@@ -370,3 +375,5 @@ For 30 days:
           | summarize MIN_CPU = min(Val), AVG_CPU = avg(Val), MAX_CPU = max(Val) by Computer
           | join (Heartbeat | distinct Computer,OSType) on Computer
           | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
+          
+<img src="Images/InsightsMetrics CPU 30days.png">
