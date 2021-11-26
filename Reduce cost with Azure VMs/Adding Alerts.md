@@ -12,8 +12,20 @@ The users should get notification when some conditions met like when there is a 
 <img src="Images/Create alert rule 1.png">
 
 - After Defining the logic click on **Done**
-<img src="Images/Configure signal logic.png">
-<img src="Images/Create alert rule 2.png">
+
+- This condition will trigger the alert when the average CPU utilization is more than 90%
+- In the query we have defined the average CPU utilization, when the threshold value will become greater than 90 the alert will fired
+<img src="Images/Alert-CPU-90.png">
+
+
+<img src="Images/Alert-CPU-90-02.png">
+<img src="Images/Alert-CPU-90-03.png">
+
+- This condition will trigger the alert when the average CPU utilization is less than 10% in last 2 days
+- In the query we have defined the average CPU utilization, when the threshold value will become less than 10 the alert will fired
+<img src="Images/Alert-CPU-10.png">
+<img src="Images/Alert-CPU-10-02.png">
+<img src="Images/Alert-CPU-10-03.png">
 
 - An action group is a collection of notification preferences defined in the Azure. To add the action group click on **Add action group**
 <img src="Images/Add action group.png">
@@ -31,8 +43,7 @@ The users should get notification when some conditions met like when there is a 
 - When the alert is fired, it should perform some action. We can define those action type on the **Actions** tab
 <img src="Images/Actions-tab-action-group.png">
 
-- Give the name of alert, it's resource group and severity. At last click on **Create alert rule**
-<img src="Images/Create alert rule final.png">
+- Click on **Review and create** and wait for the deployment to complete.
 
 ---
 
