@@ -24,3 +24,17 @@ and also when we are detaching a disk from a VM having replication (disaster rec
 even having the VM deallocated. But the disk can be detach using Azure CLI while the VM was 
 deallocated:
 az vm disk detach -g resource_group_name --vm-name vm_name --name disk_name
+
+<img src="Images/Data disk- add new one.png">
+
+<img src="Images/Data disk-disk management.png">
+
+<img src="Images/Data disk-new simple volume.png">
+
+<img src="Images/Data disk-simple volume completed.png">
+
+<img src="Images/Data disk-remove old disk.png">
+
+<img src="Images/Data disk-sava changes.png">
+
+<img src="Images/Data disk-Verify changes.png">
