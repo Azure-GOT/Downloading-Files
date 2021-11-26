@@ -341,3 +341,32 @@ Extra queries
 <img src="Images/Free-space-percentage.png">
 <img src="Images/Free-space-percentage-1.png">
  
+
+**InsightsMetrics Queries**
+
+For 7 days:
+
+          InsightsMetrics
+          | where TimeGenerated > ago(7d)
+          | where Namespace == "Processor"
+          | summarize MIN_CPU = min(Val), AVG_CPU = avg(Val), MAX_CPU = max(Val) by Computer
+          | join (Heartbeat | distinct Computer,OSType) on Computer
+          | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
+          
+For 15 days:
+
+          InsightsMetrics
+          | where TimeGenerated > ago(15d)
+          | where Namespace == "Processor"
+          | summarize MIN_CPU = min(Val), AVG_CPU = avg(Val), MAX_CPU = max(Val) by Computer
+          | join (Heartbeat | distinct Computer,OSType) on Computer
+          | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
+          
+For 30 days:
+
+          InsightsMetrics
+          | where TimeGenerated > ago(30d)
+          | where Namespace == "Processor"
+          | summarize MIN_CPU = min(Val), AVG_CPU = avg(Val), MAX_CPU = max(Val) by Computer
+          | join (Heartbeat | distinct Computer,OSType) on Computer
+          | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
