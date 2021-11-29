@@ -8,7 +8,7 @@
 
 - Creating dashboards with Azure Monitor data: https://github.com/Azure-GOT/Web-Project/blob/main/Reduce%20cost%20with%20Azure%20VMs/Adding%20data%20to%20dashboard.md
 
-- Monitoring virtual machine performance with Azure Monitor Application Insights:
+- Monitoring virtual machine performance with Azure Monitor Application Insights: https://github.com/Azure-GOT/Web-Project/blob/main/Reduce%20cost%20with%20Azure%20VMs/Monitoring%20virtual%20machine%20performance%20with%20InsightsMetrics.md
 
 - Writing log queries in Azure Monitor: https://github.com/Azure-GOT/Web-Project/blob/main/Reduce%20cost%20with%20Azure%20VMs/Reduce%20Cost%20with%20Azure%20Virtual%20Machines.md
 
