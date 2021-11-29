@@ -7,6 +7,14 @@ The cost of the virtual machine depends on various conditions:
 - The region where the VM is deployed
 - The operating system of the VM
 
+Some ways to reduce the cost of Virtual Machine:
+- Use Reserved Virtual Machine Instances
+  - Azure Reserved VM Instances is a way of committing to a fixed number of Virtual Machines and sizes in Azure for a period of 1 or 3 years
+- Azure Hybrid Benefits
+  - Azure Hybrid Benefit is a licensing benefit that helps to significantly reduce the costs of running the workloads in the cloud, it can be done by using the on-premises Software Assurance-enabled Windows Server and SQL Server licenses on Azure. 
+- Right-Size VMs
+- Schedule VMs to Start/Stop Based on Usage
+
 We will consider some situations for which we can reduce the cost associate to Azure Virtual Machines. For that you should have Vitual Machines deployed in your subscription.
 
 ## Step 1: Create the dependent resources
