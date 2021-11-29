@@ -269,15 +269,6 @@ Extra queries
 
 CPU utilization of virtual machine
 
-    Perf
-    | where TimeGenerated > ago(15d)
-    | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-    | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-    | where MAX_CPU < 25
-    | join (Heartbeat | distinct Computer) on Computer
-    | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
-     
-OR
      
     Perf
     | where TimeGenerated > ago(15d)
