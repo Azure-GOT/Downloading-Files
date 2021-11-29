@@ -267,6 +267,8 @@ We will consider some situations for which we can reduce the cost associate to A
 
 Extra queries
 
+CPU utilization of virtual machine
+
     Perf
     | where TimeGenerated > ago(15d)
     | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
@@ -274,9 +276,22 @@ Extra queries
     | where MAX_CPU < 25
     | join (Heartbeat | distinct Computer) on Computer
     | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
+     
+OR
+     
+    Perf
+    | where TimeGenerated > ago(15d)
+    | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+    | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+    | join (Heartbeat | distinct Computer,OSType) on Computer
+    | project Computer,OSType,MIN_CPU,AVG_CPU,MAX_CPU
+    | where MAX_CPU < 25
+
     
 ---
-    
+
+Memory utilization of virtual machine
+
       Perf
       | where TimeGenerated > ago(30d)
       | where CounterName == "% Committed Bytes In Use" 
