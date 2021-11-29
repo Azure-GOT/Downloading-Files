@@ -237,41 +237,31 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Free Disk Space is 90% of Total Disk Space
 
-        let FreeMemory = Perf
-        | where (ObjectName == "Memory" and CounterName contains "Available M")
-        | summarize FreeMemory = (avg(CounterValue)) by bin(TimeGenerated, 1h), Computer, InstanceName
-        | sort by TimeGenerated, Computer desc;
-        //FreeMemory
-        let UsedMemory = Perf
-        | where (ObjectName == "Memory" and CounterName == "Committed Bytes")
-        | summarize UsedMemory = (avg(CounterValue)) by bin(TimeGenerated, 1h), Computer, InstanceName
-        | sort by TimeGenerated, Computer desc;
-        //UsedMemory
-        let TotalMemory = FreeMemory | join UsedMemory on Computer, InstanceName;
-        //TotalMemory
-        let FreeMB = Perf
-        | where CounterName == "Free Megabytes"
-        | summarize FreeMB = (avg(CounterValue)) by bin(TimeGenerated, 1h), Computer, InstanceName
-        | sort by TimeGenerated, Computer desc;
-        //FreeMB
-        let FreeSpace = Perf
-        | where CounterName == "% Free Space" and InstanceName !contains "DPM"
-        | summarize FreeSpace = (avg(CounterValue)) by bin(TimeGenerated, 1h), Computer, InstanceName
-        | sort by TimeGenerated, Computer desc;
-        //FreeSpace
-        let DiskTotalFreeMB = FreeMB | join FreeSpace on Computer, InstanceName
-        | extend TotalSizeGB = toint((FreeMB / FreeSpace * 100) /1024);
-        //DiskTotalFreeMB
-        DiskTotalFreeMB | join kind=leftouter TotalMemory on Computer  | sort by TimeGenerated, Computer, InstanceName
-        | extend FreeDiskGB = FreeMB/1024
-        | where InstanceName == "_Total"
-        | extend FreeDiskPercentage = (FreeDiskGB/TotalSizeGB)*100
-        | summarize arg_max(TimeGenerated, *) by Computer
-        | project Computer, InstanceName, round(FreeDiskGB), TotalSizeGB, FreeDiskPercentage
-        | where FreeDiskPercentage > 90
-
-<img src="Images/Free-disk-space.png">
-<img src="Images/Free-disk-space-2.png">
+          Perf
+          | where ObjectName == "LogicalDisk" or // the object name used in Windows records
+          ObjectName == "Logical Disk" // the object name used in Linux records
+          | where CounterName == "Free Megabytes"
+          | where InstanceName != "_Total"
+          | where InstanceName !startswith "HarddiskVolume"
+          | summarize arg_max(TimeGenerated, *) by CounterPath // arg_max over TimeGenerated returns the latest record
+          | project Drive=InstanceName, bin(FreeGB = CounterValue / 1024, 0.1), Computer
+          | join kind=inner (Perf
+              | where ObjectName == "LogicalDisk" or // the object name used in Windows records
+              ObjectName == "Logical Disk" // the object name used in Linux records
+              | where CounterName == "% Free Space"
+              | where InstanceName != "_Total"
+              | where InstanceName !startswith "HarddiskVolume"
+              | summarize arg_max(TimeGenerated, *) by CounterPath // arg_max over TimeGenerated returns the latest record
+              | project Drive=InstanceName, bin(FreePercent = CounterValue, 0.1), Computer)
+               on Drive, Computer
+               | join kind=inner (Heartbeat | distinct  Computer,OSType) on Computer
+          | extend TotalGB = ((FreeGB*100)/FreePercent)
+          | project Computer,OSType, Drive, FreeGB,TotalGB, FreePercent
+          | order by Computer asc
+          | where FreePercent > 90
+          
+<img src="Images/Free-space-percentage.png">
+<img src="Images/Free-space-percentage-1.png">
 
 ---
 
@@ -316,30 +306,7 @@ Extra queries
       
 ---
 
-          Perf
-          | where ObjectName == "LogicalDisk" or // the object name used in Windows records
-          ObjectName == "Logical Disk" // the object name used in Linux records
-          | where CounterName == "Free Megabytes"
-          | where InstanceName != "_Total"
-          | where InstanceName !startswith "HarddiskVolume"
-          | summarize arg_max(TimeGenerated, *) by CounterPath // arg_max over TimeGenerated returns the latest record
-          | project Drive=InstanceName, bin(FreeGB = CounterValue / 1024, 0.1), Computer
-          | join kind=inner (Perf
-              | where ObjectName == "LogicalDisk" or // the object name used in Windows records
-              ObjectName == "Logical Disk" // the object name used in Linux records
-              | where CounterName == "% Free Space"
-              | where InstanceName != "_Total"
-              | where InstanceName !startswith "HarddiskVolume"
-              | summarize arg_max(TimeGenerated, *) by CounterPath // arg_max over TimeGenerated returns the latest record
-              | project Drive=InstanceName, bin(FreePercent = CounterValue, 0.1), Computer)
-               on Drive, Computer
-               | join kind=inner (Heartbeat | distinct  Computer,OSType) on Computer
-          | extend TotalGB = ((FreeGB*100)/FreePercent)
-          | project Computer,OSType, Drive, FreeGB,TotalGB, FreePercent
-          | order by Computer asc
-          
-<img src="Images/Free-space-percentage.png">
-<img src="Images/Free-space-percentage-1.png">
+
  
 
 
