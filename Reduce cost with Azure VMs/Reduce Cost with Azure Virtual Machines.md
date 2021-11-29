@@ -294,6 +294,13 @@ Memory utilization of virtual machine
 ---
 
 
+<img src="Images/Example 1.png">
+
+<img src="Images/Example 2.png">
+
+<img src="Images/Example 3.png">
+
+<img src="Images/Example 4.png">
  
 
 
