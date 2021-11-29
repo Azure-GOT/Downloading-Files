@@ -87,23 +87,22 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
-        Perf
-        | where TimeGenerated > ago(7d)
-        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-        | join
-            (
-                Perf
-                | where TimeGenerated > ago(7d)
-                | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
-                | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-        ) on Computer
-        | join (Heartbeat) on Computer
-        | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-        | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-        | where MAX_CPU < 25 and MAX_MEM < 25
-
-<img src="Images/Log-Query-7days.png">
+          Perf
+          | where TimeGenerated > ago(7d)
+          | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+          | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+          | join (Heartbeat ) on Computer
+          | join
+          (
+               Perf
+              | where TimeGenerated > ago(7d)
+              | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
+              | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
+          ) on Computer
+          | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+          | where MAX_CPU < 25 and MAX_MEM < 25
+   
+<img src="Images/Extra query.png">
 
 ---
 ### Log data for last **15 Days** of Virual Machine Performance.
@@ -152,23 +151,23 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
-        Perf
-        | where TimeGenerated > ago(15d)
-        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-        | join
-            (
+          Perf
+          | where TimeGenerated > ago(15d)
+          | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+          | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+          | join (Heartbeat ) on Computer
+          | join
+          (
                 Perf
                 | where TimeGenerated > ago(15d)
                 | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
                 | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-        ) on Computer
-        | join (Heartbeat) on Computer
-        | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-        | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-        | where MAX_CPU < 25 and MAX_MEM < 25
+          ) on Computer
+          | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+          | where MAX_CPU < 25 and MAX_MEM < 25
 
-<img src="Images/Log-Query-15days.png">
+
+<img src="Images/Log query 15 days.png">
 
 ---
 ### Log data for last **30 Days** of Virual Machine Performance.
@@ -217,23 +216,23 @@ We will consider some situations for which we can reduce the cost associate to A
 
 - Consolidated chart of Maximum CPU utilization and Maximum Memory utilization
 
-        Perf
-        | where TimeGenerated > ago(30d)
-        | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-        | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-        | join
-            (
+          Perf
+          | where TimeGenerated > ago(30d)
+          | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
+          | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
+          | join (Heartbeat ) on Computer
+          | join
+          (
                 Perf
                 | where TimeGenerated > ago(30d)
                 | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
                 | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-        ) on Computer
-        | join (Heartbeat) on Computer
-        | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-        | distinct Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-        | where MAX_CPU < 25 and MAX_MEM < 25
+          ) on Computer
+          | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
+          | where MAX_CPU < 25 and MAX_MEM < 25
 
-<img src="Images/Log-Query-30days.png">
+
+<img src="Images/Log query 30 days.png">
 
 - Free Disk Space is 90% of Total Disk Space
 
@@ -278,24 +277,6 @@ Extra queries
     
 ---
     
-    Perf
-    | where TimeGenerated > ago(7d)
-    | where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total"
-    | summarize MIN_CPU = min(CounterValue), AVG_CPU = avg(CounterValue), MAX_CPU = max(CounterValue) by Computer
-    | join (Heartbeat ) on Computer
-    | join
-    (
-          Perf
-          | where TimeGenerated > ago(7d)
-          | where CounterName == "% Committed Bytes In Use" or CounterName =="% Used Memory"
-          | summarize AVG_MEM = avg(CounterValue), MIN_MEM = min(CounterValue), MAX_MEM = max(CounterValue) by Computer
-    ) on Computer
-    | project Computer, OSType,MIN_CPU,AVG_CPU,MAX_CPU,MIN_MEM,AVG_MEM,MAX_MEM
-    | where MAX_CPU < 25 and MAX_MEM < 25
-   
-<img src="Images/Extra query.png">
-
----
       Perf
       | where TimeGenerated > ago(30d)
       | where CounterName == "% Committed Bytes In Use" 
