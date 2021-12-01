@@ -101,7 +101,7 @@ The users should get notification when some conditions met like when there is a 
 
 - Enter the **Email** and **Phone number** of the user who you want to receive the notification when the alert is fired
 > Note: You have to enter the valid Email and Phone number
-<img src="Images/Email-SMS-action-group.png" width="100%" height="100%">
+<img src="Images/Email-SMS-action-group.png">
 
 - When the alert is fired, it should perform some action. We can define those action type on the **Actions** tab
 <img src="Images/Actions-tab-action-group.png" width="100%" height="100%">
