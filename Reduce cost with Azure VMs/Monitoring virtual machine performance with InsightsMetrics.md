@@ -37,3 +37,21 @@ CPU utilization of virtual machine for last 30 days:
 <img src="Images/InsightsMetrics CPU 30days.png">
 
 
+Percentage free space of disk from last 15 days
+
+          InsightsMetrics
+          | where TimeGenerated > ago(15d)
+          | where Namespace == "LogicalDisk" and Name == "FreeSpacePercentage"
+          | extend MountID = substring(Tags,22,1)
+          | extend FreePercentage = Val
+          | join
+          (
+              InsightsMetrics
+              | where TimeGenerated > ago(15d)
+              | where Namespace == "LogicalDisk" and Name == "FreeSpaceMB"
+              | extend FreeSpace = (Val/1024)
+          ) on Computer
+          | join (Heartbeat) on Computer
+          | extend Total = (FreeSpace*100)/FreePercentage
+          | project Computer,OSType,MountID,FreeSpace,Total,FreePercentage
+
