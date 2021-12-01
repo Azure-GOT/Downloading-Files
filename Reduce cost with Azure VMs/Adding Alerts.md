@@ -13,7 +13,9 @@ The users should get notification when some conditions met like when there is a 
 
 - After Defining the logic click on **Done**
 
-- This condition will trigger the alert when the average CPU utilization is more than 90%
+**Case 1:**
+
+- This condition will trigger the alert when the **average CPU utilization is more than 90%**
 - In the query we have defined the average CPU utilization, when the threshold value will become greater than 90 the alert will fired.
 - We are calculating the avearage CPU utilization for last 15 minutes, which is evaluated every 5 minutes. The query is given below:
    
@@ -28,7 +30,11 @@ The users should get notification when some conditions met like when there is a 
 - Give the proper Alert rule name, the description of alert, if the alert is critical then the severity of the alert and at last click on Create alert rule
 <img src="Images/Alert-CPU-90-03.png" width="100%" height="100%">
 
-- This condition will trigger the alert when the average CPU utilization is less than 10% in last 2 days
+---
+
+**Case 2:**
+
+- This condition will trigger the alert when the **average CPU utilization is less than 10% in last 2 days**
 - In the query we have defined the average CPU utilization, when the threshold value will become less than 10 the alert will fired.
 - We are calculating the avearage CPU utilization for last 2 days, which is evaluated every 5 minutes. The query is given below:
 
@@ -42,6 +48,47 @@ The users should get notification when some conditions met like when there is a 
 
 - Give the proper Alert rule name, the description of alert, if the alert is critical then the severity of the alert and at last click on Create alert rule
 <img src="Images/Alert-CPU-10-03.png" width="100%" height="100%">
+
+---
+
+**Case 3:**
+
+- This condition will trigger the alert when the **average Memory utilization is greater than 90%**
+- In the query we have defined the average Memory utilization, when the threshold value will become greater than 90 the alert will fired.
+- We are calculating the avearage Memory utilization for last 30 minutes, which is evaluated every 5 minutes. The query is given below:
+
+      Perf
+      | where CounterName == "% Committed Bytes In Use" or CounterName == "% Used Memory"
+      | summarize AggregatedValue = avg(CounterValue) by Computer,bin(TimeGenerated,15m)
+
+<img src="Images/Memory utilization alert 1.png">
+
+<img src="Images/Memory utilization alert 2.png">
+
+- Give the proper Alert rule name, the description of alert, if the alert is critical then the severity of the alert and at last click on Create alert rule
+<img src="Images/Memory utilization alert 3.png">
+
+---
+
+**Case 4:**
+
+- This condition will trigger the alert when the **average % free space of disk is greater than 90%**
+- We are calculating the avearage % free space of disk for last 2 days, which is evaluated every 5 minutes. The query is given below:
+
+      Perf
+      | where ObjectName == "LogicalDisk" and CounterName == "% Free Space"
+      | where InstanceName != "_Total"
+      | where InstanceName !startswith "HarddiskVolume"
+      | summarize AggregatedValue = avg(CounterValue) by Computer,bin(TimeGenerated,15m),InstanceName
+
+<img src="Images/Free space alert 1.png">
+
+<img src="Images/Free space alert 2.png">
+
+- Give the proper Alert rule name, the description of alert, if the alert is critical then the severity of the alert and at last click on Create alert rule
+<img src="Images/Free space alert 3.png">
+
+---
 
 - An action group is a collection of notification preferences defined in the Azure. To add the action group click on **Add action group**
 <img src="Images/Add action group.png" width="100%" height="100%">
