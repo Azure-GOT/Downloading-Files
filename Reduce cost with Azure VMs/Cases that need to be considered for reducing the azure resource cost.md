@@ -20,6 +20,7 @@
   that the virtual machine is not in that much of use and we can resize the VM to lower size.
 
 - **Storage**
+  - Use Standard Storage to store Managed Disks snapshots. You can also 
 
 - **Disk**
   - Make sure to select the right disk for the machine, default is Premium SSD – the most expensive option. For non-production environments and for production servers that 
