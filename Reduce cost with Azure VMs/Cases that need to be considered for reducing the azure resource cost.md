@@ -13,14 +13,10 @@
   the swap memory of a VM.
 
 
-- **Site Recovery**
-
 - **VM Resizing**
   - If you are provisioning machines that offer more than what you need, then you’re paying for compute you don’t use. By reviewing the performance over time, we can determine 
   that the virtual machine is not in that much of use and we can resize the VM to lower size.
 
-- **Storage**
-  - Use Standard Storage to store Managed Disks snapshots. You can also 
 
 - **Disk**
   - Make sure to select the right disk for the machine, default is Premium SSD – the most expensive option. For non-production environments and for production servers that 
@@ -55,8 +51,3 @@
   - Orphaned resources occur when a VM is terminated, but resources attached to that machine continue running or existing – which incurs wasted costs. 
     Make sure you look out for Orphaned Volumes (Azure Virtual Disks), Unassociated IPs (Static Public IPs) and either terminate or reassign them. When VMs are deleted, the disks are not deleted automatically, which leaves behind as orphaned disks. These orphaned disks take up space and incur charges that most Azure users don’t even know they’re paying.
 
-- **Generation**
-
-- **SKU**
-
-- **Add On's**
