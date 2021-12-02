@@ -22,6 +22,11 @@
 - **Storage**
 
 - **Disk**
+  - Make sure to select the right disk for the machine, default is Premium SSD – the most expensive option. For non-production environments and for production servers that 
+    don't need high performance SSD, change to a disk with a lower cost. You can also delete the disks that are unused means when we delete the virtual machine the disks associated to that VM are not deleted automatically, which leaves behind as orphaned disks. For deleting such disks perform the following steps:(for managed disks)
+    1. From Azure portal search for disks
+    2. When the search is complete you’ll see a list of all your disks. Look for any disks that do not have an owner listed.
+    3. Select one of the disks without an owner. Check the "Disk state” in the overview tab to make sure that the disk is unattached. If it is, go ahead and click “Delete.”
 
 - **Licences**
   - If we have our own Windows Server or SQL Server license we can use those Licences and we can save upto 40% of the cost. When you provide your own license, Azure doesn't have 
@@ -42,8 +47,12 @@
     Look at the following example:
     | Region | Virtual Machine | Per hour cost | Monthly cost (730 hours) |
     | -- | -- | -- | -- |
-    | UK South | D11v2 | £0.2833 | £206.81 |
-    | East US | D11v2 | £0.197 | £143.81 |
+    | UK South | DS3v2 | £0.3135 | £228.85 |
+    | East US | DS3v2 | €0.2617 | £191.04 |
+
+- **Orphaned Resources**
+  - Orphaned resources occur when a VM is terminated, but resources attached to that machine continue running or existing – which incurs wasted costs. 
+    Make sure you look out for Orphaned Volumes (Azure Virtual Disks), Unassociated IPs (Static Public IPs) and either terminate or reassign them. When VMs are deleted, the disks are not deleted automatically, which leaves behind as orphaned disks. These orphaned disks take up space and incur charges that most Azure users don’t even know they’re paying.
 
 - **Generation**
 
