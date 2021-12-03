@@ -44,10 +44,16 @@
     Look at the following example:
     | Region | Virtual Machine | Per hour cost | Monthly cost (730 hours) |
     | -- | -- | -- | -- |
-    | UK South | DS3v2 | £0.3135 | £228.85 |
-    | East US | DS3v2 | €0.2617 | £191.04 |
+    | UK South | DS3v2 | €0.3135 | €228.85 |
+    | East US | DS3v2 | €0.2617 | €191.04 |
 
 - **Orphaned Resources**
   - Orphaned resources occur when a VM is terminated, but resources attached to that machine continue running or existing – which incurs wasted costs. 
     Make sure you look out for Orphaned Volumes (Azure Virtual Disks), Unassociated IPs (Static Public IPs) and either terminate or reassign them. When VMs are deleted, the disks are not deleted automatically, which leaves behind as orphaned disks. These orphaned disks take up space and incur charges that most Azure users don’t even know they’re paying.
 
+- **Networking**
+  - The IP address that we are using for the virtual machine is going to cost. when the relevant VM is in “stopped-deallocated”, no charging is imposed on “dynamic” public IP addresses. Yet, no matter how relevant resources are, “static” public IP addresses are charged (unless it’s one of the first 5 “static” public IP addresses in that region). However, the reserved IP addresses will be charged if all virtual machines in deployment are in a stopped-deallocated state.
+
+
+- **Site Recovery**
+  - If the entire region suffers from disruption as a result of a major natural disaster or large-scale service disruption, Azure Site Recovery protects your VM from the effects of the major disaster. Azure Site Recovery charges you for the number of protected instances. There are also separate charges for storage, storage transactions, and data transfers. Azure Site Recovery charges you based on the average daily number of protected instances each month. For example, if you continuously protect 20 instances for the first two weeks of a month, but you do not protect any instances for the last two weeks of the month, the average daily number of protected instances for that month will be 10.
