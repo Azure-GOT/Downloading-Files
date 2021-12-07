@@ -8,7 +8,7 @@ two options for rehydrating a blob that is stored in the Archive tier:
 
 1. Copy an archived blob to an online tier
 
-> Note: Replace placeholders in angle brackets with your own values
+> Note: Replace placeholders in angle brackets with your own values. We can copy an archived blob to an online tier via CLI or powershell only
 Azure CLI:
 
     az storage blob copy start \
@@ -74,16 +74,22 @@ Powershell:
     $blob = Get-AzStorageBlob -Container $containerName -Blob $blobName -Context $ctx
     $blob.BlobClient.SetAccessTier("Hot", $null, "Standard")
 
+
 From the portal:
 
 - Select the blob that you want to restore
 - In the top menu click on **Change Tier**
+
 <img src="Images/1 sample file.png">
-- Select the **Access tier** as *Hot* or *Cool*
+
+- Select the Access tier as **Hot** or **Cool**
 <img src="Images/2 access tier.png">
-- Select the rehydrate property as *Standard* or *High(will cost more)*
+
+- Select the rehydrate property as **Standard** or **High**(will cost more)
 <img src="Images/3 priority.png">
+
 > Note: Rehydrating a blob from Archive to Hot or Cool may take several hours to complete.
+
 - Click on **Save**
 <img src="Images/4 change tier.png">
 
