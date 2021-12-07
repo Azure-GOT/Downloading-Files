@@ -6,10 +6,11 @@ two options for rehydrating a blob that is stored in the Archive tier:
 - Copy an archived blob to an online tier
 - Change a blob's access tier to an online tier
 
-1. Copy an archived blob to an online tier
+## 1. Copy an archived blob to an online tier
 
 > Note: Replace placeholders in angle brackets with your own values. We can copy an archived blob to an online tier via CLI or powershell only
-Azure CLI:
+
+**Azure CLI:**
 
     az storage blob copy start \
     --source-container <source-container> \
@@ -21,7 +22,7 @@ Azure CLI:
     --rehydrate-priority standard \
     --auth-mode login
 
-Powershell:
+**Powershell:**
 
     # Initialize these variables with your values.
     $rgName = "<resource-group>"
@@ -45,9 +46,9 @@ Powershell:
         -RehydratePriority Standard `
         -Context $ctx
 
-2. Change a blob's access tier to an online tier
+## 2. Change a blob's access tier to an online tier
 
-Azure CLI:
+**Azure CLI:**
 
     az storage blob set-tier \
         --account-name <storage-account> \
@@ -57,7 +58,7 @@ Azure CLI:
         --rehydrate-priority Standard \
         --auth-mode login
 
-Powershell: 
+**Powershell:** 
 
     # Initialize these variables with your values.
     $rgName = "<resource-group>"
@@ -75,7 +76,7 @@ Powershell:
     $blob.BlobClient.SetAccessTier("Hot", $null, "Standard")
 
 
-From the portal:
+**From the portal:**
 
 - Select the blob that you want to restore
 - In the top menu click on **Change Tier**
