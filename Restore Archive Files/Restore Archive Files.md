@@ -78,10 +78,14 @@ From the portal:
 
 - Select the blob that you want to restore
 - In the top menu click on **Change Tier**
+<img src="Images/1 sample file.png">
 - Select the **Access tier** as *Hot* or *Cool*
+<img src="Images/2 access tier.png">
 - Select the rehydrate property as *Standard* or *High(will cost more)*
+<img src="Images/3 priority.png">
 > Note: Rehydrating a blob from Archive to Hot or Cool may take several hours to complete.
 - Click on **Save**
+<img src="Images/4 change tier.png">
 
 
 Once the rehydration process is complete you can download the file.
